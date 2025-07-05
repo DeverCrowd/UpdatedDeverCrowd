@@ -49,12 +49,13 @@ const AboutPage = ({ progress }) => {
   return (
     <motion.section
       style={{ scale, boxShadow: `0px 0px 30px 0px #860cfa`, borderRadius }}
-      className="flex flex-col items-center justify-center w-full min-h-screen backdrop-blur-2xl z-20 rounded-t-[60px] relative"
+      className="flex flex-col items-center justify-center w-full min-h-screen backdrop-blur-2xl z-20 rounded-t-[60px] relative overflow-hidden"
       id="about"
     >
       <Spotlight />
+
       {/* Background Particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <Particles
           particleColors={["#b60cfa", "#b60cfa"]}
           particleCount={300}
@@ -67,49 +68,59 @@ const AboutPage = ({ progress }) => {
         />
       </div>
 
-      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)]">
-        <div className="absolute inset-0">
-          <Particles
-            particleColors={["#b60cfa", "#b60cfa"]}
-            particleCount={200}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={50}
-            moveParticlesOnHover={false}
-            alphaParticles={true}
-            disableRotation={false}
-          />
-        </div>
+      {/* Who We Are */}
+<LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] z-10 w-full px-4 sm:px-6 md:px-8 py-12 md:py-20">
+  {/* خلفية Particles */}
+  <div className="absolute inset-0 z-0">
+    <Particles
+      particleColors={["#b60cfa", "#b60cfa"]}
+      particleCount={200}
+      particleSpread={10}
+      speed={0.1}
+      particleBaseSize={50}
+      moveParticlesOnHover={false}
+      alphaParticles={true}
+      disableRotation={false}
+    />
+  </div>
 
-        {/* Who We Are */}
-        <motion.div
-          initial={{ opacity: 0.5, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
-          className="flex flex-col items-center px-4"
-        >
-          <h1 className="mt-8 bg-gradient-to-br from-purple-300 to-purple-500 py-4 bg-clip-text text-center text-4xl md:text-7xl font-semibold tracking-tight text-transparent">
-            Who We Are?!
-          </h1>
-          <SpotlightCard
-            className="w-full md:w-[90%] lg:w-[70%] xl:w-[60%] text-xl md:text-3xl text-center"
-            spotlightColor="rgba(128, 0, 128, 0.5)"
-          >
-            At <span className="text-primary">DeverCrowd</span> we empower businesses with tailored digital solutions — from custom platforms to seamless experiences — turning ideas into strong online brands. We build lasting partnerships for digital growth.
-          </SpotlightCard>
-        </motion.div>
-      </LampContainer>
+  {/* المحتوى داخل اللمبة */}
+  <motion.div
+    initial={{ opacity: 0.5, y: 100 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
+    className="flex flex-col items-center gap-6 w-full z-10"
+  >
+    {/* العنوان */}
+    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text text-center leading-tight">
+      Who We Are?!
+    </h1>
 
-      {/* Vision + Globe + Mission */}
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8 px-6 py-20 items-center">
+    {/* الكرت الخاص بالتعريف */}
+    <SpotlightCard
+      className="text-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl w-full sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[60%] px-4"
+      spotlightColor="rgba(128, 0, 128, 0.5)"
+    >
+      At <span className="text-primary">DeverCrowd</span>, we empower
+      businesses with tailored digital solutions — from custom platforms
+      to seamless experiences — turning ideas into strong online brands.
+      We build lasting partnerships for digital growth.
+    </SpotlightCard>
+  </motion.div>
+</LampContainer>
+
+    
+
+      {/* Vision / Mission / Globe */}
+      <div className="w-full max-w-7xl px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
         {/* Vision */}
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="flex flex-col text-center items-center gap-5"
+          className="text-center flex flex-col items-center gap-4"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
             Vision
           </h2>
           <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200">
@@ -118,7 +129,7 @@ const AboutPage = ({ progress }) => {
         </motion.div>
 
         {/* Globe */}
-        <div className="justify-center hidden lg:flex">
+        <div className="flex justify-center">
           <GlobeDemo />
         </div>
 
@@ -127,9 +138,9 @@ const AboutPage = ({ progress }) => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="flex flex-col text-center items-center gap-5"
+          className="text-center flex flex-col items-center gap-4"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
             Mission
           </h2>
           <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200">
@@ -143,9 +154,9 @@ const AboutPage = ({ progress }) => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="flex flex-col items-center text-center gap-6 px-6"
+        className="flex flex-col items-center text-center gap-6 px-4 sm:px-6"
       >
-        <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
           Core Values
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
@@ -164,8 +175,8 @@ const AboutPage = ({ progress }) => {
         </div>
       </motion.div>
 
-      {/* Circular Text Animation */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-10 w-full my-16">
+      {/* CircularText */}
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-10 my-16 w-full">
         <div className="w-32 sm:w-40">
           <CircularText text="011010*011010*011010*" onHover="slowDown" spinDuration={30} />
         </div>
@@ -174,20 +185,20 @@ const AboutPage = ({ progress }) => {
         </div>
       </div>
 
-      {/* Our Achievements */}
+      {/* Achievements */}
       <motion.div
-        className="w-full max-w-[90%] mx-auto my-20"
+        className="w-full max-w-7xl px-4 sm:px-6 py-20"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.h2
-          className="text-3xl md:text-5xl pb-5 flex flex-col justify-end items-center gap-3 text-center"
+          className="text-3xl md:text-5xl pb-5 text-center font-bold text-black dark:text-white"
           variants={cardVariants}
         >
           Our Achievements
-          <div className="w-24 h-1 bg-primary mt-2" />
+          <div className="w-24 h-1 bg-primary mx-auto mt-2" />
         </motion.h2>
 
         <motion.div

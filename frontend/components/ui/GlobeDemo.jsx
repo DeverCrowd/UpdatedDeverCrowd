@@ -395,18 +395,18 @@ export function GlobeDemo() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden md:h-[50vh] h-full flex  items-center justify-start">
-        <motion.div 
-        initial={{opacity:0,y:-200}}
-          whileInView={{
-            opacity:1, y:0,
-            transition:{duration:1,ease:"easeInOut"}
-          }}
-        className=" w-full h-72 md:h-full z-10 flex items-center justify-center ">
-          <World data={sampleArcs} globeConfig={globeConfig}/>
-        </motion.div>
-      </div>
+    <div className="flex items-center justify-center w-full h-60 sm:h-80 md:h-[300px] lg:h-[350px] xl:h-[400px]">
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 1, ease: "easeInOut" },
+        }}
+        className="w-full h-full flex items-center justify-center"
+      >
+        <World data={sampleArcs} globeConfig={globeConfig} />
+      </motion.div>
     </div>
   );
 }
