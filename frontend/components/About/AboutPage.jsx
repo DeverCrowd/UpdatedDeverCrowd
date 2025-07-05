@@ -176,7 +176,7 @@ const AboutPage = ({ progress }) => {
       </motion.div>
 
       {/* CircularText */}
-      <div className="hidden xl:flex flex-col sm:flex-row justify-between px-30 items-center my-16 w-full">
+      <div className="hidden cursor-default  xl:flex flex-col sm:flex-row justify-between px-30 items-center my-16 w-full">
         <div className="w-56">
           <CircularText text="011010*011010*011010*" onHover="slowDown" spinDuration={30} />
         </div>
@@ -194,7 +194,7 @@ const AboutPage = ({ progress }) => {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.h2
-          className="text-3xl md:text-5xl pb-5 text-center font-bold text-black dark:text-white"
+          className="text-3xl md:text-5xl pb-5 text-center font-bold text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text"
           variants={cardVariants}
         >
           Our Achievements

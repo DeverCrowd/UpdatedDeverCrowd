@@ -96,7 +96,7 @@ const ServicesPage = ({ progress }) => {
       className="flex flex-col justify-start w-full h-[600vh] backdrop-blur-2xl z-30 relative top-0 "
       id="services"
     >
-      <h2 className="text-2xl sm:text-3xl md:text-4xl pb-5 min-h-[20vh] flex flex-col justify-center items-center text-center gap-3">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl pb-5 min-h-[20vh] text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text flex flex-col justify-center items-center text-center gap-3">
         Checkout Our services!
         <div className="w-4/5 sm:w-3/5 md:w-2/3 lg:w-1/2 xl:w-[40%] h-1 bg-primary mx-auto mt-2 rounded-full" />
       </h2>

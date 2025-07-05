@@ -8,7 +8,7 @@ const ContactPage = () => {
       id="contact"
     >
       <div className="flex-col">
-        <h2 className="text-3xl md:text-4xl pb-5 h-[15vh] flex flex-col justify-end items-center gap-3">
+        <h2 className="text-3xl md:text-4xl pb-5 h-[15vh] text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text flex flex-col justify-end items-center gap-3">
           Get In Touch
           <div className="border w-70 md:w-100 bg-primary"></div>
         </h2>

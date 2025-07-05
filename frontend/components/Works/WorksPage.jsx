@@ -93,7 +93,7 @@ const WorksPage = () => {
       className="relative flex flex-col justify-center w-full min-h-[100vh] backdrop-blur-2xl z-40"
       id="works"
     >
-      <h2 className="text-4xl pb-5 h-[25vh] flex flex-col justify-end items-center gap-3">
+      <h2 className="text-4xl pb-5 h-[25vh] text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text flex flex-col justify-end items-center gap-3">
         Checkout Our works!
         <div className="border w-100 bg-primary"></div>
       </h2>
@@ -112,7 +112,7 @@ const WorksPage = () => {
           );
         })}
       </div>
-      <h2 className="text-4xl pb-5 h-[25vh] flex flex-col justify-end items-center gap-3">
+      <h2 className="text-4xl pb-5 h-[25vh] flex flex-col text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text justify-end items-center gap-3">
         Hear Our Client <div className="border w-100 bg-primary"></div>
       </h2>
 
