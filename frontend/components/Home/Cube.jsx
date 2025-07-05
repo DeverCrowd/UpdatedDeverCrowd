@@ -11,7 +11,7 @@ const Cube = ({ whileTap, whileInView, animate, initial, style }) => {
   const half = cubeSize / 2;
 
   const faceClass =
-    "absolute w-full h-full flex flex-col items-center justify-center gap-4 rounded-[inherit] overflow-hidden bg-gradient-to-t from-gray-800 to-gray-950 border-[10px] border-black shadow-lg text-primary";
+    "absolute w-full h-full flex flex-col items-center justify-center gap-4 rounded-[inherit] overflow-hidden bg-gradient-to-t from-gray-800 to-gray-950 border-[10px] border-black shadow-lg text-primary backface-hidden";
 
   return (
     <motion.div
@@ -64,11 +64,11 @@ const Cube = ({ whileTap, whileInView, animate, initial, style }) => {
 
       {/* Top */}
       <div
-        className="absolute w-full h-full flex flex-col items-center justify-center gap-2 rounded-[inherit] overflow-hidden bg-gradient-to-b from-gray-950 to-gray-900 border-[10px] border-black shadow-xl text-primary"
+        className="absolute w-full h-full flex flex-col items-center justify-center gap-2 rounded-[inherit] overflow-hidden bg-gradient-to-b from-gray-950 to-gray-900 border-[10px] border-black shadow-xl"
         style={{ transform: `translateY(-${half}px) rotateX(90deg)` }}
       >
-        <Logo width={150} height={30} />
-        <p className="text-2xl font-bold">
+        <Logo width={300} height={30} className="xl:w-[90%]"/>
+        <p className="text-3xl font-bold">
           Dever<span className="text-primary">Crowd</span>
         </p>
       </div>
