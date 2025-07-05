@@ -16,7 +16,7 @@ import { useRef } from "react";
 
 const Nav = () => {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll()
+  const { scrollYProgress } = useScroll();
   const pathLengthFirst = useTransform(scrollYProgress, [0, 1], [0.2, 1.2]);
   const pathLengthSecond = useTransform(scrollYProgress, [0, 1], [0.15, 1.2]);
   const pathLengthThird = useTransform(scrollYProgress, [0, 1], [0.1, 1.2]);
@@ -44,7 +44,7 @@ const Nav = () => {
       <div className="flex items-center justify-around w-[35%] h-full border-b border-primary">
         <Link className="flex relative" href="#about">
           <div
-            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-120 flex gap-2`}
+            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2`}
           >
             <FaRegQuestionCircle className="text-xl" />
             About
@@ -53,7 +53,7 @@ const Nav = () => {
 
         <Link className="flex relative" href="#services">
           <div
-            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-120 flex gap-2`}
+            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2`}
           >
             <IoLayers className="text-xl" />
             Services
@@ -69,14 +69,14 @@ const Nav = () => {
         className="flex items-center justify-center absolute top-[30%] left-[43.2%] w-[14%] py-1 shadow-primary"
       >
         <Link href="/">
-          <Logo width={100} height={32} />
+          <Logo width={96} height={32} />
         </Link>
       </div>
       {/* left side */}
       <div className="flex items-center justify-around w-[35%] h-full border-b border-primary">
         <Link className="flex relative" href="#works">
           <div
-            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-120 flex gap-2`}
+            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2`}
           >
             <FaFolderOpen className="text-xl" />
             Works
@@ -84,7 +84,7 @@ const Nav = () => {
         </Link>
         <Link className="flex relative" href="#contact">
           <div
-            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-120 flex gap-2`}
+            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2`}
           >
             <HiMail className="text-xl" />
             Contact Us

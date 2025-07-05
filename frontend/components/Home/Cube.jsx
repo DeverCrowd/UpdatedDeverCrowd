@@ -11,7 +11,7 @@ const Cube = ({ whileTap, whileInView, animate, initial, style }) => {
   const half = cubeSize / 2;
 
   const faceClass =
-    "absolute w-full h-full flex flex-col items-center justify-center gap-4 bg-gradient-to-t from-gray-800 to-gray-950 border-[10px] border-black rounded-3xl shadow-lg text-primary";
+    "absolute w-full h-full flex flex-col items-center justify-center gap-4 rounded-[inherit] overflow-hidden bg-gradient-to-t from-gray-800 to-gray-950 border-[10px] border-black shadow-lg text-primary";
 
   return (
     <motion.div
@@ -24,15 +24,15 @@ const Cube = ({ whileTap, whileInView, animate, initial, style }) => {
       whileInView={whileInView}
       animate={animate}
       initial={initial}
-      className="relative transform-3d select-none font-extrabold"
+      className="relative transform-3d select-none font-extrabold rounded-3xl"
     >
       {/* Front */}
       <div
         className={faceClass}
         style={{ transform: `translateZ(${half}px)` }}
       >
-        <FaHandsHelping className="text-8xl" />
-        <p className="uppercase text-4xl">Support</p>
+        <FaHandsHelping className="text-7xl" />
+        <p className="uppercase text-3xl">Support</p>
       </div>
 
       {/* Back */}
@@ -40,8 +40,8 @@ const Cube = ({ whileTap, whileInView, animate, initial, style }) => {
         className={faceClass}
         style={{ transform: `translateZ(-${half}px) rotateY(180deg)` }}
       >
-        <IoTerminal className="text-8xl" />
-        <p className="uppercase text-4xl">Development</p>
+        <IoTerminal className="text-7xl" />
+        <p className="uppercase text-3xl">Development</p>
       </div>
 
       {/* Right */}
@@ -49,8 +49,8 @@ const Cube = ({ whileTap, whileInView, animate, initial, style }) => {
         className={faceClass}
         style={{ transform: `translateX(${half}px) rotateY(90deg)` }}
       >
-        <BsShieldLockFill className="text-8xl" />
-        <p className="uppercase text-4xl">Security</p>
+        <BsShieldLockFill className="text-7xl" />
+        <p className="uppercase text-3xl">Security</p>
       </div>
 
       {/* Left */}
@@ -58,26 +58,26 @@ const Cube = ({ whileTap, whileInView, animate, initial, style }) => {
         className={faceClass}
         style={{ transform: `translateX(-${half}px) rotateY(-90deg)` }}
       >
-        <MdDesignServices className="text-8xl" />
-        <p className="uppercase text-4xl">Design</p>
+        <MdDesignServices className="text-7xl" />
+        <p className="uppercase text-3xl">Design</p>
       </div>
 
       {/* Top */}
       <div
-        className="absolute w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-gray-950 to-gray-900 border-[10px] border-black rounded-3xl text-primary"
+        className="absolute w-full h-full flex flex-col items-center justify-center gap-2 rounded-[inherit] overflow-hidden bg-gradient-to-b from-gray-950 to-gray-900 border-[10px] border-black shadow-xl text-primary"
         style={{ transform: `translateY(-${half}px) rotateX(90deg)` }}
       >
-        <Logo width={200} height={40} />
-        <p className="text-3xl font-bold">
+        <Logo width={150} height={30} />
+        <p className="text-2xl font-bold">
           Dever<span className="text-primary">Crowd</span>
         </p>
       </div>
 
       {/* Bottom */}
       <div
-        className="absolute w-full h-full bg-black border-[10px] border-black rounded-3xl"
-        style={{ transform: `translateY(${half}px) rotateX(90deg)` }}
-      ></div>
+        className="absolute w-full h-full bg-black rounded-[inherit] overflow-hidden border-[10px] border-black shadow-lg"
+        style={{ transform: `translateY(${half}px) rotateX(-90deg)` }}
+      />
     </motion.div>
   );
 };

@@ -14,7 +14,7 @@ const HomePage = ({ progress }) => {
     <motion.section
       style={{ scale, boxShadow: `0px 0px 30px 0px #860cfa`, borderRadius }}
       id="home"
-      className="top-0 flex flex-col justify-center w-full overflow-hidden min-h-[100vh] select-none z-10 sticky rounded-4xl border"
+      className="top-0 flex flex-col justify-center w-full overflow-hidden min-h-[105vh] select-none z-10 sticky rounded-4xl border"
     >
       {/* Background Particles */}
       <div className="absolute inset-0">
