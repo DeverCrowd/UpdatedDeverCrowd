@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaEnvelope } from "react-icons/fa";
 import { motion, useScroll, useTransform } from "motion/react";
-import Lightning from "../ui/Lightning";
 import Particles from "../ui/Particles";
 
 const HomePage = ({ progress }) => {
@@ -18,7 +17,6 @@ const HomePage = ({ progress }) => {
       className=" top-0 flex flex-col justify-center w-full overflow-hidden min-h-[100vh] select-none z-10 sticky rounded-4xl border"
     >
       <div style={{ width: "100%", height: "100%", position: "absolute" }}>
-        <Lightning hue={300} xOffset={-1.3} speed={0.5} intensity={0.5} size={3} />
       </div>
       <div style={{ width: "100%", height: "100%", position: "absolute" }}>
         <Particles

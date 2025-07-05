@@ -66,7 +66,7 @@ const Nav = () => {
           borderRadius: "0px 0px 40px 40px",
           boxShadow: "0px 7px 9px 0px #b60cfa",
         }}
-        className="flex items-center justify-center absolute top-[30%] left-[43.2%] w-[14%] shadow-primary"
+        className="flex items-center justify-center absolute top-[30%] left-[43.2%] w-[14%] py-1 shadow-primary"
       >
         <Link href="/">
           <Logo width={100} height={32} />
