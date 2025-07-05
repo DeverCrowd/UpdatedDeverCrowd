@@ -29,9 +29,8 @@ export default function Main() {
   return (
     <main className="bg-[#00000]">
       <HomePage progress = {scrollYProgress}/>
-
-      <ServicesPage  progress = {scrollYProgress}/>
       <AboutPage  progress = {scrollYProgress}/>
+      <ServicesPage  progress = {scrollYProgress}/>
       <WorksPage  progress = {scrollYProgress}/>
       <ContactPage/>
     </main>

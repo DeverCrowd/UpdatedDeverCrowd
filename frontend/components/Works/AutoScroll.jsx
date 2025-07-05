@@ -32,7 +32,7 @@ const AutoScroll = ({ tests }) => {
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className=" w-full h-full mx-auto flex overflow-hidden  items-center"
+      className=" w-full h-full mx-auto flex overflow-hidden  items-center [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]"
     >
       <motion.div style={{ x: xTranslation }} ref={ref} className="flex gap-20">
         {[...tests, ...tests].map((test, i) => {

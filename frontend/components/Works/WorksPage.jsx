@@ -8,6 +8,8 @@ import {
   useTransform,
 } from "motion/react";
 import AutoScroll from "./AutoScroll";
+import TestCard from "./TestCard";
+import { InfiniteSlider } from "../ui/infinite-slider";
 const projects = [
   {
     title: "Project 1",

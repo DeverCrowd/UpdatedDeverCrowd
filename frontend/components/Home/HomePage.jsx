@@ -4,28 +4,35 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaEnvelope } from "react-icons/fa";
 import { motion, useScroll, useTransform } from "motion/react";
-const HomePage = ({progress}) => {
+import Lightning from "../ui/Lightning";
+import Particles from "../ui/Particles";
+
+const HomePage = ({ progress }) => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(progress, [0, 0.5], [1, 0.5]);
-  const borderRadius = useTransform(
-    progress,
-    [0, 0.5],
-    ["0px", "150px"]
-  );
+  const borderRadius = useTransform(progress, [0, 0.5], ["0px", "150px"]);
   return (
     <motion.section
       style={{ scale, boxShadow: `0px 0px 30px 0px #860cfa`, borderRadius }}
       id="home"
-      className=" top-0 flex flex-col justify-center w-full overflow-hidden min-h-[100vh] px-5 sm:px-6 lg:px-12 pt-6 md:pt-12 select-none z-10 sticky rounded-4xl"
+      className=" top-0 flex flex-col justify-center w-full overflow-hidden min-h-[100vh] select-none z-10 sticky rounded-4xl border"
     >
-      <Image
-        src="/assets/bg8.png"
-        fill
-        alt="background"
-        className="object-cover opacity-100"
-        priority
-        quality={100}
-      />
+      <div style={{ width: "100%", height: "100%", position: "absolute" }}>
+        <Lightning hue={300} xOffset={-1.3} speed={0.5} intensity={0.5} size={3} />
+      </div>
+      <div style={{ width: "100%", height: "100%", position: "absolute" }}>
+        <Particles
+          particleColors={["#ffffff", "#ffffff"]}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={false}
+          alphaParticles={true}
+          disableRotation={false}
+        />
+      </div>
+
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center pt-20 pb-10">
         <div className="flex flex-col gap-6 sm:gap-5 md:gap-6 lg:gap-8 md:w-2/3 z-1 order-2 md:order-1">
           <h1 className=" text-white md:text-6xl text-3xl text-start font-extrabold ">
@@ -51,7 +58,7 @@ const HomePage = ({progress}) => {
         </div>
         <div className="flex md:items-end md:justify-end md:w-1/3 z-0 order-1 md:order-2">
           <Cube
-          initial={{rotateX:-60}}
+            initial={{ rotateX: -60 }}
             whileTap={{
               scale: 1.05,
             }}
