@@ -1,5 +1,5 @@
 "use client";
-import { motion, useTransform } from "motion/react";
+import { motion } from "motion/react";
 import Logo from "../Logo";
 import { MdDesignServices } from "react-icons/md";
 import { IoTerminal } from "react-icons/io5";
@@ -7,63 +7,76 @@ import { BsShieldLockFill } from "react-icons/bs";
 import { FaHandsHelping } from "react-icons/fa";
 
 const Cube = ({ whileTap, whileInView, animate, initial, style }) => {
-  const cornerColor = "#000000";
+  const cubeSize = 350;
+  const half = cubeSize / 2;
+
+  const faceClass =
+    "absolute w-full h-full flex flex-col items-center justify-center gap-4 bg-gradient-to-t from-gray-800 to-gray-950 border-[10px] border-black rounded-3xl shadow-lg text-primary";
+
   return (
     <motion.div
-      style={style}
+      style={{
+        width: cubeSize,
+        height: cubeSize,
+        ...style,
+      }}
       whileTap={whileTap}
       whileInView={whileInView}
       animate={animate}
       initial={initial}
-      className="relative xl:w-[400px] xl:h-[400px] w-[200px] h-[200px] transform-3d select-none group font-extrabold"
+      className="relative transform-3d select-none font-extrabold"
     >
-      <div className=" shadow-lg/100 shadow-primary  text-5xl xl:text-9xl border-9 border-black rounded-4xl  w-full h-full bg-linear-to-t from-gray-800 to-gray-950 absolute translate-z-25 xl:translate-z-50 flex items-center justify-center transition-shadow duration-400 text-primary">
-        <FaHandsHelping />
-        <p className="text-4xl uppercase">support</p>
-      </div>
+      {/* Front */}
       <div
-        style={{ backgroundColor: cornerColor }}
-        className=" w-full h-full absolute translate-z-24.75 xl:translate-z-49.5 rounded-4xl"
-      />
-      <div className="  shadow-lg/100 shadow-primary text-2xl  xl:text-9xl border-9 border-black rounded-4xl  w-full h-full bg-linear-to-t from-gray-800 to-gray-950 absolute rotate-y-180 -translate-z-25 xl:-translate-z-50 flex items-center justify-center transition-shadow duration-400 text-primary">
-        <IoTerminal />
-        <p className="text-4xl uppercase">development</p>
+        className={faceClass}
+        style={{ transform: `translateZ(${half}px)` }}
+      >
+        <FaHandsHelping className="text-8xl" />
+        <p className="uppercase text-4xl">Support</p>
       </div>
+
+      {/* Back */}
       <div
-        style={{ backgroundColor: cornerColor }}
-        className=" w-full h-full absolute -translate-z-24.75 xl:-translate-z-49.5 rounded-4xl"
-      />
-      <div className="  shadow-lg/100 shadow-primary text-2xl xl:text-9xl border-9 border-black rounded-4xl  w-full h-full bg-linear-to-t from-gray-800 to-gray-950 absolute translate-x-25 xl:translate-x-50 rotate-y-90 flex items-center justify-center transition-shadow duration-400 text-primary">
-        <BsShieldLockFill />
-        <p className="text-4xl uppercase">Security</p>
+        className={faceClass}
+        style={{ transform: `translateZ(-${half}px) rotateY(180deg)` }}
+      >
+        <IoTerminal className="text-8xl" />
+        <p className="uppercase text-4xl">Development</p>
       </div>
+
+      {/* Right */}
       <div
-        style={{ backgroundColor: cornerColor }}
-        className=" w-full h-full absolute translate-x-24.75 xl:translate-x-49.5 rotate-y-90 rounded-4xl"
-      />
-      <div className="  shadow-lg/100 shadow-primary text-2xl  xl:text-9xl border-9 border-black rounded-4xl  w-full h-full bg-linear-to-t from-gray-800 to-gray-950 absolute -translate-x-25 xl:-translate-x-50 -rotate-y-90 flex items-center justify-center transition-shadow duration-400 text-primary">
-        <MdDesignServices />
-        <p className="text-4xl uppercase">design</p>
+        className={faceClass}
+        style={{ transform: `translateX(${half}px) rotateY(90deg)` }}
+      >
+        <BsShieldLockFill className="text-8xl" />
+        <p className="uppercase text-4xl">Security</p>
       </div>
+
+      {/* Left */}
       <div
-        style={{ backgroundColor: cornerColor }}
-        className=" w-full h-full absolute -translate-x-24.75 xl:-translate-x-49.5 -rotate-y-90 rounded-4xl"
-      />
-      <div className=" border-9 border-black rounded-4xl  w-full h-full bg-gradient-to-b from-gray-950 via-gray-950 to-gray-950 absolute -translate-y-25 xl:-translate-y-50 rotate-x-90 flex flex-col items-center justify-center transition-shadow duration-400 ">
-        <Logo width={300} height={22} />
-        <p className="font-extrabold xl:xl:text-5xl text-2xl">
+        className={faceClass}
+        style={{ transform: `translateX(-${half}px) rotateY(-90deg)` }}
+      >
+        <MdDesignServices className="text-8xl" />
+        <p className="uppercase text-4xl">Design</p>
+      </div>
+
+      {/* Top */}
+      <div
+        className="absolute w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-gray-950 to-gray-900 border-[10px] border-black rounded-3xl text-primary"
+        style={{ transform: `translateY(-${half}px) rotateX(90deg)` }}
+      >
+        <Logo width={200} height={40} />
+        <p className="text-3xl font-bold">
           Dever<span className="text-primary">Crowd</span>
         </p>
       </div>
 
-      {/* bottom */}
+      {/* Bottom */}
       <div
-        style={{ backgroundColor: cornerColor }}
-        className="  border-9 border-black rounded-4xl  w-full h-full absolute translate-y-25 xl:translate-y-50 rotate-x-90"
-      ></div>
-      <div
-        style={{ backgroundColor: cornerColor }}
-        className="  w-full h-full absolute translate-y-24.75 xl:translate-y-49.5 rotate-x-90 rounded-4xl"
+        className="absolute w-full h-full bg-black border-[10px] border-black rounded-3xl"
+        style={{ transform: `translateY(${half}px) rotateX(90deg)` }}
       ></div>
     </motion.div>
   );

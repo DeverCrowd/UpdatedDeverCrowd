@@ -1,7 +1,6 @@
 import React from "react";
 import Cube from "./Cube";
 import Link from "next/link";
-import Image from "next/image";
 import { FaEnvelope } from "react-icons/fa";
 import { motion, useScroll, useTransform } from "motion/react";
 import Particles from "../ui/Particles";
@@ -10,15 +9,15 @@ const HomePage = ({ progress }) => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(progress, [0, 0.5], [1, 0.5]);
   const borderRadius = useTransform(progress, [0, 0.5], ["0px", "150px"]);
+
   return (
     <motion.section
       style={{ scale, boxShadow: `0px 0px 30px 0px #860cfa`, borderRadius }}
       id="home"
-      className=" top-0 flex flex-col justify-center w-full overflow-hidden min-h-[100vh] select-none z-10 sticky rounded-4xl border"
+      className="top-0 flex flex-col justify-center w-full overflow-hidden min-h-[100vh] select-none z-10 sticky rounded-4xl border"
     >
-      <div style={{ width: "100%", height: "100%", position: "absolute" }}>
-      </div>
-      <div style={{ width: "100%", height: "100%", position: "absolute" }}>
+      {/* Background Particles */}
+      <div className="absolute inset-0">
         <Particles
           particleColors={["#ffffff", "#ffffff"]}
           particleCount={200}
@@ -31,35 +30,38 @@ const HomePage = ({ progress }) => {
         />
       </div>
 
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-center pt-20 pb-10">
-        <div className="flex flex-col gap-6 sm:gap-5 md:gap-6 lg:gap-8 md:w-2/3 z-1 order-2 md:order-1">
-          <h1 className=" text-white md:text-6xl text-3xl text-start font-extrabold ">
+      {/* Main Content */}
+      <div className="relative container mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12 sm:gap-16 lg:gap-20 px-6 sm:px-8 lg:px-25 pt-20 pb-10">
+        {/* Left Side: Text */}
+        <div className="flex flex-col gap-6 sm:gap-5 md:gap-6 lg:gap-8 w-full md:w-2/3 order-2 md:order-1">
+          <h1 className="text-white md:text-5xl text-3xl text-start font-extrabold">
             Grow <span className="text-primary">Faster</span> With Smarter
             Digital Products
           </h1>
-          <p className="text-white/60 text-start md:w-[70%] md:text-xl text-sm">
+          <p className="text-white/60 text-start md:text-lg text-sm max-w-[90%] md:max-w-[70%]">
             We build high-performing websites and mobile apps that solve real
             problems, engage users, and grow your business.
           </p>
-          <div className="md:border border-primary md:w-[70%]"></div>
+          <div className="border border-primary w-full md:w-[70%]"></div>
+
           <Link
             href="#contact"
             className="group flex gap-4 border-t border-b rounded-full items-center w-[200px] sm:w-[250px] shadow-lg shadow-accent hover:shadow-primary hover:border-accent transition-all duration-300 hover:backdrop-blur-md backdrop-blur-sm"
           >
-            <div className=" items-center justify-center rounded-full py-3 text-2xl bg-accent px-5 group-hover:bg-primary group-hover:px-8 transition-all duration-300">
+            <div className="items-center justify-center rounded-full py-3 text-2xl bg-accent px-5 group-hover:bg-primary group-hover:px-8 transition-all duration-300">
               <FaEnvelope />
             </div>
-            <div className="items-end justify-end text-end rounded-full text-sm md:text-lg group-hover:text-primary transition-all duration-300 ">
+            <div className="text-sm md:text-lg group-hover:text-primary transition-all duration-300">
               Book A Call
             </div>
           </Link>
         </div>
-        <div className="flex md:items-end md:justify-end md:w-1/3 z-0 order-1 md:order-2">
+
+        {/* Right Side: Cube */}
+        <div className="flex justify-center md:justify-end w-full md:w-1/3 order-1 md:order-2">
           <Cube
             initial={{ rotateX: -60 }}
-            whileTap={{
-              scale: 1.05,
-            }}
+            whileTap={{ scale: 1.05 }}
             whileInView={{
               rotateX: -30,
               transition: { duration: 3 },

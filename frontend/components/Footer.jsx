@@ -23,7 +23,7 @@ const Footer = () => {
         </div>
 
         {/* Links */}
-        <div className="w-full lg:w-1/2 flex flex-col sm:flex-row justify-center lg:justify-center lg:gap-60 gap-20 p-5">
+        <div className="w-full lg:w-1/2 flex flex-col sm:flex-row justify-center lg:justify-center lg:gap-60 gap-10 p-5">
           {/* Site Links */}
           <div className="flex flex-col items-center sm:items-start gap-2">
             <h3 className="pb-3 font-semibold text-white">SITE</h3>

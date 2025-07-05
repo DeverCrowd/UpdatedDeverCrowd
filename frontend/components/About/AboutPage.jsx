@@ -49,7 +49,7 @@ const AboutPage = ({ progress }) => {
   return (
     <motion.section
       style={{ scale, boxShadow: `0px 0px 30px 0px #860cfa`, borderRadius }}
-      className="flex flex-col items-center justify-center w-full min-h-screen backdrop-blur-2xl z-20 rounded-t-[60px] relative overflow-hidden"
+      className="flex flex-col items-center justify-center min-h-screen backdrop-blur-2xl z-20 rounded-t-[60px] relative overflow-hidden"
       id="about"
     >
       <Spotlight />
