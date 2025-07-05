@@ -19,6 +19,19 @@ import { MaskContainer } from "../ui/svg-mask-effect";
 import ScrambledText from "../ui/ScrambledText";
 import { TextShimmerWave } from "../ui/text-shimmer-wave";
 import SpotlightCard from "../ui/SpotlightCard";
+import AchievementsCards from "./AchievementsCards";
+import { SlScreenDesktop } from "react-icons/sl";
+import { FaUsers } from "react-icons/fa6";
+import { HiOutlineBadgeCheck } from "react-icons/hi";
+
+
+
+
+const achievementsCards = [
+  { title: "Projects", icon: <SlScreenDesktop/>, num: 1 },
+  { title: "Customers", icon: <FaUsers/>, num: 1 },
+  { title: "Experience", icon: <HiOutlineBadgeCheck/>, num: 1 },
+];
 
 const AboutPage = ({ progress }) => {
   const { scrollYProgress } = useScroll();
@@ -75,10 +88,10 @@ const AboutPage = ({ progress }) => {
             className="w-[60%] text-3xl text-center"
             spotlightColor="rgba(128, 0, 128, 0.5)"
           >
-            At <span className="text-primary">DeverCrowd</span> we empower businesses with tailored digital solutions
-            - from custom platforms to seamless experiences - turning ideas into
-            strong online brands. We build lasting partnerships for digital
-            growth
+            At <span className="text-primary">DeverCrowd</span> we empower
+            businesses with tailored digital solutions - from custom platforms
+            to seamless experiences - turning ideas into strong online brands.
+            We build lasting partnerships for digital growth
           </SpotlightCard>
         </motion.div>
       </LampContainer>
@@ -181,6 +194,24 @@ const AboutPage = ({ progress }) => {
               spinDuration={30}
               className=""
             />
+          </div>
+        </div>
+        <div className="calculates my-30">
+          <h2 className="text-4xl pb-5 h-[15vh] flex flex-col justify-end items-center gap-3">
+            Our Achievements
+            <div className="border w-100 bg-primary"></div>
+          </h2>
+          <div className="flex justify-center gap-16">
+            {achievementsCards.map((card, id) => {
+              return (
+                <AchievementsCards
+                  key={id}
+                  title={card.title}
+                  icon={card.icon}
+                  num={card.num}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
