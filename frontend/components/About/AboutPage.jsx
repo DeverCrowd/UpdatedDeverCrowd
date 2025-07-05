@@ -176,11 +176,11 @@ const AboutPage = ({ progress }) => {
       </motion.div>
 
       {/* CircularText */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-10 my-16 w-full">
-        <div className="w-32 sm:w-40">
+      <div className="hidden xl:flex flex-col sm:flex-row justify-between px-30 items-center my-16 w-full">
+        <div className="w-56">
           <CircularText text="011010*011010*011010*" onHover="slowDown" spinDuration={30} />
         </div>
-        <div className="w-32 sm:w-40">
+        <div className="w-56">
           <CircularText text="011010*011010*011010*" onHover="slowDown" spinDuration={30} />
         </div>
       </div>
@@ -198,7 +198,7 @@ const AboutPage = ({ progress }) => {
           variants={cardVariants}
         >
           Our Achievements
-          <div className="w-24 h-1 bg-primary mx-auto mt-2" />
+          <div className="w-[65%] md:w-[55%] xl:w-[40%] h-1 bg-primary mx-auto mt-2" />
         </motion.h2>
 
         <motion.div
