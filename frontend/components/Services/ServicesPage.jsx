@@ -5,7 +5,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Steak from "./Steak";
 import Card from "./Card";
 import { MdDesignServices } from "react-icons/md";
@@ -81,11 +81,21 @@ const ServicesPage = ({ progress }) => {
     target: section,
     // offset: ["start start", "start end"],
   });
-  const isMobile = window.innerWidth <= 480;
-  const isTablit = window.innerWidth <= 768;
-  const isLabtop = window.innerWidth <= 1640;
-  const cubeSize = isMobile?150:isTablit?250:isLabtop?300:350;
-  const xCube = useTransform(scrollYProgress, [0, 0.2], [0, isMobile?0:isTablit?0:-((window.innerWidth/2)-(cubeSize))]);
+  const [mobileWidth, setMobileWidth] = useState(false);
+  const [isTablit, setTablitWidth] = useState(false);
+  const [isLabtop, setLabtopWidth] = useState(false);
+  useEffect(() => {
+    setMobileWidth(window.innerWidth <= 480);
+    setTablitWidth(window.innerWidth <= 768);
+    setLabtopWidth(window.innerWidth <= 1640);
+  });
+
+  const cubeSize = isMobile ? 150 : isTablit ? 250 : isLabtop ? 300 : 350;
+  const xCube = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    [0, isMobile ? 0 : isTablit ? 0 : -(window.innerWidth / 2 - cubeSize)]
+  );
   const scaleCube = useTransform(scrollYProgress, [0, 0.2], [2, 1]);
   const rotateYCube = useTransform(scrollYProgress, [0, 1], [0, 400]);
   const rotateXCube = useTransform(scrollYProgress, [0, 0.2], [-90, -25]);
@@ -105,7 +115,7 @@ const ServicesPage = ({ progress }) => {
       <div className="flex flex-col items-center justify-start w-full h-full">
         <div className="flex flex-col absolute items-center justify-start mt-50 h-[90%] w-[50%] pb-50 z-50">
           <Cube
-          cubeSize={cubeSize}
+            cubeSize={cubeSize}
             style={{
               position: "sticky",
               top: 300,
