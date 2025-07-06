@@ -81,14 +81,23 @@ const ServicesPage = ({ progress }) => {
     target: section,
     // offset: ["start start", "start end"],
   });
-  const [isMobile, setMobileWidth] = useState(false);
-  const [isTablit, setTablitWidth] = useState(false);
-  const [isLabtop, setLabtopWidth] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  const [isLaptop, setIsLaptop] = useState(false);
+
   useEffect(() => {
-    setMobileWidth(window.innerWidth <= 480);
-    setTablitWidth(window.innerWidth <= 768);
-    setLabtopWidth(window.innerWidth <= 1640);
-  });
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width <= 480);
+      setIsTablet(width > 480 && width <= 768);
+      setIsLaptop(width > 768 && width <= 1640);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const cubeSize = isMobile ? 150 : isTablit ? 250 : isLabtop ? 300 : 350;
   const xCube = useTransform(
