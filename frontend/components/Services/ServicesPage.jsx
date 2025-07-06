@@ -84,10 +84,11 @@ const ServicesPage = ({ progress }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isLaptop, setIsLaptop] = useState(false);
-
+    const [innerWidth, setInnerWidth] = useState(0);
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
+      setInnerWidth(window.innerWidth)
       setIsMobile(width <= 480);
       setIsTablet(width > 480 && width <= 768);
       setIsLaptop(width > 768 && width <= 1640);
@@ -103,7 +104,7 @@ const ServicesPage = ({ progress }) => {
   const xCube = useTransform(
     scrollYProgress,
     [0, 0.2],
-    [0, isMobile ? 0 : isTablet ? 0 : -(window.innerWidth / 2 - cubeSize)]
+    [0, isMobile ? 0 : isTablet ? 0 : -(innerWidth / 2 - cubeSize)]
   );
   const scaleCube = useTransform(scrollYProgress, [0, 0.2], [2, 1]);
   const rotateYCube = useTransform(scrollYProgress, [0, 1], [0, 400]);
