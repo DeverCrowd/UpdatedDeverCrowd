@@ -99,11 +99,11 @@ const ServicesPage = ({ progress }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const cubeSize = isMobile ? 150 : isTablit ? 250 : isLabtop ? 300 : 350;
+  const cubeSize = isMobile ? 150 : isTablet ? 250 : isLaptop ? 300 : 350;
   const xCube = useTransform(
     scrollYProgress,
     [0, 0.2],
-    [0, isMobile ? 0 : isTablit ? 0 : -(window.innerWidth / 2 - cubeSize)]
+    [0, isMobile ? 0 : isTablet ? 0 : -(window.innerWidth / 2 - cubeSize)]
   );
   const scaleCube = useTransform(scrollYProgress, [0, 0.2], [2, 1]);
   const rotateYCube = useTransform(scrollYProgress, [0, 1], [0, 400]);
