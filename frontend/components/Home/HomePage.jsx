@@ -60,6 +60,7 @@ const HomePage = ({ progress }) => {
         {/* Right Side: Cube */}
         <div className="absolute top-[60%] right-50 xl:top-0 xl:right-0 xl:relative z-0 xl:flex justify-center md:justify-end w-full md:w-1/3 order-1 md:order-2">
           <Cube
+          cubeSize={300}
             initial={{ rotateX: -60 }}
             whileTap={{ scale: 1.05 }}
             whileInView={{

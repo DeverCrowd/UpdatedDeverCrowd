@@ -6,8 +6,7 @@ import { IoTerminal } from "react-icons/io5";
 import { BsShieldLockFill } from "react-icons/bs";
 import { FaHandsHelping } from "react-icons/fa";
 
-const Cube = ({ whileTap, whileInView, animate, initial, style }) => {
-  const cubeSize = 350;
+const Cube = ({ whileTap, whileInView, animate, initial, style, cubeSize }) => {
   const half = cubeSize / 2;
 
   const faceClass =

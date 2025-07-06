@@ -81,13 +81,16 @@ const ServicesPage = ({ progress }) => {
     target: section,
     // offset: ["start start", "start end"],
   });
-
-  const xCube = useTransform(scrollYProgress, [0, 0.2], [0, -500]);
+  const isMobile = window.innerWidth <= 480;
+  const isTablit = window.innerWidth <= 768;
+  const isLabtop = window.innerWidth <= 1640;
+  const cubeSize = isMobile?150:isTablit?250:isLabtop?300:350;
+  const xCube = useTransform(scrollYProgress, [0, 0.2], [0, isMobile?0:isTablit?0:-((window.innerWidth/2)-(cubeSize))]);
   const scaleCube = useTransform(scrollYProgress, [0, 0.2], [2, 1]);
   const rotateYCube = useTransform(scrollYProgress, [0, 1], [0, 400]);
   const rotateXCube = useTransform(scrollYProgress, [0, 0.2], [-90, -25]);
 
- return (
+  return (
     <motion.section
       style={{ boxShadow: `0px 0px 30px 0px #860cfa` }}
       ref={section}
@@ -102,6 +105,7 @@ const ServicesPage = ({ progress }) => {
       <div className="flex flex-col items-center justify-start w-full h-full">
         <div className="flex flex-col absolute items-center justify-start mt-50 h-[90%] w-[50%] pb-50 z-50">
           <Cube
+          cubeSize={cubeSize}
             style={{
               position: "sticky",
               top: 300,
