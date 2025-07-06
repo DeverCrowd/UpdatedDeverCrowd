@@ -3,7 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaEnvelope } from "react-icons/fa";
 import AboutPage from "@/components/About/AboutPage";
-import { motion, useMotionValueEvent, useScroll, useTransform } from "motion/react";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "motion/react";
 import Lenis from "lenis";
 import { useEffect } from "react";
 import "lenis/dist/lenis.css";
@@ -28,11 +33,11 @@ export default function Main() {
   });
   return (
     <main className="bg-[#00000]">
-      <HomePage progress = {scrollYProgress}/>
-      <AboutPage  progress = {scrollYProgress}/>
-      <ServicesPage  progress = {scrollYProgress}/>
-      <WorksPage  progress = {scrollYProgress}/>
-      <ContactPage/>
+      <HomePage progress={scrollYProgress} />
+      <AboutPage progress={scrollYProgress} />
+      <ServicesPage progress={scrollYProgress} />
+      <WorksPage progress={scrollYProgress} />
+      <ContactPage />
     </main>
   );
 }

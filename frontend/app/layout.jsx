@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
       <body className="font-code">
         <Header />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
