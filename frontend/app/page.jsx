@@ -27,7 +27,7 @@ export default function Main() {
     console.log("v", v);
   });
   return (
-    <main className="bg-[#00000]">
+    <main className="flex flex-col justify-center items-center bg-[#00000]">
       <HomePage progress = {scrollYProgress}/>
       <AboutPage  progress = {scrollYProgress}/>
       <ServicesPage  progress = {scrollYProgress}/>
