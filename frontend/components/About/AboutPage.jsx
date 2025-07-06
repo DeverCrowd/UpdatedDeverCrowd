@@ -14,7 +14,6 @@ import { HiOutlineBadgeCheck } from "react-icons/hi";
 import AutoScroll from "../About/AutoScroll";
 import TestCard from "../About/TestCard";
 
-
 const tests = [
   {
     name: "swilam",
@@ -227,27 +226,9 @@ const AboutPage = ({ progress }) => {
         </div>
       </motion.div>
 
-      {/* CircularText */}
-      <div className="hidden cursor-default  xl:flex flex-col sm:flex-row justify-between px-30 items-center my-16 w-full">
-        <div className="w-56">
-          <CircularText
-            text="011010*011010*011010*"
-            onHover="slowDown"
-            spinDuration={30}
-          />
-        </div>
-        <div className="w-56">
-          <CircularText
-            text="011010*011010*011010*"
-            onHover="slowDown"
-            spinDuration={30}
-          />
-        </div>
-      </div>
-
       {/* Achievements */}
       <motion.div
-        className="w-full max-w-7xl px-4 sm:px-6 py-20"
+        className="w-full max-w-7xl px-4 sm:px-6 py-20 flex flex-col items-center justify-center"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -262,7 +243,7 @@ const AboutPage = ({ progress }) => {
         </motion.h2>
 
         <motion.div
-          className="flex flex-col md:flex-row justify-center items-center gap-10 pt-6 flex-wrap"
+          className="flex flex-row justify-center items-center gap-10  flex-wrap"
           variants={containerVariants}
         >
           {achievementsCards.map((card, id) => (
@@ -274,15 +255,16 @@ const AboutPage = ({ progress }) => {
               />
             </motion.div>
           ))}
-          <h2 className="text-4xl pb-5 h-[25vh] flex flex-col text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text justify-end items-center gap-3">
-            Hear Our Client <div className="border w-100 bg-primary"></div>
-          </h2>
-
-          <div className="h-[30vh] w-full flex justify-center items-center mb-20 overflow-x-hidden">
-            <AutoScroll tests={tests} />
-          </div>
         </motion.div>
       </motion.div>
+      <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center">
+        <h2 className="text-4xl pb-5 h-[25vh] flex flex-col text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text justify-end items-center gap-3">
+          Hear Our Client <div className="border w-100 bg-primary"></div>
+        </h2>
+        <div className="h-[30vh] w-full flex justify-center items-center mb-20 overflow-x-hidden">
+          <AutoScroll tests={tests} />
+        </div>
+      </div>
     </motion.section>
   );
 };

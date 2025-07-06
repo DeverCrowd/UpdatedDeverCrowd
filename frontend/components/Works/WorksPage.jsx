@@ -62,12 +62,12 @@ const WorksPage = () => {
     <section
       style={{ boxShadow: `0px 0px 30px 0px #860cfa` }}
       ref={section}
-      className="relative flex flex-col justify-center w-full min-h-[100vh] backdrop-blur-2xl z-40"
+      className="relative flex flex-col items-center justify-center w-full min-h-[100vh] backdrop-blur-2xl z-40"
       id="works"
     >
-      <h2 className="text-4xl pb-5 h-[25vh] text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text flex flex-col justify-end items-center gap-3">
+      <h2 className="text-4xl pb-5 h-[25vh] text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text flex flex-col justify-end items-center gap-3 text-center">
         Checkout Our works!
-        <div className="border w-100 bg-primary"></div>
+        <div className="border w-[90%] xl:w-full bg-primary"></div>
       </h2>
       <div className="flex flex-col">
         {projects.map((project, i) => {

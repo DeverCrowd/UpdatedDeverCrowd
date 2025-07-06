@@ -25,7 +25,7 @@ const ProjectCard = ({
     offset: ["start end", "start start"],
   });
   const scale = useTransform(progress, range, [1, targetScale]);
-  const scaleImage = useTransform(scrollYProgress, [0, 1], [1.15, 1]);
+  const scaleImage = useTransform(scrollYProgress, [0, 1], [1, 1]);
 
   return (
     <div
@@ -40,21 +40,21 @@ const ProjectCard = ({
           top: `${i * 5}%`,
           boxShadow:`0px 0px 15px 0px ${color}`,
         }}
-        className={`w-[1000px] h-[500px] flex flex-col justify-center rounded-4xl`}
+        className={`xl:w-[50%] xl:h-[50%] w-[70%] h-[40%] flex flex-col justify-center rounded-4xl`}
       >
-        <h1 className="items-center flex justify-center text-4xl text-black font-extrabold uppercase">
+        <h1 className="items-center flex justify-center xl:text-4xl text-2xl text-black font-extrabold uppercase">
           {title}
         </h1>
         <div className="flex items-center w-[90%] h-[80%] ">
-          <p className="flex w-[60%] pl-10 pr-10">{description}</p>
+          <p className="flex w-[60%] pl-10 pr-10 text-xs xl:text-xl">{description}</p>
           <motion.div
             style={{ opacity: scrollYProgress, scale: scaleImage }}
-            className="flex w-[350px] h-[350px] bg-accent rounded-2xl items-center"
+            className="flex w-[50%] h-[80%] bg-accent rounded-2xl items-center"
           >
             <Image
               src={src}
-              width={500}
-              height={500}
+              width={100}
+              height={100}
               alt="project image"
               className="object-cover"
             />

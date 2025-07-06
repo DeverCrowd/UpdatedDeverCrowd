@@ -14,7 +14,7 @@ const HomePage = ({ progress }) => {
     <motion.section
       style={{ scale, boxShadow: `0px 0px 30px 0px #860cfa`, borderRadius }}
       id="home"
-      className="top-0 flex flex-col justify-center w-full items-center bg-red-500 overflow-hidden min-h-[105vh] select-none z-10 sticky rounded-4xl border"
+      className="top-0 flex flex-col justify-center xl:w-full items-center  overflow-hidden min-h-[105vh] select-none z-10 sticky rounded-4xl border "
     >
       {/* Background Particles */}
       <div className="absolute inset-0">
@@ -33,7 +33,7 @@ const HomePage = ({ progress }) => {
       {/* Main Content */}
       <div className="relative container mx-auto flex flex-col-reverse md:flex-row items-center justify-center xl:justify-between gap-12 sm:gap-16 lg:gap-20 px-6 sm:px-8 lg:px-25 pt-20 pb-10">
         {/* Left Side: Text */}
-        <div className="flex flex-col gap-6 sm:gap-5 md:gap-6 lg:gap-8 w-full xl:w-2/3 order-2 md:order-1">
+        <div className="relative bottom-50 xl:bottom-0 flex flex-col gap-6 sm:gap-5 md:gap-6 lg:gap-8 w-full xl:w-2/3 order-2 md:order-1 z-1">
           <h1 className="text-white md:text-5xl text-3xl text-start font-extrabold">
             Grow <span className="text-primary">Faster</span> With Smarter
             Digital Products
@@ -58,7 +58,7 @@ const HomePage = ({ progress }) => {
         </div>
 
         {/* Right Side: Cube */}
-        <div className="hidden xl:flex justify-center md:justify-end w-full md:w-1/3 order-1 md:order-2">
+        <div className="absolute top-[60%] right-50 xl:top-0 xl:right-0 xl:relative z-0 xl:flex justify-center md:justify-end w-full md:w-1/3 order-1 md:order-2">
           <Cube
             initial={{ rotateX: -60 }}
             whileTap={{ scale: 1.05 }}
