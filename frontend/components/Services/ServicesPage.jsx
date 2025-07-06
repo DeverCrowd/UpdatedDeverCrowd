@@ -81,7 +81,7 @@ const ServicesPage = ({ progress }) => {
     target: section,
     // offset: ["start start", "start end"],
   });
-  const [mobileWidth, setMobileWidth] = useState(false);
+  const [isMobile, setMobileWidth] = useState(false);
   const [isTablit, setTablitWidth] = useState(false);
   const [isLabtop, setLabtopWidth] = useState(false);
   useEffect(() => {
