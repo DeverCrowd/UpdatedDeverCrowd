@@ -1,9 +1,5 @@
 "use client";
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { GlobeDemo } from "../ui/GlobeDemo";
 import { LampContainer } from "../ui/lamp";
 import Particles from "../ui/Particles";
@@ -15,7 +11,37 @@ import AchievementsCards from "./AchievementsCards";
 import { SlScreenDesktop } from "react-icons/sl";
 import { FaUsers } from "react-icons/fa6";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
+import AutoScroll from "../About/AutoScroll";
+import TestCard from "../About/TestCard";
 
+
+const tests = [
+  {
+    name: "swilam",
+    image: "/assets/user.png",
+    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
+  },
+  {
+    name: "swilam",
+    image: "/assets/user.png",
+    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
+  },
+  {
+    name: "swilam",
+    image: "/assets/user.png",
+    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
+  },
+  {
+    name: "swilam",
+    image: "/assets/user.png",
+    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
+  },
+  {
+    name: "swilam",
+    image: "/assets/user.png",
+    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
+  },
+];
 const containerVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -69,47 +95,45 @@ const AboutPage = ({ progress }) => {
       </div>
 
       {/* Who We Are */}
-<LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] z-10 w-full px-4 sm:px-6 md:px-8 py-12 md:py-20">
-  {/* خلفية Particles */}
-  <div className="absolute inset-0 z-0">
-    <Particles
-      particleColors={["#b60cfa", "#b60cfa"]}
-      particleCount={200}
-      particleSpread={10}
-      speed={0.1}
-      particleBaseSize={50}
-      moveParticlesOnHover={false}
-      alphaParticles={true}
-      disableRotation={false}
-    />
-  </div>
+      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] z-10 w-full px-4 sm:px-6 md:px-8 py-12 md:py-20">
+        {/* خلفية Particles */}
+        <div className="absolute inset-0 z-0">
+          <Particles
+            particleColors={["#b60cfa", "#b60cfa"]}
+            particleCount={200}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={50}
+            moveParticlesOnHover={false}
+            alphaParticles={true}
+            disableRotation={false}
+          />
+        </div>
 
-  {/* المحتوى داخل اللمبة */}
-  <motion.div
-    initial={{ opacity: 0.5, y: 100 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
-    className="flex flex-col items-center gap-6 w-full z-10"
-  >
-    {/* العنوان */}
-    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text text-center leading-tight">
-      Who We Are?!
-    </h1>
+        {/* المحتوى داخل اللمبة */}
+        <motion.div
+          initial={{ opacity: 0.5, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-6 w-full z-10"
+        >
+          {/* العنوان */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text text-center leading-tight">
+            Who We Are?!
+          </h1>
 
-    {/* الكرت الخاص بالتعريف */}
-    <SpotlightCard
-      className="text-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl w-full sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[60%] px-4"
-      spotlightColor="rgba(128, 0, 128, 0.5)"
-    >
-      At <span className="text-primary">DeverCrowd</span>, we empower
-      businesses with tailored digital solutions — from custom platforms
-      to seamless experiences — turning ideas into strong online brands.
-      We build lasting partnerships for digital growth.
-    </SpotlightCard>
-  </motion.div>
-</LampContainer>
-
-    
+          {/* الكرت الخاص بالتعريف */}
+          <SpotlightCard
+            className="text-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl w-full sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[60%] px-4"
+            spotlightColor="rgba(128, 0, 128, 0.5)"
+          >
+            At <span className="text-primary">DeverCrowd</span>, we empower
+            businesses with tailored digital solutions — from custom platforms
+            to seamless experiences — turning ideas into strong online brands.
+            We build lasting partnerships for digital growth.
+          </SpotlightCard>
+        </motion.div>
+      </LampContainer>
 
       {/* Vision / Mission / Globe */}
       <div className="w-full max-w-7xl px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
@@ -124,7 +148,9 @@ const AboutPage = ({ progress }) => {
             Vision
           </h2>
           <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200">
-            At <span className="text-primary">DeverCrowd</span>, our vision is to become the go-to digital partner for ambitious brands, shaping the future of the web with innovation, creativity, and trust.
+            At <span className="text-primary">DeverCrowd</span>, our vision is
+            to become the go-to digital partner for ambitious brands, shaping
+            the future of the web with innovation, creativity, and trust.
           </p>
         </motion.div>
 
@@ -144,7 +170,9 @@ const AboutPage = ({ progress }) => {
             Mission
           </h2>
           <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200">
-            Our mission is to empower startups and businesses crafting scalable, user-centric web solutions that transform ideas into real, impactful digital experiences.
+            Our mission is to empower startups and businesses crafting scalable,
+            user-centric web solutions that transform ideas into real, impactful
+            digital experiences.
           </p>
         </motion.div>
       </div>
@@ -160,16 +188,40 @@ const AboutPage = ({ progress }) => {
           Core Values
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
-          <MaskContainer revealText={<p className="font-bold text-slate-800 dark:text-white text-center">Professionalism</p>}>
+          <MaskContainer
+            revealText={
+              <p className="font-bold text-slate-800 dark:text-white text-center">
+                Professionalism
+              </p>
+            }
+          >
             Quality work, done right.
           </MaskContainer>
-          <MaskContainer revealText={<p className="font-bold text-slate-800 dark:text-white text-center">Transparency</p>}>
+          <MaskContainer
+            revealText={
+              <p className="font-bold text-slate-800 dark:text-white text-center">
+                Transparency
+              </p>
+            }
+          >
             Clear, honest communication.
           </MaskContainer>
-          <MaskContainer revealText={<p className="font-bold text-slate-800 dark:text-white text-center">Creativity</p>}>
+          <MaskContainer
+            revealText={
+              <p className="font-bold text-slate-800 dark:text-white text-center">
+                Creativity
+              </p>
+            }
+          >
             Smart, fresh ideas.
           </MaskContainer>
-          <MaskContainer revealText={<p className="font-bold text-slate-800 dark:text-white text-center">Commitment</p>}>
+          <MaskContainer
+            revealText={
+              <p className="font-bold text-slate-800 dark:text-white text-center">
+                Commitment
+              </p>
+            }
+          >
             Fully dedicated, always.
           </MaskContainer>
         </div>
@@ -178,10 +230,18 @@ const AboutPage = ({ progress }) => {
       {/* CircularText */}
       <div className="hidden cursor-default  xl:flex flex-col sm:flex-row justify-between px-30 items-center my-16 w-full">
         <div className="w-56">
-          <CircularText text="011010*011010*011010*" onHover="slowDown" spinDuration={30} />
+          <CircularText
+            text="011010*011010*011010*"
+            onHover="slowDown"
+            spinDuration={30}
+          />
         </div>
         <div className="w-56">
-          <CircularText text="011010*011010*011010*" onHover="slowDown" spinDuration={30} />
+          <CircularText
+            text="011010*011010*011010*"
+            onHover="slowDown"
+            spinDuration={30}
+          />
         </div>
       </div>
 
@@ -214,6 +274,13 @@ const AboutPage = ({ progress }) => {
               />
             </motion.div>
           ))}
+          <h2 className="text-4xl pb-5 h-[25vh] flex flex-col text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text justify-end items-center gap-3">
+            Hear Our Client <div className="border w-100 bg-primary"></div>
+          </h2>
+
+          <div className="h-[30vh] w-full flex justify-center items-center mb-20 overflow-x-hidden">
+            <AutoScroll tests={tests} />
+          </div>
         </motion.div>
       </motion.div>
     </motion.section>

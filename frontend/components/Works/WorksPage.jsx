@@ -1,15 +1,14 @@
 import Image from "next/image";
 import React, { useRef } from "react";
-import ProjectCard from "./ProjectCard";
 import {
   motion,
   useMotionValueEvent,
   useScroll,
   useTransform,
 } from "motion/react";
-import AutoScroll from "./AutoScroll";
-import TestCard from "./TestCard";
 import { InfiniteSlider } from "../ui/infinite-slider";
+import ProjectCard from "../Works/ProjectCard";
+
 const projects = [
   {
     title: "Project 1",
@@ -53,33 +52,6 @@ const projects = [
   },
 ];
 
-const tests = [
-  {
-    name: "swilam",
-    image: "/assets/user.png",
-    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
-  },
-  {
-    name: "swilam",
-    image: "/assets/user.png",
-    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
-  },
-  {
-    name: "swilam",
-    image: "/assets/user.png",
-    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
-  },
-  {
-    name: "swilam",
-    image: "/assets/user.png",
-    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
-  },
-  {
-    name: "swilam",
-    image: "/assets/user.png",
-    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
-  },
-];
 const WorksPage = () => {
   const section = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -111,13 +83,6 @@ const WorksPage = () => {
             />
           );
         })}
-      </div>
-      <h2 className="text-4xl pb-5 h-[25vh] flex flex-col text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text justify-end items-center gap-3">
-        Hear Our Client <div className="border w-100 bg-primary"></div>
-      </h2>
-
-      <div className="h-[30vh] w-full flex justify-center items-center mb-20 overflow-x-hidden">
-        <AutoScroll tests={tests} />
       </div>
     </section>
   );

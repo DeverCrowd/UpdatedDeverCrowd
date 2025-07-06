@@ -27,7 +27,7 @@ const AutoScroll = ({ tests }) => {
       repeatDelay: 0,
     });
     return controls.stop;
-  }, [xTranslation, width,]);
+  }, [xTranslation, width]);
   return (
     <div
       onMouseEnter={() => setHover(true)}
