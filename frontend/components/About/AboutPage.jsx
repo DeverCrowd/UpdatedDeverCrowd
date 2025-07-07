@@ -92,7 +92,7 @@ const AboutPage = ({ progress }) => {
           disableRotation={false}
         />
       </div>
-      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] px-4 md:px-8 relative 2xs:top-20 z-0">
+      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] relative sm:top-0 bottom-20 z-0">
         <motion.div
           initial={{ opacity: 0.5, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -172,7 +172,6 @@ const AboutPage = ({ progress }) => {
             digital experiences.
           </p>
         </motion.div>
-
       </div>
 
       {/* <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center">
