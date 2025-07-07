@@ -102,7 +102,7 @@ const page = () => {
     setProject(projects[currentIndex]);
   };
   return (
-    <section className="min-h-[100vh] flex flex-col justify-center py-12 xl:py-03 mr-3 ml-3">
+    <section className="min-h-[100vh] flex flex-col justify-center py-20 xl:py-3 mr-3 ml-3">
       <div className="xl:w-[100%] xl:p-10">
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <div className="w-full xl:w-[30%] ">
@@ -139,7 +139,7 @@ const page = () => {
               <div className="xl:text-7xl text-5xl leading-none font-extrabold text-transparent text-outline">
                 {project.name}
               </div>
-              <p className="text-white/70 lg:w-[90%] ">{project.description}</p>
+              <p className="text-white/70 lg:w-[90%] h-20 border">{project.description}</p>
               <div className="flex sm:flex-row flex-col gap-9  lg:justify-between justify-around lg:w-[70%]">
                 <div className="gap-9 flex flex-col">
                   <ul className="flex flex-col lg:flex-row gap-4">
