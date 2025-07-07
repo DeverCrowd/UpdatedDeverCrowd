@@ -29,66 +29,69 @@ const projects = [
       { name: "CSS3" },
       { name: "JavaScript" }
     ],
-    industry: [{ name: "Technology" }],
+    industry: [{ name: "Markting" }],
     scope: [{ name: "Design" }, { name: "Development" }],
-    image: "/assets/logo.png",
+    image: "/assets/projects/influcrowd.png",
     live: "",
     github: "",
   },
   {
     turnaround: "1 Week",
-    client: "InfluCrowd",
+    client: "Mohamed Rawaby",
     name: "Rawaby Portfolio",
-    category: "Backend",
+    category: "Modern Portfolio",
     title: "RESTful API for E-Commerce",
     description:
       "Developed a secure and scalable backend API using Node.js and Express. Handled user authentication, product management, and MongoDB data integration.",
     stack: [
-      { name: "Node.js" },
-      { name: "Express.js" },
-      { name: "MongoDB" }
+      { name: "HTML5" },
+      { name: "CSS3" },
+      { name: "JavaScript" }
     ],
-    industry: [{ name: "Technology" }],
-    scope: [{ name: "Development" }],
-    image: "/assets/logo.png",
+    industry: [{ name: "Portfolio" }],
+    scope: [{ name: "Design" }, { name: "Development" }],
+    image: "/assets/projects/rawaby.png",
     live: "",
     github: "",
   },
   {
     turnaround: "1 Week",
-    client: "InfluCrowd",
+    client: "CodeCrowd",
     name: "CodeCrowd",
-    category: "Pentest",
+    category: "Full Web",
     title: "Web Application Security Audit",
     description:
       "Performed penetration testing using Burp Suite and OWASP ZAP to identify common web vulnerabilities. Delivered a detailed report with risk levels and recommended fixes.",
     stack: [
-      { name: "Burp Suite" },
-      { name: "OWASP ZAP" },
-      { name: "MongoDB" }
+      { name: "NodeJs" },
+      { name: "Express" },
+      { name: "MongoDB" },
+      { name: "ReactJs" },
+      { name: "Motion Framer" },
+      { name: "Tailwend" },
     ],
-    industry: [{ name: "Technology" }],
+    industry: [{ name: "Programming" }],
     scope: [{ name: "Security" }],
-    image: "/assets/logo.png",
+    image: "/assets/projects/codecrowd.png",
     live: "",
     github: "",
   },
   {
     turnaround: "1 Week",
-    client: "InfluCrowd",
+    client: "Mohamed Hamad",
     name: "Swilam Portfolio",
-    category: "UI/UX",
+    category: "Frontend",
     title: "Personal Portfolio Design",
     description:
       "Designed a sleek personal portfolio using Figma, enhanced with animated transitions via Framer Motion, and styled with Tailwind CSS for a responsive layout.",
     stack: [
-      { name: "Figma" },
+      { name: "Next Js" },
       { name: "Framer Motion" },
-      { name: "Tailwind CSS" }
+      { name: "Tailwind CSS" },
     ],
-    industry: [{ name: "Technology" }],
-    scope: [{ name: "Design" }],
-    image: "/assets/logo.png",
+    industry: [{ name: "Portfolio" }],
+    scope: [{ name: "Design" },{ name: "Development" }],
+    image: "/assets/projects/swilam.png",
     live: "",
     github: "",
   },
@@ -136,7 +139,7 @@ const page = () => {
           </div>
           <div className="w-full xl:w-[90%] flex flex-col order-2 xl:order-none">
             <div className="flex flex-col gap-9 justify-around h-full">
-              <div className="xl:text-7xl text-5xl leading-none font-extrabold text-transparent text-outline">
+              <div className="xl:text-7xl text-5xl leading-none font-extrabold text-primary">
                 {project.name}
               </div>
               <p className="text-white/70 lg:w-[90%]">{project.description}</p>

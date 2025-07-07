@@ -81,11 +81,13 @@ const ServicesPage = ({ progress }) => {
     target: section,
     // offset: ["start start", "start end"],
   });
+  // useMotionValueEvent(scrollYProgress,'change',(v)=>{console.log(v);
+  // })
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isLaptop, setIsLaptop] = useState(false);
   const [innerWidth, setInnerWidth] = useState(0);
-    const [isUnder24, setIsUnder24] = useState(false);
+  const [isUnder24, setIsUnder24] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -107,7 +109,7 @@ const ServicesPage = ({ progress }) => {
   const xCube = useTransform(
     scrollYProgress,
     [0, 0.2],
-    [0, isUnder24?0: -(innerWidth / 2 - cubeSize)]
+    [0, isUnder24 ? 0 : -(innerWidth / 2 - cubeSize)]
   );
   const scaleCube = useTransform(scrollYProgress, [0, 0.2], [2, 1]);
   const rotateYCube = useTransform(scrollYProgress, [0, 1], [0, 400]);
@@ -117,12 +119,12 @@ const ServicesPage = ({ progress }) => {
     <motion.section
       style={{ boxShadow: `0px 0px 30px 0px #3B82F6` }}
       ref={section}
-      className="flex flex-col justify-start w-full h-[600vh] backdrop-blur-2xl z-30 relative top-0 "
+      className="flex flex-col justify-start w-full h-[400vh] lg:h-[600vh] backdrop-blur-2xl z-30 relative top-0 "
       id="services"
     >
-      <div className="flex flex-col items-center justify-start w-full h-full">
-        <H1 title="What we cna give you" />
-        <div className="flex flex-col absolute items-center justify-start mt-50 h-[90%] w-[50%] pb-50 z-50">
+      <div className="flex flex-col items-center justify-start w-full h-full p-20">
+        <H1 title="What we can give you" />
+        <div className="hidden lg:flex flex-col absolute items-center justify-start mt-50 h-[95%] w-[100%] pb-50 z-50">
           <Cube
             cubeSize={cubeSize}
             style={{
@@ -135,7 +137,7 @@ const ServicesPage = ({ progress }) => {
           />
         </div>
 
-        <div className="flex flex-col absolute items-start justify-start mt-50 h-[90%] w-[73%] pb-50">
+        <div className="flex flex-col absolute items-center lg:items-start justify-start h-[100%] mt-50 lg:mt-0 w-[100%] pb-50 ">
           {cards.map((card, i) => {
             return (
               <Card
