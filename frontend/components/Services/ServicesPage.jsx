@@ -54,25 +54,25 @@ const cards = [
     color: "#3B82F6",
     darkColor: "#0a010d",
     icon: designIcon,
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, maxime itaque ipsum sed beatae totam deserunt quidem tempora,",
+    text: "We craft stunning visuals and intuitive user experiences that bring your ideas to life. Eye-catching, strategic, and always user-focused.",
   },
   {
     color: "#3B82F6",
     darkColor: "#0a010d",
     icon: developmentIcon,
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, maxime itaque ipsum sed beatae totam deserunt quidem tempora,",
+    text: "From responsive websites to powerful platforms — we build fast, scalable, and clean solutions tailored to your business goals.",
   },
   {
     icon: cyberIcon,
     color: "#3B82F6",
     darkColor: "#0a010d",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, maxime itaque ipsum sed beatae totam deserunt quidem tempora,",
+    text: "Your digital safety is our priority. We protect your systems against threats with strong, up-to-date security measures.",
   },
   {
     icon: supportIcon,
     color: "#3B82F6",
     darkColor: "#0a010d",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, maxime itaque ipsum sed beatae totam deserunt quidem tempora,",
+    text: "We’re with you beyond launch — offering reliable support, quick fixes, and continuous improvements whenever you need us.",
   },
 ];
 const ServicesPage = ({ progress }) => {

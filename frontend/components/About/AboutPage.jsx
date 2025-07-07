@@ -92,7 +92,7 @@ const AboutPage = ({ progress }) => {
           disableRotation={false}
         />
       </div>
-      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] px-4 md:px-8 relative 2xs:top-20">
+      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] px-4 md:px-8 relative 2xs:top-20 z-0">
         <motion.div
           initial={{ opacity: 0.5, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ const AboutPage = ({ progress }) => {
         </motion.div>
       </LampContainer>
       {/* Vision / Mission / Globe */}
-      <div className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+      <div className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center z-1">
         {/* Vision */}
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -175,12 +175,12 @@ const AboutPage = ({ progress }) => {
 
       </div>
 
-      <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center">
+      {/* <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center">
         <H1 title="what client said" />
         <div className="h-[30vh] w-full flex justify-center items-center mb-20 overflow-x-hidden">
           <AutoScroll tests={tests} />
         </div>
-      </div>
+      </div> */}
     </motion.section>
   );
 };
