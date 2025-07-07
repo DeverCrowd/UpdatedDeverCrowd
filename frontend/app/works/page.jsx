@@ -15,7 +15,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css";
 import WorkSliderBtns from "./WorkSliderBtns";
-
 const projects = [
   {
     turnaround: "1 Week",
@@ -24,10 +23,14 @@ const projects = [
     category: "Frontend",
     title: "Modern Landing Page",
     description:
-      "A responsive and interactive landing page built with clean HTML5, modern CSS3 animations, and vanilla JavaScript. Designed for speed, accessibility, and mobile-first experience.",
-    stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
+      "Built a fully responsive landing page using HTML5, CSS3, and vanilla JavaScript. The design focuses on clean layout, subtle animations, and fast loading for marketing conversions.",
+    stack: [
+      { name: "HTML5" },
+      { name: "CSS3" },
+      { name: "JavaScript" }
+    ],
     industry: [{ name: "Technology" }],
-    scope: [{ name: "Development" }, { name: "Design" }],
+    scope: [{ name: "Design" }, { name: "Development" }],
     image: "/assets/logo.png",
     live: "",
     github: "",
@@ -39,10 +42,14 @@ const projects = [
     category: "Backend",
     title: "RESTful API for E-Commerce",
     description:
-      "A secure and scalable REST API built with Node.js and Express, connected to a MongoDB database. Features include user authentication, product management, and order processing.",
-    stack: [{ name: "Node.js" }, { name: "Express.js" }, { name: "MongoDB" }],
+      "Developed a secure and scalable backend API using Node.js and Express. Handled user authentication, product management, and MongoDB data integration.",
+    stack: [
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "MongoDB" }
+    ],
     industry: [{ name: "Technology" }],
-    scope: [{ name: "Development" }, { name: "Design" }],
+    scope: [{ name: "Development" }],
     image: "/assets/logo.png",
     live: "",
     github: "",
@@ -54,10 +61,14 @@ const projects = [
     category: "Pentest",
     title: "Web Application Security Audit",
     description:
-      "A professional penetration testing project where I identified and reported vulnerabilities using tools like Burp Suite and OWASP ZAP. Includes risk assessment and mitigation plans.",
-    stack: [{ name: "Burp Suite" }, { name: "OWASP ZAP" }, { name: "MongoDB" }],
+      "Performed penetration testing using Burp Suite and OWASP ZAP to identify common web vulnerabilities. Delivered a detailed report with risk levels and recommended fixes.",
+    stack: [
+      { name: "Burp Suite" },
+      { name: "OWASP ZAP" },
+      { name: "MongoDB" }
+    ],
     industry: [{ name: "Technology" }],
-    scope: [{ name: "Development" }, { name: "Design" }],
+    scope: [{ name: "Security" }],
     image: "/assets/logo.png",
     live: "",
     github: "",
@@ -69,14 +80,14 @@ const projects = [
     category: "UI/UX",
     title: "Personal Portfolio Design",
     description:
-      "A sleek and user-friendly portfolio UI designed in Figma, with animated transitions and component-based layout. Focused on showcasing personal projects in an engaging way.",
+      "Designed a sleek personal portfolio using Figma, enhanced with animated transitions via Framer Motion, and styled with Tailwind CSS for a responsive layout.",
     stack: [
       { name: "Figma" },
       { name: "Framer Motion" },
-      { name: "Tailwind CSS" },
+      { name: "Tailwind CSS" }
     ],
     industry: [{ name: "Technology" }],
-    scope: [{ name: "Development" }, { name: "Design" }],
+    scope: [{ name: "Design" }],
     image: "/assets/logo.png",
     live: "",
     github: "",
