@@ -139,7 +139,7 @@ const page = () => {
               <div className="xl:text-7xl text-5xl leading-none font-extrabold text-transparent text-outline">
                 {project.name}
               </div>
-              <p className="text-white/70 lg:w-[90%] h-20 border">{project.description}</p>
+              <p className="text-white/70 lg:w-[90%]">{project.description}</p>
               <div className="flex sm:flex-row flex-col gap-9  lg:justify-between justify-around lg:w-[70%]">
                 <div className="gap-9 flex flex-col">
                   <ul className="flex flex-col lg:flex-row gap-4">
