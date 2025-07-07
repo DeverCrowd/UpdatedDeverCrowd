@@ -1,19 +1,13 @@
 "use client";
 import { motion, useScroll, useTransform } from "motion/react";
-import { GlobeDemo } from "../ui/GlobeDemo";
 import { LampContainer } from "../ui/lamp";
 import Particles from "../ui/Particles";
 import { Spotlight } from "../ui/spotlight-new";
-import CircularText from "../ui/CircularText";
-import { MaskContainer } from "../ui/svg-mask-effect";
-import SpotlightCard from "../ui/SpotlightCard";
-import AchievementsCards from "./AchievementsCards";
 import { SlScreenDesktop } from "react-icons/sl";
 import { FaUsers } from "react-icons/fa6";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
 import AutoScroll from "../About/AutoScroll";
-import TestCard from "../About/TestCard";
-import CountUp from "../ui/CountUp";
+
 import H1 from "../ui/H1";
 
 const tests = [
@@ -181,12 +175,12 @@ const AboutPage = ({ progress }) => {
 
       </div>
 
-      {/* <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center">
+      <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center">
         <H1 title="what client said" />
         <div className="h-[30vh] w-full flex justify-center items-center mb-20 overflow-x-hidden">
           <AutoScroll tests={tests} />
         </div>
-      </div> */}
+      </div>
     </motion.section>
   );
 };

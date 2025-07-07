@@ -1,18 +1,13 @@
 "use client";
 import Link from "next/link";
 import Logo from "./Logo";
-import { FaRegQuestionCircle } from "react-icons/fa";
-import { IoLayers } from "react-icons/io5";
-import { FaFolderOpen } from "react-icons/fa";
+
 import { HiMail } from "react-icons/hi";
 import {
-  motion,
-  useMotionValueEvent,
+
   useScroll,
-  useTransform,
 } from "motion/react";
-import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
-import { useRef } from "react";
+
 
 const Nav = () => {
   const { scrollYProgress } = useScroll();

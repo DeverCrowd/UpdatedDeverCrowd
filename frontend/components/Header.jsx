@@ -1,16 +1,5 @@
 "use client";
-import Logo from "./Logo";
-import MobileNav from "./MobileNav";
 import Nav from "./Nav";
-import Link from "next/link";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "motion/react";
-import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
-import { useRef } from "react";
 
 const Header = () => {
   return (
