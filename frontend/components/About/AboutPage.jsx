@@ -13,6 +13,8 @@ import { FaUsers } from "react-icons/fa6";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
 import AutoScroll from "../About/AutoScroll";
 import TestCard from "../About/TestCard";
+import CountUp from "../ui/CountUp";
+import H1 from "../ui/H1";
 
 const tests = [
   {
@@ -73,17 +75,21 @@ const AboutPage = ({ progress }) => {
 
   return (
     <motion.section
-      style={{ scale, boxShadow: `0px 0px 30px 0px #860cfa`, borderRadius }}
-      className="flex flex-col items-center justify-center min-h-screen backdrop-blur-2xl z-20 rounded-t-[60px] relative overflow-hidden"
+      className="flex flex-col items-center justify-center w-full min-h-[100vh] backdrop-blur-2xl z-20  relative top-0 rounded-4xl py-9"
       id="about"
     >
       <Spotlight />
-
-      {/* Background Particles */}
-      <div className="absolute inset-0 z-0">
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          zIndex: "50",
+        }}
+      >
         <Particles
-          particleColors={["#b60cfa", "#b60cfa"]}
-          particleCount={300}
+          particleColors={["#3B82F6"]}
+          particleCount={30}
           particleSpread={10}
           speed={0.1}
           particleBaseSize={200}
@@ -92,50 +98,37 @@ const AboutPage = ({ progress }) => {
           disableRotation={false}
         />
       </div>
-
-      {/* Who We Are */}
-      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] z-10 w-full px-4 sm:px-6 md:px-8 py-12 md:py-20">
-        {/* خلفية Particles */}
-        <div className="absolute inset-0 z-0">
-          <Particles
-            particleColors={["#b60cfa", "#b60cfa"]}
-            particleCount={200}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={50}
-            moveParticlesOnHover={false}
-            alphaParticles={true}
-            disableRotation={false}
-          />
-        </div>
-
-        {/* المحتوى داخل اللمبة */}
+      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] px-4 md:px-8 relative 2xs:top-20">
         <motion.div
           initial={{ opacity: 0.5, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-6 w-full z-10"
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="flex flex-col items-center justify-center gap-5 "
         >
-          {/* العنوان */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text text-center leading-tight">
+          <h1 className="bg-gradient-to-br from-blue-300 to-blue-500 bg-clip-text text-transparent text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight">
             Who We Are?!
           </h1>
 
-          {/* الكرت الخاص بالتعريف */}
-          <SpotlightCard
-            className="text-center text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl w-full sm:w-[90%] md:w-[85%] lg:w-[75%] xl:w-[60%] px-4"
-            spotlightColor="rgba(128, 0, 128, 0.5)"
+          <p
+            className="relative overflow-hidden rounded-2xl w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] text-md p-2 sm:text-xl md:text-2xl lg:text-3xl text-center"
+            style={{
+              boxShadow: "9px 9px 10px 0px #1E3A8A",
+              borderRadius: "0px 50px 0px 50px",
+            }}
           >
             At <span className="text-primary">DeverCrowd</span>, we empower
-            businesses with tailored digital solutions — from custom platforms
-            to seamless experiences — turning ideas into strong online brands.
+            businesses with tailored digital solutions – from custom platforms
+            to seamless experiences – turning ideas into strong online brands.
             We build lasting partnerships for digital growth.
-          </SpotlightCard>
+          </p>
         </motion.div>
       </LampContainer>
-
       {/* Vision / Mission / Globe */}
-      <div className="w-full max-w-7xl px-4 sm:px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+      <div className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
         {/* Vision */}
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -143,21 +136,32 @@ const AboutPage = ({ progress }) => {
           transition={{ duration: 1 }}
           className="text-center flex flex-col items-center gap-4"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white border-t border-l border-r border-primary rounded-2xl p-3">
             Vision
           </h2>
-          <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200">
+          <p className="border-b border-l border-r border-primary rounded-2xl p-5 text-base md:text-lg text-neutral-700 dark:text-neutral-200">
             At <span className="text-primary">DeverCrowd</span>, our vision is
             to become the go-to digital partner for ambitious brands, shaping
             the future of the web with innovation, creativity, and trust.
           </p>
         </motion.div>
 
-        {/* Globe */}
-        <div className="flex justify-center">
-          <GlobeDemo />
-        </div>
-
+        {/* core values */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-center flex flex-col items-center gap-4 "
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white border-t border-l border-r border-primary rounded-2xl p-3">
+            Core Values
+          </h2>
+          <p className="border-b border-l border-r border-primary rounded-2xl p-5 text-base md:text-lg text-neutral-700 dark:text-neutral-200">
+            We believe in integrity, innovation, teamwork, and a relentless
+            pursuit of excellence. These values guide our mission and shape the
+            way we serve our clients and community.
+          </p>
+        </motion.div>
         {/* Mission */}
         <motion.div
           initial={{ opacity: 0, y: 100 }}
@@ -165,106 +169,24 @@ const AboutPage = ({ progress }) => {
           transition={{ duration: 1 }}
           className="text-center flex flex-col items-center gap-4"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
+          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white border-t border-l border-r border-primary rounded-2xl p-3">
             Mission
           </h2>
-          <p className="text-base md:text-lg text-neutral-700 dark:text-neutral-200">
+          <p className="border-b border-l border-r border-primary rounded-2xl p-5 text-base md:text-lg text-neutral-700 dark:text-neutral-200">
             Our mission is to empower startups and businesses crafting scalable,
             user-centric web solutions that transform ideas into real, impactful
             digital experiences.
           </p>
         </motion.div>
+
       </div>
 
-      {/* Core Values */}
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="flex flex-col items-center text-center gap-6 px-4 sm:px-6"
-      >
-        <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
-          Core Values
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
-          <MaskContainer
-            revealText={
-              <p className="font-bold text-slate-800 dark:text-white text-center">
-                Professionalism
-              </p>
-            }
-          >
-            Quality work, done right.
-          </MaskContainer>
-          <MaskContainer
-            revealText={
-              <p className="font-bold text-slate-800 dark:text-white text-center">
-                Transparency
-              </p>
-            }
-          >
-            Clear, honest communication.
-          </MaskContainer>
-          <MaskContainer
-            revealText={
-              <p className="font-bold text-slate-800 dark:text-white text-center">
-                Creativity
-              </p>
-            }
-          >
-            Smart, fresh ideas.
-          </MaskContainer>
-          <MaskContainer
-            revealText={
-              <p className="font-bold text-slate-800 dark:text-white text-center">
-                Commitment
-              </p>
-            }
-          >
-            Fully dedicated, always.
-          </MaskContainer>
-        </div>
-      </motion.div>
-
-      {/* Achievements */}
-      <motion.div
-        className="w-full max-w-7xl px-4 sm:px-6 py-20 flex flex-col items-center justify-center"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <motion.h2
-          className="text-3xl md:text-5xl pb-5 text-center font-bold text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text"
-          variants={cardVariants}
-        >
-          Our Achievements
-          <div className="w-[65%] md:w-[55%] xl:w-[40%] h-1 bg-primary mx-auto mt-2" />
-        </motion.h2>
-
-        <motion.div
-          className="flex flex-row justify-center items-center gap-10  flex-wrap"
-          variants={containerVariants}
-        >
-          {achievementsCards.map((card, id) => (
-            <motion.div key={id} variants={cardVariants}>
-              <AchievementsCards
-                title={card.title}
-                icon={card.icon}
-                num={card.num}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
-      <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center">
-        <h2 className="text-4xl pb-5 h-[25vh] flex flex-col text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text justify-end items-center gap-3">
-          Hear Our Client <div className="border w-100 bg-primary"></div>
-        </h2>
+      {/* <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center">
+        <H1 title="what client said" />
         <div className="h-[30vh] w-full flex justify-center items-center mb-20 overflow-x-hidden">
           <AutoScroll tests={tests} />
         </div>
-      </div>
+      </div> */}
     </motion.section>
   );
 };

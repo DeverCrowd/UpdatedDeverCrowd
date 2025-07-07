@@ -14,7 +14,6 @@ import { useEffect } from "react";
 import "lenis/dist/lenis.css";
 import ServicesPage from "@/components/Services/ServicesPage";
 import useMousePosition from "./utils/useMousePosition";
-import WorksPage from "@/components/Works/WorksPage";
 import HomePage from "@/components/Home/HomePage";
 import ContactPage from "@/components/Contact/ContactPage";
 
@@ -28,15 +27,11 @@ export default function Main() {
     requestAnimationFrame(raf);
   });
   const { scrollYProgress } = useScroll();
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    console.log("v", v);
-  });
   return (
     <main className="bg-[#00000]">
       <HomePage progress = {scrollYProgress}/>
       <AboutPage  progress = {scrollYProgress}/>
       <ServicesPage  progress = {scrollYProgress}/>
-      <WorksPage  progress = {scrollYProgress}/>
       <ContactPage/>
     </main>
   );

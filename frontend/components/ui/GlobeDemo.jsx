@@ -12,7 +12,7 @@ export function GlobeDemo() {
     pointSize: 1,
     globeColor: "#062056",
     showAtmosphere: false,
-    atmosphereColor: "#b60cfa",
+    atmosphereColor: "#1E3A8A",
     atmosphereAltitude: 0.1,
     emissive: "#062056",
     emissiveIntensity: 0.1,
@@ -30,7 +30,7 @@ export function GlobeDemo() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-  const colors = ["#b60cfa", "#3b82f6", "#b60cfa"];
+  const colors = ["#1E3A8A", "#3b82f6", "#1E3A8A"];
   const sampleArcs = [
     {
       order: 1,

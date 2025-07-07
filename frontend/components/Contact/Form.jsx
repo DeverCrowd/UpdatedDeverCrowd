@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiSend, FiCheckCircle } from "react-icons/fi";
+import H1 from "../ui/H1";
 
 const ContactForm = () => {
   const [form, setForm] = useState({
@@ -79,9 +80,12 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form w-full sm:w-[90%] md:w-[85%] lg:w-[70%] xl:w-[55%] 2xl:w-[45%] m-8 mx-auto backdrop-blur-sm mt-5">
-      <div className="card w-full bg-cardColor py-6 px-6 sm:px-8 md:px-10 lg:px-12 rounded-2xl border border-primary">
-        <h1 className="text-xl sm:text-2xl pb-3 text-primary">Send a Message</h1>
+    <div className="contact-form w-full sm:w-[90%] md:w-[90%] mx-auto ">
+      <H1 title="Get in touch" />
+      <div className="card w-full bg-cardColor py-6 px-6 sm:px-8 md:px-10 lg:px-12 rounded-2xl ">
+        <h1 className="text-xl sm:text-2xl pb-3 text-primary">
+          Send a Message
+        </h1>
         <p className="text-white/60 text-sm sm:text-base">
           Fill out the form and we’ll get back to you shortly.
         </p>
@@ -128,7 +132,9 @@ const ContactForm = () => {
 
           <div className="flex flex-col md:flex-row gap-6">
             <div className="w-full">
-              <label className="block text-white/70 text-sm mb-1">Company</label>
+              <label className="block text-white/70 text-sm mb-1">
+                Company
+              </label>
               <input
                 type="text"
                 name="company"
@@ -154,10 +160,7 @@ const ContactForm = () => {
                     "Delete",
                     "+",
                   ];
-                  if (
-                    !/[0-9]/.test(e.key) &&
-                    !allowedKeys.includes(e.key)
-                  ) {
+                  if (!/[0-9]/.test(e.key) && !allowedKeys.includes(e.key)) {
                     e.preventDefault();
                   }
                 }}

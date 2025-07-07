@@ -1,25 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Cube from "./Cube";
 import Link from "next/link";
 import { FaEnvelope } from "react-icons/fa";
 import { motion, useScroll, useTransform } from "motion/react";
 import Particles from "../ui/Particles";
+import CountUp from "../ui/CountUp";
+import H1 from "../ui/H1";
 
 const HomePage = ({ progress }) => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(progress, [0, 0.5], [1, 0.5]);
   const borderRadius = useTransform(progress, [0, 0.5], ["0px", "150px"]);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  const [isLaptop, setIsLaptop] = useState(false);
+  const [innerWidth, setInnerWidth] = useState(0);
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setInnerWidth(window.innerWidth);
+      setIsMobile(width <= 480 && width >= 320);
+      setIsTablet(width >= 480 && width <= 768);
+      setIsLaptop(width >= 768 && width <= 1640);
+    };
 
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <motion.section
-      style={{ scale, boxShadow: `0px 0px 30px 0px #860cfa`, borderRadius }}
+      style={{ scale, boxShadow: `0px 0px 30px 0px #1E3A8A`, borderRadius }}
       id="home"
-      className="top-0 flex flex-col justify-center xl:w-full items-center  overflow-hidden min-h-[105vh] select-none z-10 sticky rounded-4xl border "
+      className="top-0 flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-10 sticky rounded-4xl"
     >
       {/* Background Particles */}
       <div className="absolute inset-0">
         <Particles
-          particleColors={["#ffffff", "#ffffff"]}
+          particleColors={["#ffffff"]}
           particleCount={200}
           particleSpread={10}
           speed={0.1}
@@ -30,37 +49,85 @@ const HomePage = ({ progress }) => {
         />
       </div>
 
-      {/* Main Content */}
-      <div className="relative container mx-auto flex flex-col-reverse md:flex-row items-center justify-center xl:justify-between gap-12 sm:gap-16 lg:gap-20 px-6 sm:px-8 lg:px-25 pt-20 pb-10">
-        {/* Left Side: Text */}
-        <div className="relative bottom-50 xl:bottom-0 flex flex-col gap-6 sm:gap-5 md:gap-6 lg:gap-8 w-full xl:w-2/3 order-2 md:order-1 z-1">
-          <h1 className="text-white md:text-5xl text-3xl text-start font-extrabold">
-            Grow <span className="text-primary">Faster</span> With Smarter
-            Digital Products
-          </h1>
-          <p className="text-white/60 text-start md:text-lg text-sm max-w-[90%] md:max-w-[70%]">
-            We build high-performing websites and mobile apps that solve real
-            problems, engage users, and grow your business.
-          </p>
-          <div className="border border-primary w-full md:w-[70%]"></div>
-
-          <Link
-            href="#contact"
-            className="group flex gap-4 border-t border-b rounded-full items-center w-[200px] sm:w-[250px] shadow-lg shadow-accent hover:shadow-primary hover:border-accent transition-all duration-300 hover:backdrop-blur-md backdrop-blur-sm"
-          >
-            <div className="items-center justify-center rounded-full py-3 text-2xl bg-accent px-5 group-hover:bg-primary group-hover:px-8 transition-all duration-300">
-              <FaEnvelope />
+      <div className="flex flex-col items-center justify-center w-full gap-9 sm:p-16 p-4">
+        <h1 className="text-white lg:text-6xl text-3xl font-extrabold text-center xl:w-[60%] w-[100%]">
+          Grow <span className="text-primary">Faster</span> With Smarter Digital
+          Products
+        </h1>
+        <p className="text-white/60 text-center lg:text-lg text-sm xl:w-[40%] w-[100%]">
+          We build high-performing websites and mobile apps that solve real
+          problems, engage users, and grow your business.
+        </p>
+        <div className="border border-primary w-full lg:w-[50%]"></div>
+        {/* Achievements */}
+        <div className="lg:w-[40%] w-full flex items-center justify-center">
+          <div className="flex items-center justify-between gap-5 text-xs sm:text-lg w-full h-full">
+            <div className="flex flex-col items-center justify-center gap-4 border-b p-5 rounded-full border-primary w-1/5">
+              <h1 className="z-1">Projects</h1>
+              <CountUp
+                from={0}
+                to={11}
+                separator=","
+                direction="up"
+                duration={1}
+                className="text-3xl z-1"
+              />
             </div>
-            <div className="text-sm md:text-lg group-hover:text-primary transition-all duration-300">
-              Book A Call
+            <div className="flex flex-col items-center justify-center gap-4 border-b p-5 rounded-full border-primary w-1/5">
+              <h1 className="z-1">Customers</h1>
+              <CountUp
+                from={0}
+                to={9}
+                separator=","
+                direction="up"
+                duration={1}
+                className="text-3xl z-1"
+              />
             </div>
-          </Link>
+            <div className="flex flex-col items-center justify-center gap-4 border-b p-5 rounded-full border-primary w-1/5">
+              <h1 className="z-1">Experience</h1>
+              <CountUp
+                from={0}
+                to={5}
+                separator=","
+                direction="up"
+                duration={1}
+                className="text-3xl z-1"
+              />
+            </div>
+            <div className="flex flex-col items-center justify-center gap-4 border-b p-5 rounded-full border-primary w-1/5">
+              <h1 className="z-1">Industry</h1>
+              <CountUp
+                from={0}
+                to={3}
+                separator=","
+                direction="up"
+                duration={1}
+                className="text-3xl z-1"
+              />
+            </div>
+            
+          </div>
         </div>
+        <Link
+          href="#contact"
+          className="group flex gap-4 border-t border-b rounded-full items-center w-[200px] sm:w-[250px] shadow-lg shadow-accent hover:shadow-primary hover:border-accent transition-all duration-300 hover:backdrop-blur-md backdrop-blur-sm"
+        >
+          <div className="items-center justify-center rounded-full py-3 text-2xl px-5 bg-primary group-hover:px-8 transition-all duration-300">
+            <FaEnvelope />
+          </div>
+          <div className="text-sm lg:text-lg group-hover:text-primary transition-all duration-300">
+            Book A Call
+          </div>
+        </Link>
 
         {/* Right Side: Cube */}
-        <div className="absolute top-[60%] right-50 xl:top-0 xl:right-0 xl:relative z-0 xl:flex justify-center md:justify-end w-full md:w-1/3 order-1 md:order-2">
+        {/* <div
+          className="hidden absolute top-[60%] left-25 lg:top-0 lg:right-0 lg:relative z-0 lg:flex justify-center order-2 lg:w-1/4
+        "
+        >
           <Cube
-          cubeSize={300}
+            cubeSize={200}
             initial={{ rotateX: -60 }}
             whileTap={{ scale: 1.05 }}
             whileInView={{
@@ -76,7 +143,7 @@ const HomePage = ({ progress }) => {
               },
             }}
           />
-        </div>
+        </div> */}
       </div>
     </motion.section>
   );

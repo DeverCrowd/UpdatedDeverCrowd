@@ -7,7 +7,11 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css";
+import WorkSliderBtns from "./WorkSliderBtns";
 const ProjectCard = ({
   title,
   description,

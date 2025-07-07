@@ -15,15 +15,9 @@ import { useRef } from "react";
 const Header = () => {
   return (
     <>
-      <header className="hidden xl:flex fixed z-50 items-center left-[15%] w-[70%]">
+      <header className="xl:flex fixed z-50 items-center sm:left-[25%] sm:w-[50%] lg:left-[30%] lg:w-[40%] xl:left-[37.5%] xl:w-[25%] w-full top-5">
         <Nav />
       </header>
-      <div className="xl:hidden fixed top-0 left-0 w-full backdrop-blur-md z-50 p-4 flex justify-between items-center shadow-xl shadow-accent rounded-full">
-        <Link href="/">
-          <Logo width={100} height={100} />
-        </Link>
-        <MobileNav />
-      </div>
     </>
   );
 };

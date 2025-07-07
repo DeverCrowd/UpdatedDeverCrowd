@@ -6,13 +6,13 @@ import {
   useTransform,
 } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import Steak from "./Steak";
 import Card from "./Card";
 import { MdDesignServices } from "react-icons/md";
 import { IoTerminal } from "react-icons/io5";
 import { BsShieldLockFill } from "react-icons/bs";
 import { FaHandsHelping } from "react-icons/fa";
 import Cube from "../Home/Cube";
+import H1 from "../ui/H1";
 
 const cyberIcon = () => {
   return <BsShieldLockFill />;
@@ -51,27 +51,27 @@ const steaks = [
 
 const cards = [
   {
-    color: "#3e0555",
+    color: "#3B82F6",
     darkColor: "#0a010d",
     icon: designIcon,
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, maxime itaque ipsum sed beatae totam deserunt quidem tempora,",
   },
   {
-    color: "#580777",
-    darkColor: "#14021a",
+    color: "#3B82F6",
+    darkColor: "#0a010d",
     icon: developmentIcon,
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, maxime itaque ipsum sed beatae totam deserunt quidem tempora,",
   },
   {
     icon: cyberIcon,
-    color: "#720999",
-    darkColor: "#1f032b",
+    color: "#3B82F6",
+    darkColor: "#0a010d",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, maxime itaque ipsum sed beatae totam deserunt quidem tempora,",
   },
   {
     icon: supportIcon,
-    color: "#950bcc",
-    darkColor: "#2c043d",
+    color: "#3B82F6",
+    darkColor: "#0a010d",
     text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi, maxime itaque ipsum sed beatae totam deserunt quidem tempora,",
   },
 ];
@@ -84,14 +84,17 @@ const ServicesPage = ({ progress }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isLaptop, setIsLaptop] = useState(false);
-    const [innerWidth, setInnerWidth] = useState(0);
+  const [innerWidth, setInnerWidth] = useState(0);
+    const [isUnder24, setIsUnder24] = useState(false);
+
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      setInnerWidth(window.innerWidth)
+      setInnerWidth(window.innerWidth);
       setIsMobile(width <= 480);
       setIsTablet(width > 480 && width <= 768);
       setIsLaptop(width > 768 && width <= 1640);
+      setIsUnder24(width < 1024);
     };
 
     handleResize();
@@ -104,7 +107,7 @@ const ServicesPage = ({ progress }) => {
   const xCube = useTransform(
     scrollYProgress,
     [0, 0.2],
-    [0, isMobile ? 0 : isTablet ? 0 : -(innerWidth / 2 - cubeSize)]
+    [0, isUnder24?0: -(innerWidth / 2 - cubeSize)]
   );
   const scaleCube = useTransform(scrollYProgress, [0, 0.2], [2, 1]);
   const rotateYCube = useTransform(scrollYProgress, [0, 1], [0, 400]);
@@ -112,17 +115,13 @@ const ServicesPage = ({ progress }) => {
 
   return (
     <motion.section
-      style={{ boxShadow: `0px 0px 30px 0px #860cfa` }}
+      style={{ boxShadow: `0px 0px 30px 0px #3B82F6` }}
       ref={section}
       className="flex flex-col justify-start w-full h-[600vh] backdrop-blur-2xl z-30 relative top-0 "
       id="services"
     >
-      <h2 className="text-2xl sm:text-3xl md:text-4xl pb-5 min-h-[20vh] text-transparent bg-gradient-to-br from-purple-300 to-purple-500 bg-clip-text flex flex-col justify-center items-center text-center gap-3">
-        Checkout Our services!
-        <div className="w-4/5 sm:w-3/5 md:w-2/3 lg:w-1/2 xl:w-[40%] h-1 bg-primary mx-auto mt-2 rounded-full" />
-      </h2>
-
       <div className="flex flex-col items-center justify-start w-full h-full">
+        <H1 title="What we cna give you" />
         <div className="flex flex-col absolute items-center justify-start mt-50 h-[90%] w-[50%] pb-50 z-50">
           <Cube
             cubeSize={cubeSize}

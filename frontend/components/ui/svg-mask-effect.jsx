@@ -30,7 +30,7 @@ export const MaskContainer = ({
 
   return (
     <motion.div
-    style={{boxShadow:"0px 9px 10px 0px #b60cfa"}}
+    style={{boxShadow:"0px 9px 10px 0px #1E3A8A"}}
       ref={containerRef}
       className={cn("relative w-80 h-20", className)}
       animate={{

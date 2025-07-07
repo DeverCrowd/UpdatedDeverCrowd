@@ -42,7 +42,7 @@ const FlipCard = ({ icon, title, num }) => {
     position: "absolute",
     width: "100%",
     height: "100%",
-    border: "3px solid #b60cfa",
+    border: "3px solid #1E3A8A",
     borderRadius: "24px",
     boxShadow: "0 10px 20px rgba(0,0,0,0.15)",
     display: "flex",
@@ -56,13 +56,13 @@ const FlipCard = ({ icon, title, num }) => {
   const frontStyle = {
     ...faceStyle,
     backgroundColor: "transparent",
-    color: "#b60cfa",
+    color: "#1E3A8A",
   };
 
   const backStyle = {
     ...faceStyle,
     backgroundColor: "#000",
-    color: "#b60cfa",
+    color: "#1E3A8A",
     transform: "rotateY(180deg)",
   };
 
