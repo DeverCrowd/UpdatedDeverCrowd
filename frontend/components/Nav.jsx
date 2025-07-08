@@ -23,7 +23,7 @@ const Nav = () => {
 
         <Link className="flex relative" href="/#about">
           <div
-            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2`}
+            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 border-l border-r px-3 border-primary hover:shadow-md shadow-primary`}
           >
             {/* <FaRegQuestionCircle className="text-xl" /> */}
             About
@@ -31,7 +31,7 @@ const Nav = () => {
         </Link>
         <Link className="flex relative" href="/#services">
           <div
-            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2`}
+            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 border-l border-r px-3 border-primary hover:shadow-md shadow-primary`}
           >
             {/* <FaRegQuestionCircle className="text-xl" /> */}
             Services
@@ -40,7 +40,7 @@ const Nav = () => {
 
         <Link className="flex relative" href="/works">
           <div
-            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2`}
+            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 border-l border-r px-3 border-primary hover:shadow-md shadow-primary`}
           >
             {/* <FaFolderOpen className="text-xl" /> */}
             Works
