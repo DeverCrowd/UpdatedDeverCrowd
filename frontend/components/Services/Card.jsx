@@ -66,7 +66,7 @@ const Card = ({ icon, text, color, i, darkColor, progress }) => {
         x: x ?? 0,
         scale,
         opacity,
-        rotateX,
+        // rotateX,
         backgroundImage: `linear-gradient(145deg, ${color}, ${darkColor})`,
         boxShadow: `0px 20px 50px -10px ${color}, inset 0 0 20px -5px ${darkColor}`,
         position: "sticky",
