@@ -66,9 +66,9 @@ const HomePage = ({ progress }) => {
           We build high-performing websites and mobile apps that solve real
           problems, engage users, and grow your business.
         </p>
-        <div className="border border-primary w-full lg:w-[50%]"></div>
+        <div className="border border-primary w-full xl:w-[50%]"></div>
         {/* Achievements */}
-        <div className="lg:w-[50%] w-full flex items-center justify-center">
+        <div className="xl:w-[50%] w-full flex items-center justify-center">
           <div className="flex flex-wrap items-center justify-between gap-6 text-sm sm:text-base w-full h-full">
             {[
               { to: 11, label: "Projects" },
