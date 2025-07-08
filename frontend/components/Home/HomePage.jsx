@@ -37,7 +37,7 @@ const HomePage = ({ progress }) => {
       className="top-0 flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-10 sticky rounded-4xl"
     >
       <Image
-        src="/assets/bgs/bg13.jpg"
+        src="/bgs/bg13.jpg"
         fill
         quality={100}
         alt="bg"

@@ -10,7 +10,7 @@ const ContactPage = () => {
       id="contact"
     >
       <Image
-        src="/assets/bgs/bg4.png"
+        src="/bgs/bg4.png"
         fill
         quality={100}
         alt="bg"

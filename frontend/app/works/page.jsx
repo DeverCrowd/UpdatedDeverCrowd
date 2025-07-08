@@ -36,7 +36,7 @@ const projects = [
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
     industry: [{ name: "Markting" }],
     scope: [{ name: "Design" }, { name: "Development" }],
-    image: "/assets/projects/influcrowd.png",
+    image: "/projects/influcrowd.png",
     live: "https://mohamedhamad1.github.io/InfluCrowd/#hero",
     github: "",
   },
@@ -51,7 +51,7 @@ const projects = [
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
     industry: [{ name: "Portfolio" }],
     scope: [{ name: "Design" }, { name: "Development" }],
-    image: "/assets/projects/rawaby.png",
+    image: "/projects/rawaby.png",
     live: "https://devercrowd.github.io/Rawaby/",
     github: "",
   },
@@ -73,7 +73,7 @@ const projects = [
     ],
     industry: [{ name: "Programming" }],
     scope: [{ name: "Security" }],
-    image: "/assets/projects/codecrowd.png",
+    image: "/projects/codecrowd.png",
     live: "",
     github: "",
   },
@@ -92,7 +92,7 @@ const projects = [
     ],
     industry: [{ name: "Portfolio" }],
     scope: [{ name: "Design" }, { name: "Development" }],
-    image: "/assets/projects/swilam.png",
+    image: "/projects/swilam.png",
     live: "",
     github: "",
   },
@@ -106,7 +106,7 @@ const page = () => {
     setProject(projects[currentIndex]);
   };
   return (
-    <section className="min-h-screen px-4 xl:px-20 py-20 text-white bg-[url('/assets/bgs/bg15.jpg')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-gradient-to-br from-[#0c45a0]/90 to-[#091d3a]/90">
+    <section className="min-h-screen px-4 xl:px-20 py-20 text-white bg-[url('/bgs/bg15.jpg')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-gradient-to-br from-[#0c45a0]/90 to-[#091d3a]/90">
       <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row gap-12 items-start">
         {/* Slider Section */}
         <div className="w-full xl:w-[35%] relative">
