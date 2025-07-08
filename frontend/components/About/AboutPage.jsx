@@ -117,7 +117,7 @@ const AboutPage = ({ progress }) => {
           disableRotation={false}
         />
       </div>
-      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] relative sm:top-0 bottom-20 z-0">
+      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] relative sm:top-0 bottom-20 z-0 mt-20 sm:mt-0">
         <motion.div
           initial={{ opacity: 0.5, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ const AboutPage = ({ progress }) => {
           </h1>
 
           <p
-            className="relative bg-white/2 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 py-6 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light"
+            className="relative bg-white/2 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light"
             style={{
               boxShadow: "9px 9px 10px 0px #1E3A8A",
               borderRadius: "0px 50px 0px 50px",
