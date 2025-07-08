@@ -14,7 +14,7 @@ const WorkSliderBtns = ({ containerStyles, btnStyles, iconsStyles }) => {
           scale: 1.1,
         }}
         whileTap={{
-            scale:0.9
+          scale: 0.9,
         }}
         transition={{
           duration: 0.05,
@@ -29,7 +29,7 @@ const WorkSliderBtns = ({ containerStyles, btnStyles, iconsStyles }) => {
           scale: 1.1,
         }}
         whileTap={{
-            scale:0.9
+          scale: 0.9,
         }}
         transition={{
           duration: 0.05,

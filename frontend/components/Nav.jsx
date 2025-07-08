@@ -22,12 +22,12 @@ const Nav = () => {
         </Link>
 
         {[
-          { href: "/#about", label: "About" },
-          { href: "/#services", label: "Services" },
-          { href: "/works", label: "Works" },
+          { href: "/#about", label: "About Us" },
+          // { href: "/#services", label: "Services" },
+          { href: "/works", label: "Our Works" },
         ].map(({ href, label }, i) => (
           <Link key={i} className="flex relative" href={href}>
-            <div className="hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 border-l border-r px-3 border-primary hover:shadow-md shadow-primary">
+            <div className="hover:border-primary text-center rounded-sm hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 border-l border-r px-3 border-primary hover:shadow-md shadow-primary">
               {label}
             </div>
           </Link>

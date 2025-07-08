@@ -78,7 +78,7 @@ const HomePage = ({ progress }) => {
             ].map(({ to, label }, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center justify-center gap-2 sm:gap-3 w-[45%] sm:w-[22%] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300"
+                className="flex flex-col items-center justify-center gap-2 sm:gap-3 w-[45%] sm:w-[20%] h-[100] bg-white/5 backdrop-blur-md border border-white/10 rounded-full p-4 sm:p-6 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300"
               >
                 <span className="text-white/70 text-sm sm:text-base tracking-wide">
                   {label}

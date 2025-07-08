@@ -96,7 +96,7 @@ const Info = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <p className="text-sky-200 text-sm uppercase tracking-widest">Find me on</p>
+          <p className="text-sky-200 text-sm uppercase tracking-widest">Find us on</p>
 
           <div className="flex gap-3 flex-wrap items-center justify-center">
             {socials.map((social, i) => (

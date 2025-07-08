@@ -75,8 +75,9 @@ const Card = ({ icon, text, color, i, darkColor, progress }) => {
         zIndex: isUnder24 ? i + 50 : i,
         width: cardWidth,
         height: cardHeight,
+        
       }}
-      className="rounded-[2rem] p-6 lg:p-8 flex flex-col items-center justify-center border border-white/10 backdrop-blur-md hover:scale-105 hover:shadow-[0_0_60px_0px_rgba(12,69,160,0.5)]"
+      className="rounded-[2rem] p-6 lg:p-8 flex flex-col items-center justify-center border border-white/10 backdrop-blur-md hover:scale-105 hover:shadow-[0_0_60px_0px_rgba(12,69,160,0.5)] m-50 lg:m-0"
     >
       <div className="h-[20%] text-[3rem] sm:text-[4rem] text-white/90 mb-2">
         {icon()}
