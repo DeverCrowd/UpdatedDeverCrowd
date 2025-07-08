@@ -69,7 +69,7 @@ const AboutPage = ({ progress }) => {
 
   return (
     <motion.section
-      className="flex flex-col items-center justify-center w-full min-h-[100vh] backdrop-blur-2xl z-20  relative top-0 rounded-4xl py-9"
+      className="flex flex-col items-center justify-center w-full min-h-[100vh] backdrop-blur-3xl z-20 relative top-0 py-9"
       id="about"
     >
       <Spotlight />
