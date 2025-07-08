@@ -106,7 +106,6 @@ const HomePage = ({ progress }) => {
                 className="text-3xl z-1"
               />
             </div>
-            
           </div>
         </div>
         <Link

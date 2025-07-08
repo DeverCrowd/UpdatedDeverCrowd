@@ -111,13 +111,14 @@ const ServicesPage = ({ progress }) => {
     [0, 0.2],
     [0, isUnder24 ? 0 : -(innerWidth / 2 - cubeSize)]
   );
-  const scaleCube = useTransform(scrollYProgress, [0, 0.2], [2, 1]);
   const rotateYCube = useTransform(scrollYProgress, [0, 1], [0, 400]);
   const rotateXCube = useTransform(scrollYProgress, [0, 0.2], [-90, -25]);
+  const borderRadius = useTransform(progress, [0.85, 1], ["0px", "150px"]);
+  const scale = useTransform(progress, [0.85, 1.2], [1, 0.5]);
 
   return (
     <motion.section
-      style={{ boxShadow: `0px 0px 30px 0px #3B82F6` }}
+      style={{borderRadius, scale, boxShadow: `0px 0px 30px 0px #3B82F6` }}
       ref={section}
       className="flex flex-col justify-start w-full h-[400vh] lg:h-[600vh] backdrop-blur-2xl z-30 relative top-0 "
       id="services"

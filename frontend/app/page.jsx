@@ -27,6 +27,8 @@ export default function Main() {
     requestAnimationFrame(raf);
   });
   const { scrollYProgress } = useScroll();
+  useMotionValueEvent(scrollYProgress,'change',(v)=>{console.log(v);
+  })
   return (
     <main className="bg-[#00000]">
       <HomePage progress = {scrollYProgress}/>
