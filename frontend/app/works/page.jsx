@@ -24,11 +24,7 @@ const projects = [
     title: "Modern Landing Page",
     description:
       "Built a fully responsive landing page using HTML5, CSS3, and vanilla JavaScript. The design focuses on clean layout, subtle animations, and fast loading for marketing conversions.",
-    stack: [
-      { name: "HTML5" },
-      { name: "CSS3" },
-      { name: "JavaScript" }
-    ],
+    stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
     industry: [{ name: "Markting" }],
     scope: [{ name: "Design" }, { name: "Development" }],
     image: "/assets/projects/influcrowd.png",
@@ -43,11 +39,7 @@ const projects = [
     title: "RESTful API for E-Commerce",
     description:
       "Developed a secure and scalable backend API using Node.js and Express. Handled user authentication, product management, and MongoDB data integration.",
-    stack: [
-      { name: "HTML5" },
-      { name: "CSS3" },
-      { name: "JavaScript" }
-    ],
+    stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
     industry: [{ name: "Portfolio" }],
     scope: [{ name: "Design" }, { name: "Development" }],
     image: "/assets/projects/rawaby.png",
@@ -90,7 +82,7 @@ const projects = [
       { name: "Tailwind CSS" },
     ],
     industry: [{ name: "Portfolio" }],
-    scope: [{ name: "Design" },{ name: "Development" }],
+    scope: [{ name: "Design" }, { name: "Development" }],
     image: "/assets/projects/swilam.png",
     live: "",
     github: "",
@@ -138,47 +130,14 @@ const page = () => {
             </Swiper>
           </div>
           <div className="w-full xl:w-[90%] flex flex-col order-2 xl:order-none">
-            <div className="flex flex-col gap-9 justify-around h-full">
-              <div className="xl:text-7xl text-5xl leading-none font-extrabold text-primary">
+            <div className="flex flex-col gap-9 justify-around  h-full">
+              <div className="xl:text-7xl text-5xl leading-none font-extrabold text-primary text-center">
                 {project.name}
               </div>
-              <p className="text-white/70 lg:w-[90%]">{project.description}</p>
-              <div className="flex sm:flex-row flex-col gap-9  lg:justify-between justify-around lg:w-[70%]">
-                <div className="gap-9 flex flex-col">
-                  <ul className="flex flex-col lg:flex-row gap-4">
-                    <p className="text-white/50">Stack:</p>
-                    {project.stack.map((item, index) => {
-                      return (
-                        <li key={index} className="text-xl text-sky-400">
-                          {item.name}
-                          {index !== project.stack.length - 1 && ","}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <ul className="flex flex-col lg:flex-row gap-4">
-                    <p className="text-white/50">Industry:</p>
-                    {project.industry.map((item, index) => {
-                      return (
-                        <li key={index} className="text-xl text-sky-400">
-                          {item.name}
-                          {index !== project.stack.length - 1 && ","}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <ul className="flex flex-col xl:flex-row gap-4">
-                    <p className="text-white/50">Scope of Work:</p>
-                    {project.scope.map((item, index) => {
-                      return (
-                        <li key={index} className="text-xl text-sky-400">
-                          {item.name}
-                          {index !== project.stack.length - 1 && ","}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+              <p className="text-white/70 lg:w-[90%] text-center">
+                {project.description}
+              </p>
+              <div className="flex sm:flex-row flex-col gap-9 lg:justify-between justify-around lg:w-[70%]">
                 <div className="gap-9 flex flex-col">
                   <p>
                     <span className="text-white/50">Client: </span>
@@ -192,6 +151,41 @@ const page = () => {
                     <span className="text-white/50">Category: </span>
                     {project.category}
                   </p>
+                </div>
+                <div className="gap-9 flex flex-col">
+                  <ul className="flex flex-wrap gap-4">
+                    <p className="text-white/50">Stack:</p>
+                    {project.stack.map((item, index) => {
+                      return (
+                        <li key={index} className="text-xl text-sky-400">
+                          {item.name}
+                          {index !== project.stack.length - 1 && ","}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <ul className="flex  flex-wrap gap-4">
+                    <p className="text-white/50">Industry:</p>
+                    {project.industry.map((item, index) => {
+                      return (
+                        <li key={index} className="text-xl text-sky-400">
+                          {item.name}
+                          {index !== project.stack.length - 1 && ","}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <ul className="flex flex-wrap gap-4">
+                    <p className="text-white/50">Scope of Work:</p>
+                    {project.scope.map((item, index) => {
+                      return (
+                        <li key={index} className="text-xl text-sky-400">
+                          {item.name}
+                          {index !== project.stack.length - 1 && ","}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               </div>
               <div className="border border-primary-foreground"></div>
