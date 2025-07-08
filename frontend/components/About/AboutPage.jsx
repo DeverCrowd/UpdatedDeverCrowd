@@ -55,7 +55,39 @@ const tests = [
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
 ];
-
+const vmcs = [
+  {
+    title: "Vision",
+    icon: "🌐",
+    desc: (
+      <>
+        At <span className="text-blue-500 font-semibold">DeverCrowd</span>, our
+        vision is to become the go-to digital partner for ambitious brands,
+        shaping the future of the web with innovation, creativity, and trust.
+      </>
+    ),
+  },
+  {
+    title: "Core Values",
+    icon: "💎",
+    desc: (
+      <>
+        Integrity, innovation, and teamwork fuel everything we do — guiding how
+        we work, deliver, and grow with our clients.
+      </>
+    ),
+  },
+  {
+    title: "Mission",
+    icon: "🚀",
+    desc: (
+      <>
+        We empower startups and businesses by building scalable, user-centric
+        solutions that transform ideas into real digital impact.
+      </>
+    ),
+  },
+];
 const AboutPage = ({ progress }) => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(progress, [0.55, 1], [1, 0.5]);
@@ -89,7 +121,6 @@ const AboutPage = ({ progress }) => {
         <motion.div
           initial={{ opacity: 0.5, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -97,66 +128,60 @@ const AboutPage = ({ progress }) => {
           }}
           className="flex flex-col items-center justify-center gap-5 "
         >
-          <h1 className="bg-gradient-to-br from-blue-300 to-blue-500 bg-clip-text text-transparent text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium tracking-tight">
+          <h1 className="text-center font-extrabold text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text tracking-tight leading-tight drop-shadow-[0_2px_20px_rgba(59,130,246,0.5)]">
             Who We Are?!
           </h1>
 
           <p
-            className="relative overflow-hidden rounded-2xl w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] text-md p-2 sm:text-xl md:text-2xl lg:text-3xl text-center"
+            className="relative bg-white/5 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 py-6 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light"
             style={{
               boxShadow: "9px 9px 10px 0px #1E3A8A",
               borderRadius: "0px 50px 0px 50px",
             }}
           >
-            At <span className="text-primary">DeverCrowd</span>, we empower
-            businesses with tailored digital solutions – from custom platforms
-            to seamless experiences – turning ideas into strong online brands.
-            We build lasting partnerships for digital growth.
+            At <span className="text-primary font-semibold">DeverCrowd</span>,
+            we're more than developers — we're partners in innovation. From
+            concept to code, we design and engineer seamless digital experiences
+            that grow with your business. Whether it's a product, platform, or
+            complete ecosystem — we make it real.
           </p>
         </motion.div>
       </LampContainer>
-      {/* Vision / Mission / Globe */}
+      {/* Vision / Mission / core value */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center z-1"
+        className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch z-10"
       >
-        {/* Vision */}
-        <div className="text-center flex flex-col items-center gap-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white border-t border-l border-r border-primary rounded-2xl p-3">
-            Vision
-          </h2>
-          <p className="border-b border-l border-r border-primary rounded-2xl p-5 text-base md:text-lg text-neutral-700 dark:text-neutral-200">
-            At <span className="text-primary">DeverCrowd</span>, our vision is
-            to become the go-to digital partner for ambitious brands, shaping
-            the future of the web with innovation, creativity, and trust.
-          </p>
-        </div>
+        {vmcs.map((item, i) => (
+          <div
+            key={i}
+            className="group relative flex flex-col items-center text-center rounded-3xl p-6 bg-gradient-to-b from-white/5 to-white/0 border border-blue-500/20 backdrop-blur-md overflow-hidden transition duration-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)]"
+          >
+            {/* Glow circle background */}
+            <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[120px] h-[120px] bg-blue-500/10 rounded-full blur-2xl group-hover:scale-110 transition" />
 
-        {/* core values */}
-        <div className="text-center flex flex-col items-center gap-4 ">
-          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white border-t border-l border-r border-primary rounded-2xl p-3">
-            Core Values
-          </h2>
-          <p className="border-b border-l border-r border-primary rounded-2xl p-5 text-base md:text-lg text-neutral-700 dark:text-neutral-200">
-            We believe in integrity, innovation, teamwork, and a relentless
-            pursuit of excellence. These values guide our mission and shape the
-            way we serve our clients and community.
-          </p>
-        </div>
-        {/* Mission */}
-        <div className="text-center flex flex-col items-center gap-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white border-t border-l border-r border-primary rounded-2xl p-3">
-            Mission
-          </h2>
-          <p className="border-b border-l border-r border-primary rounded-2xl p-5 text-base md:text-lg text-neutral-700 dark:text-neutral-200">
-            Our mission is to empower startups and businesses crafting scalable,
-            user-centric web solutions that transform ideas into real, impactful
-            digital experiences.
-          </p>
-        </div>
+            {/* Icon */}
+            <div className="relative z-10 w-14 h-14 mb-4 flex items-center justify-center rounded-full border border-blue-500/30 bg-white/10 text-blue-400 text-2xl shadow-lg backdrop-blur-sm group-hover:scale-105 transition">
+              {item.icon}
+            </div>
+
+            {/* Title */}
+            <h3 className="relative z-10 text-xl md:text-2xl font-semibold text-blue-300 tracking-wide mb-2">
+              {item.title}
+            </h3>
+
+            {/* Description */}
+            <p className="relative z-10 text-sm md:text-base text-white/70 leading-relaxed font-light tracking-wide">
+              {item.desc}
+            </p>
+
+            {/* Glow border bottom on hover */}
+            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-500/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+          </div>
+        ))}
       </motion.div>
 
       {/* <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center mt-15">

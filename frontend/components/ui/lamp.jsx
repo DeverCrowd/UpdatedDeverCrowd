@@ -79,7 +79,7 @@ export const LampContainer = ({ children, className }) => {
         <motion.div
           initial={{ width: "15rem" }}
           whileInView={{ width: "30rem" }}
-          viewport={{once:true}}
+          
           transition={{
             delay: 0.3,
             duration: 0.8,
