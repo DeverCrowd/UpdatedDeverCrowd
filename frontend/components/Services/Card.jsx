@@ -7,7 +7,7 @@ import {
 } from "motion/react";
 import { useEffect, useState } from "react";
 
-const Card = ({ icon, text, color, i, darkColor, progress }) => {
+const Card = ({ icon, text, color, i, darkColor, progress,title }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isLaptop, setIsLaptop] = useState(false);
@@ -51,7 +51,7 @@ const Card = ({ icon, text, color, i, darkColor, progress }) => {
     opacity = useTransform(
       x,
       [0, innerWidth / 2 + cardWidth / 2 - 100],
-      [0, 1.1]
+      [0, 1.2]
     );
     scale = useTransform(
       x,
@@ -66,8 +66,8 @@ const Card = ({ icon, text, color, i, darkColor, progress }) => {
         x: x ?? 0,
         scale,
         opacity,
-        backgroundImage: `linear-gradient(145deg, ${color}, ${darkColor})`,
-        boxShadow: `0px 20px 50px -10px ${color}, inset 0 0 20px -5px ${darkColor}`,
+        // backgroundImage: `linear-gradient(145deg, ${color}, ${darkColor})`,
+        boxShadow: `8px 8px 8px 0px ${color},  -8px -8px 8px 0px ${color}`,
         position: "sticky",
         top: isUnder24 ? 200 + i * 50 : 250,
         left: isUnder24 ? "0%" : 0,
@@ -76,8 +76,11 @@ const Card = ({ icon, text, color, i, darkColor, progress }) => {
         height: cardHeight,
         
       }}
-      className="rounded-[2rem] p-6 lg:p-8 flex flex-col items-center justify-center border border-white/10 backdrop-blur-md hover:scale-105 hover:shadow-[0_0_60px_0px_rgba(12,69,160,0.5)] m-50 lg:m-0"
+      className="rounded-[2rem] p-6 lg:p-8 flex flex-col items-center justify-around border border-primary backdrop-blur-3xl bg-[radial-gradient(circle_at_center,_#0A0F2C,_#000000)] m-50 lg:m-0"
     >
+      <h1 className="text-2xl font-extrabold">
+        {title}
+      </h1>
       <div className="h-[20%] text-[3rem] sm:text-[4rem] text-white/90 mb-2">
         {icon()}
       </div>

@@ -54,22 +54,26 @@ const cards = [
   {
     color: "#3B82F6",
     darkColor: "#0a010d",
+    title:"Design",
     icon: designIcon,
     text: "We craft stunning visuals and intuitive user experiences that bring your ideas to life. Eye-catching, strategic, and always user-focused.",
   },
-  {
+  {    title:"Development",
+
     color: "#3B82F6",
     darkColor: "#0a010d",
     icon: developmentIcon,
     text: "From responsive websites to powerful platforms — we build fast, scalable, and clean solutions tailored to your business goals.",
   },
-  {
+  {    title:"Security",
+
     icon: cyberIcon,
     color: "#3B82F6",
     darkColor: "#0a010d",
     text: "Your digital safety is our priority. We protect your systems against threats with strong, up-to-date security measures.",
   },
-  {
+  {    title:"Support",
+
     icon: supportIcon,
     color: "#3B82F6",
     darkColor: "#0a010d",
@@ -147,6 +151,7 @@ const ServicesPage = ({ progress }) => {
                 icon={card.icon}
                 text={card.text}
                 color={card.color}
+                title={card.title}
                 i={i}
                 darkColor={card.darkColor}
                 progress={scrollYProgress}
