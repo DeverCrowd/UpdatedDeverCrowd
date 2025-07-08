@@ -31,27 +31,27 @@ import TestCard from "./TestCard";
 const tests = [
   {
     name: "swilam",
-    image: "/assets/user.png",
+    image: "/icons/user.png",
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
-    image: "/assets/user.png",
+    image: "/icons/user.png",
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
-    image: "/assets/user.png",
+    image: "/icons/user.png",
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
-    image: "/assets/user.png",
+    image: "/icons/user.png",
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
-    image: "/assets/user.png",
+    image: "/icons/user.png",
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
 ];
