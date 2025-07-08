@@ -192,11 +192,13 @@ const AboutPage = ({ progress }) => {
           }}
           breakpoints={{
             768: {
-              slidesPerView: 3,
-              spaceBetween: 25,
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 4,
             },
           }}
-          slidesPerView={2}
+          slidesPerView={1}
           className="h-[300px] rounded-3xl p-9"
         >
           {tests.map((test, i) => (

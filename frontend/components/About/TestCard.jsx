@@ -3,19 +3,33 @@ import Image from "next/image";
 
 const TestCard = ({ name, image, test }) => {
   return (
-    <div className="shadow-lg transition-shadow duration-400 hover:shadow-xl shadow-primary flex flex-col items-center justify-center gap-4 border p-4 size-full rounded-3xl group ">
-      <div className="flex items-center justify-center gap-4 ">
-        <Image
-          width={50}
-          height={57}
-          src={image}
-          alt="image"
-          className="rounded-full object-cover"
-        />
-        <h1 className=" text-white/50 text-lg lg:text-base capitalize items-center justify-center flex group-hover:text-primary transition duration-300">{name}</h1>
+    <div className="flex flex-col items-center justify-between text-center bg-[#0f172a]/60 border border-[#1e3a8a]/30 rounded-3xl p-6 shadow-lg max-w-md mx-auto ">
+      <div className="flex items-center gap-4 mb-5">
+        <div className="w-[60px] h-[60px] rounded-full overflow-hidden border-2 border-blue-500 shadow-md">
+          <Image
+            src={image}
+            alt={name}
+            width={60}
+            height={60}
+            className="object-cover w-full h-full"
+          />
+        </div>
+        <h1 className="text-white text-lg font-medium tracking-wide capitalize group-hover:text-blue-400 transition-colors duration-300">
+          {name}
+        </h1>
       </div>
-      <div className="border w-[90%] flex items-center justify-center" />
-      <p className="flex items-center justify-center text-center text-white/50 group-hover:text-white transition duration-300 2xs:text-xs lg:text-base">{test}</p>
+
+      <div className="relative text-white/80 text-sm md:text-base font-light leading-relaxed bg-white/5 border border-white/10 p-4 rounded-xl shadow-inner backdrop-blur-2xl">
+        <span className="absolute top-[-10px] left-[-10px] text-blue-500 text-4xl font-bold opacity-20">
+          “
+        </span>
+        <p className="relative z-10">{test}</p>
+        <span className="absolute bottom-[-10px] right-[-10px] text-blue-500 text-4xl font-bold opacity-20">
+          ”
+        </span>
+      </div>
+
+      <div className="mt-6 h-[2px] w-1/3 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent rounded-full" />
     </div>
   );
 };
