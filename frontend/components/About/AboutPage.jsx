@@ -96,6 +96,7 @@ const AboutPage = ({ progress }) => {
         <motion.div
           initial={{ opacity: 0.5, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{once:true}}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -122,14 +123,15 @@ const AboutPage = ({ progress }) => {
         </motion.div>
       </LampContainer>
       {/* Vision / Mission / Globe */}
-      <div className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center z-1">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{once:true}}
+        transition={{ duration: 1 }}
+        className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center z-1"
+      >
         {/* Vision */}
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center flex flex-col items-center gap-4"
-        >
+        <div className="text-center flex flex-col items-center gap-4">
           <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white border-t border-l border-r border-primary rounded-2xl p-3">
             Vision
           </h2>
@@ -138,15 +140,10 @@ const AboutPage = ({ progress }) => {
             to become the go-to digital partner for ambitious brands, shaping
             the future of the web with innovation, creativity, and trust.
           </p>
-        </motion.div>
+        </div>
 
         {/* core values */}
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center flex flex-col items-center gap-4 "
-        >
+        <div className="text-center flex flex-col items-center gap-4 ">
           <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white border-t border-l border-r border-primary rounded-2xl p-3">
             Core Values
           </h2>
@@ -155,14 +152,9 @@ const AboutPage = ({ progress }) => {
             pursuit of excellence. These values guide our mission and shape the
             way we serve our clients and community.
           </p>
-        </motion.div>
+        </div>
         {/* Mission */}
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center flex flex-col items-center gap-4"
-        >
+        <div className="text-center flex flex-col items-center gap-4">
           <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white border-t border-l border-r border-primary rounded-2xl p-3">
             Mission
           </h2>
@@ -171,8 +163,8 @@ const AboutPage = ({ progress }) => {
             user-centric web solutions that transform ideas into real, impactful
             digital experiences.
           </p>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
 
       {/* <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center">
         <H1 title="what client said" />

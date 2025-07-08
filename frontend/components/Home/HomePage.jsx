@@ -32,7 +32,7 @@ const HomePage = ({ progress }) => {
   }, []);
   return (
     <motion.section
-      style={{ scale, boxShadow: `0px 0px 30px 0px #1E3A8A`, borderRadius }}
+      style={{ scale, boxShadow: `0px 0px 30px 0px #1E3A8A` }}
       id="home"
       className="top-0 flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-10 sticky rounded-4xl"
     >
