@@ -54,30 +54,33 @@ const cards = [
   {
     color: "#3B82F6",
     darkColor: "#0a010d",
-    title:"Design",
+    title: "Design",
     icon: designIcon,
-    text: "We craft stunning visuals and intuitive user experiences that bring your ideas to life. Eye-catching, strategic, and always user-focused.",
+    text: "Turn ideas into interfaces that wow. We design sleek, modern visuals that grab attention, build trust, and keep users coming back.",
   },
-  {    title:"Development",
+  {
+    title: "Development",
 
     color: "#3B82F6",
     darkColor: "#0a010d",
     icon: developmentIcon,
-    text: "From responsive websites to powerful platforms — we build fast, scalable, and clean solutions tailored to your business goals.",
+    text: "We build blazing-fast, scalable websites and platforms that work flawlessly — helping you grow, sell, and succeed online.",
   },
-  {    title:"Security",
+  {
+    title: "Security",
 
     icon: cyberIcon,
     color: "#3B82F6",
     darkColor: "#0a010d",
-    text: "Your digital safety is our priority. We protect your systems against threats with strong, up-to-date security measures.",
+    text: "Sleep easy — your platform is protected. We secure your data, block threats, and ensure your users always feel safe.",
   },
-  {    title:"Support",
+  {
+    title: "Support",
 
     icon: supportIcon,
     color: "#3B82F6",
     darkColor: "#0a010d",
-    text: "We’re with you beyond launch — offering reliable support, quick fixes, and continuous improvements whenever you need us.",
+    text: "We're your tech partner, not just your developers. Get quick fixes, updates, and ongoing guidance to keep your platform running perfectly.",
   },
 ];
 const ServicesPage = ({ progress }) => {

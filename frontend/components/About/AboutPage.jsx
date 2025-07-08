@@ -62,7 +62,7 @@ const AboutPage = ({ progress }) => {
   const borderRadius = useTransform(progress, [0.55, 1], ["0px", "500px"]);
   return (
     <motion.section
-      className="flex flex-col items-center justify-center w-full min-h-[100vh] backdrop-blur-3xl z-20 relative top-0 py-9"
+      className="flex flex-col items-center justify-center w-full min-h-[100vh] backdrop-blur-3xl z-20 relative top-0 py-20"
       id="about"
     >
       <Spotlight />
