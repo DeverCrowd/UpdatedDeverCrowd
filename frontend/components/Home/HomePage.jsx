@@ -6,11 +6,12 @@ import { motion, useScroll, useTransform } from "motion/react";
 import Particles from "../ui/Particles";
 import CountUp from "../ui/CountUp";
 import H1 from "../ui/H1";
+import Image from "next/image";
 
 const HomePage = ({ progress }) => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(progress, [0, 0.5], [1, 0.5]);
-  const borderRadius = useTransform(progress, [0, 0.5], ["0px", "150px"]);
+  const borderRadius = useTransform(progress, [0, 0.5], ["0px", "1000px"]);
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isLaptop, setIsLaptop] = useState(false);
@@ -35,6 +36,13 @@ const HomePage = ({ progress }) => {
       id="home"
       className="top-0 flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-10 sticky rounded-4xl"
     >
+      <Image
+        src="/assets/bgs/bg13.jpg"
+        fill
+        quality={100}
+        alt="bg"
+        className="object-cover sticky top-0 z-0"
+      />
       {/* Background Particles */}
       <div className="absolute inset-0">
         <Particles
@@ -49,7 +57,7 @@ const HomePage = ({ progress }) => {
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center w-full gap-9 sm:p-16 p-4">
+      <div className="flex flex-col items-center justify-center w-full gap-9 sm:p-16 p-4 z-1">
         <h1 className="text-white lg:text-6xl text-3xl font-extrabold text-center xl:w-[60%] w-[100%]">
           Grow <span className="text-primary">Faster</span> With Smarter Digital
           Products
@@ -60,52 +68,35 @@ const HomePage = ({ progress }) => {
         </p>
         <div className="border border-primary w-full lg:w-[50%]"></div>
         {/* Achievements */}
-        <div className="lg:w-[40%] w-full flex items-center justify-center">
-          <div className="flex items-center justify-between gap-5 text-xs sm:text-lg w-full h-full">
-            <div className="flex flex-col items-center justify-center gap-4 border-b p-5 rounded-full border-primary w-1/5">
-              <h1 className="z-1">Projects</h1>
-              <CountUp
-                from={0}
-                to={11}
-                separator=","
-                direction="up"
-                duration={1}
-                className="text-3xl z-1"
-              />
-            </div>
-            <div className="flex flex-col items-center justify-center gap-4 border-b p-5 rounded-full border-primary w-1/5">
-              <h1 className="z-1">Customers</h1>
-              <CountUp
-                from={0}
-                to={9}
-                separator=","
-                direction="up"
-                duration={1}
-                className="text-3xl z-1"
-              />
-            </div>
-            <div className="flex flex-col items-center justify-center gap-4 border-b p-5 rounded-full border-primary w-1/5">
-              <h1 className="z-1">Experience</h1>
-              <CountUp
-                from={0}
-                to={5}
-                separator=","
-                direction="up"
-                duration={1}
-                className="text-3xl z-1"
-              />
-            </div>
-            <div className="flex flex-col items-center justify-center gap-4 border-b p-5 rounded-full border-primary w-1/5">
-              <h1 className="z-1">Industry</h1>
-              <CountUp
-                from={0}
-                to={3}
-                separator=","
-                direction="up"
-                duration={1}
-                className="text-3xl z-1"
-              />
-            </div>
+        <div className="lg:w-[50%] w-full flex items-center justify-center">
+          <div className="flex flex-wrap items-center justify-between gap-6 text-sm sm:text-base w-full h-full">
+            {[
+              { to: 11, label: "Projects" },
+              { to: 9, label: "Customer" },
+              { to: 5, label: "Experience" },
+              { to: 3, label: "Industry" },
+            ].map(({ to, label }, i) => (
+              <div
+                key={i}
+                className="flex flex-col items-center justify-center gap-2 sm:gap-3 w-[45%] sm:w-[22%] bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 shadow-md hover:shadow-lg hover:scale-[1.03] transition-all duration-300"
+              >
+                <span className="text-white/70 text-sm sm:text-base tracking-wide">
+                  {label}
+                </span>
+                <CountUp
+                  from={0}
+                  to={to}
+                  duration={1.5}
+                  separator=","
+                  className="text-2xl sm:text-4xl font-bold text-[#0c9aff]"
+                />
+                {label == "Experience" && (
+                  <p className="absolute bottom-5 right-10 text-white/50">
+                    yrs
+                  </p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
         <Link

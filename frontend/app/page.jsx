@@ -29,11 +29,18 @@ export default function Main() {
   const { scrollYProgress } = useScroll();
   // useMotionValueEvent(scrollYProgress,'change',(v)=>{console.log(v);})
   return (
-    <main className="bg-[#00000]">
-      <HomePage progress = {scrollYProgress}/>
-      <AboutPage  progress = {scrollYProgress}/>
-      <ServicesPage  progress = {scrollYProgress}/>
-      <ContactPage/>
+    <main className="">
+      <div
+        className="fixed inset-0 -z-10 bg-no-repeat bg-cover bg-center"
+        style={{
+          backgroundImage: `url('/assets/bgs/bg13.jpg')`,
+          backgroundAttachment: "fixed",
+        }}
+      />
+      <HomePage progress={scrollYProgress} />
+      <AboutPage progress={scrollYProgress} />
+      <ServicesPage progress={scrollYProgress} />
+      <ContactPage />
     </main>
   );
 }

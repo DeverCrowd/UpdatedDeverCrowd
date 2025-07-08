@@ -13,6 +13,7 @@ import { BsShieldLockFill } from "react-icons/bs";
 import { FaHandsHelping } from "react-icons/fa";
 import Cube from "../Home/Cube";
 import H1 from "../ui/H1";
+import Image from "next/image";
 
 const cyberIcon = () => {
   return <BsShieldLockFill />;
@@ -118,7 +119,7 @@ const ServicesPage = ({ progress }) => {
 
   return (
     <motion.section
-      style={{borderRadius, scale, boxShadow: `0px 0px 30px 0px #3B82F6` }}
+      style={{ borderRadius, scale, boxShadow: `0px 15px 30px 0px #3B82F6` }}
       ref={section}
       className="flex flex-col justify-start w-full h-[400vh] lg:h-[600vh] backdrop-blur-2xl z-30 relative top-0 "
       id="services"

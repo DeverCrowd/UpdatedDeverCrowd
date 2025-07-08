@@ -28,7 +28,7 @@ const projects = [
     industry: [{ name: "Markting" }],
     scope: [{ name: "Design" }, { name: "Development" }],
     image: "/assets/projects/influcrowd.png",
-    live: "",
+    live: "https://mohamedhamad1.github.io/InfluCrowd/#hero",
     github: "",
   },
   {
@@ -43,11 +43,11 @@ const projects = [
     industry: [{ name: "Portfolio" }],
     scope: [{ name: "Design" }, { name: "Development" }],
     image: "/assets/projects/rawaby.png",
-    live: "",
+    live: "https://devercrowd.github.io/Rawaby/",
     github: "",
   },
   {
-    turnaround: "1 Week",
+    turnaround: "UNDER DEVELOPMENT",
     client: "CodeCrowd",
     name: "CodeCrowd",
     category: "Full Web",
@@ -69,7 +69,7 @@ const projects = [
     github: "",
   },
   {
-    turnaround: "1 Week",
+    turnaround: "UNDER DEVELOPMENT",
     client: "Mohamed Hamad",
     name: "Swilam Portfolio",
     category: "Frontend",
@@ -97,100 +97,111 @@ const page = () => {
     setProject(projects[currentIndex]);
   };
   return (
-    <section className="min-h-[100vh] flex flex-col justify-center py-20 xl:py-3 mr-3 ml-3">
-      <div className="xl:w-[100%] xl:p-10">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[30%] ">
-            <Swiper
-              spaceBetween={30}
-              slidesPerView={1}
-              className="xl:h-[520px]"
-              onSlideChange={handleSlideChange}
-            >
-              {projects.map((project, index) => {
-                return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[260px] xl:h-[460px] relative group flex justify-center items-center bg-accent border-b border-sky-950 rounded-3xl">
-                      <div className="relative w-full h-full rounded-3xl">
-                        <Image
-                          src={project.image}
-                          fill
-                          className="object-cover rounded-3xl "
-                          alt={project.title}
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-              <WorkSliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none p-2"
-                btnStyles="bg-primary hover:primary-foreground text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
-              />
-            </Swiper>
-          </div>
-          <div className="w-full xl:w-[90%] flex flex-col order-2 xl:order-none">
-            <div className="flex flex-col gap-9 justify-around  h-full">
-              <div className="xl:text-7xl text-5xl leading-none font-extrabold text-primary text-center">
-                {project.name}
-              </div>
-              <p className="text-white/70 lg:w-[90%] text-center">
-                {project.description}
-              </p>
-              <div className="flex sm:flex-row flex-col gap-9 lg:justify-between justify-around lg:w-[70%]">
-                <div className="gap-9 flex flex-col">
-                  <p>
-                    <span className="text-white/50">Client: </span>
-                    {project.client}
-                  </p>
-                  <p>
-                    <span className="text-white/50">Turnaround: </span>
-                    {project.turnaround}
-                  </p>
-                  <p>
-                    <span className="text-white/50">Category: </span>
-                    {project.category}
-                  </p>
+    <section className="min-h-screen px-4 xl:px-20 py-20 text-white bg-[url('/assets/bgs/bg15.jpg')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-gradient-to-br from-[#0c45a0]/90 to-[#091d3a]/90">
+      <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row gap-12 items-start">
+        {/* Slider Section */}
+        <div className="w-full xl:w-[35%] relative">
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={1}
+            className="xl:h-[250px] rounded-3xl"
+            onSlideChange={handleSlideChange}
+          >
+            {projects.map((project, index) => (
+              <SwiperSlide key={index}>
+                <div className="relative group h-[300px] xl:h-full rounded-3xl overflow-hidden shadow-lg">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105 duration-500"
+                  />
                 </div>
-                <div className="gap-9 flex flex-col">
-                  <ul className="flex flex-wrap gap-4">
-                    <p className="text-white/50">Stack:</p>
-                    {project.stack.map((item, index) => {
-                      return (
-                        <li key={index} className="text-xl text-sky-400">
-                          {item.name}
-                          {index !== project.stack.length - 1 && ","}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <ul className="flex  flex-wrap gap-4">
-                    <p className="text-white/50">Industry:</p>
-                    {project.industry.map((item, index) => {
-                      return (
-                        <li key={index} className="text-xl text-sky-400">
-                          {item.name}
-                          {index !== project.stack.length - 1 && ","}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  <ul className="flex flex-wrap gap-4">
-                    <p className="text-white/50">Scope of Work:</p>
-                    {project.scope.map((item, index) => {
-                      return (
-                        <li key={index} className="text-xl text-sky-400">
-                          {item.name}
-                          {index !== project.stack.length - 1 && ","}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
+              </SwiperSlide>
+            ))}
+            <WorkSliderBtns
+              containerStyles="absolute bottom-4 right-4 flex gap-2 z-10"
+              btnStyles="bg-white/10 hover:bg-[#0c45a0] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all"
+            />
+          </Swiper>
+          <Link
+          style={{display:project.live?"block":"none"}}
+            href={project.live}
+            target="_blank"
+            className="mt-6 inline-block px-6 py-3 bg-[#0c45a0] hover:bg-[#1860d0] text-white rounded-xl text-lg font-semibold shadow-lg transition-all w-fit"
+          >
+            Visit Project ↗
+          </Link>
+        </div>
+
+        {/* Details Section */}
+        <div className="w-full xl:w-[65%] flex flex-col gap-8">
+          <h2 className="text-4xl xl:text-6xl font-extrabold text-[#0c45a0] tracking-tight text-center xl:text-left">
+            {project.name}
+          </h2>
+
+          <p className="text-sky-100 leading-relaxed text-center xl:text-left">
+            {project.description}
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow">
+              <p className="text-white/60 text-sm mb-1">Client</p>
+              <p className="text-white font-medium">{project.client}</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow">
+              <p className="text-white/60 text-sm mb-1">Turnaround</p>
+              <p className="text-white font-medium">{project.turnaround}</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow">
+              <p className="text-white/60 text-sm mb-1">Category</p>
+              <p className="text-white font-medium">{project.category}</p>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow col-span-1 md:col-span-3">
+              <p className="text-white/60 text-sm mb-2">Stack</p>
+              <div className="flex flex-wrap gap-2">
+                {project.stack.map((item, index) => (
+                  <span
+                    key={index}
+                    className="bg-[#0c45a0]/20 text-sky-300 px-3 py-1 rounded-full text-sm"
+                  >
+                    {item.name}
+                  </span>
+                ))}
               </div>
-              <div className="border border-primary-foreground"></div>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow col-span-1 md:col-span-3">
+              <p className="text-white/60 text-sm mb-2">Industry</p>
+              <div className="flex flex-wrap gap-2">
+                {project.industry.map((item, index) => (
+                  <span
+                    key={index}
+                    className="bg-[#0c45a0]/20 text-sky-300 px-3 py-1 rounded-full text-sm"
+                  >
+                    {item.name}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow col-span-1 md:col-span-3">
+              <p className="text-white/60 text-sm mb-2">Scope of Work</p>
+              <div className="flex flex-wrap gap-2">
+                {project.scope.map((item, index) => (
+                  <span
+                    key={index}
+                    className="bg-[#0c45a0]/20 text-sky-300 px-3 py-1 rounded-full text-sm"
+                  >
+                    {item.name}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
+
+          <div className="border-t border-sky-800 pt-4"></div>
         </div>
       </div>
     </section>

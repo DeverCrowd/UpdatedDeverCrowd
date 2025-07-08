@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FiSend, FiCheckCircle } from "react-icons/fi";
 import H1 from "../ui/H1";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const [form, setForm] = useState({
@@ -80,131 +81,140 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form w-full sm:w-[90%] md:w-[90%] mx-auto ">
-      <H1 title="Get in touch" />
-      <div className="card w-full bg-cardColor py-6 px-6 sm:px-8 md:px-10 lg:px-12 rounded-2xl ">
-        <h1 className="text-xl sm:text-2xl pb-3 text-primary">
-          Send a Message
-        </h1>
-        <p className="text-white/60 text-sm sm:text-base">
+    <motion.div
+      className="contact-form w-full mx-auto"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+
+      <motion.div
+        className="card w-full backdrop-blur-3xl bg-gradient-to-br from-[#0a0f1ca1] to-[#0c1e3b] py-8 px-6 sm:px-10 md:px-12 rounded-4xl shadow-[0_8px_24px_rgba(0,0,0,0.6)] borde border-sky-900/40"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
+        >
+        <H1 title="Get in touch" />
+      
+        <p className="text-sky-200 text-sm sm:text-base max-w-md">
           Fill out the form and we’ll get back to you shortly.
         </p>
 
         {success && (
-          <div className="mt-6 bg-black/70 border border-primary text-primary py-3 px-5 rounded-xl text-sm flex items-center gap-3 shadow-md transition-all duration-300">
-            <FiCheckCircle className="text-primary text-xl" />
+          <motion.div
+            className="mt-6 bg-[#0c1e3b]/80 border border-sky-500 text-sky-400 py-3 px-5 rounded-xl text-sm flex items-center gap-3 shadow-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+          >
+            <FiCheckCircle className="text-xl" />
             <span className="font-medium tracking-wide">
               Message sent successfully!
             </span>
-          </div>
+          </motion.div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-5 pt-8">
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="w-full">
-              <label className="block text-white/70 text-sm mb-1">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-xl border border-white/10 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-              />
-              {errors.name && (
-                <p className="text-red-500 text-xs mt-1">{errors.name}</p>
-              )}
-            </div>
-
-            <div className="w-full">
-              <label className="block text-white/70 text-sm mb-1">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-xl border border-white/10 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-xs mt-1">{errors.email}</p>
-              )}
-            </div>
+        <form onSubmit={handleSubmit} className="space-y-6 pt-10">
+          <div className="flex flex-col md:flex-row md:gap-6">
+            {["name", "email"].map((field, index) => (
+              <motion.div
+                key={field}
+                className="w-full"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <label className="text-sky-200 text-sm mb-1 block">
+                  {field.charAt(0).toUpperCase() + field.slice(1)}
+                </label>
+                <input
+                  type={field === "email" ? "email" : "text"}
+                  name={field}
+                  value={form[field]}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-sky-800 bg-transparent text-white placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                />
+                {errors[field] && (
+                  <p className="text-red-500 text-xs mt-1">{errors[field]}</p>
+                )}
+              </motion.div>
+            ))}
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="w-full">
-              <label className="block text-white/70 text-sm mb-1">
-                Company
-              </label>
-              <input
-                type="text"
-                name="company"
-                value={form.company}
-                onChange={handleChange}
-                className="w-full px-4 py-2 rounded-xl border border-white/10 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-              />
-            </div>
-
-            <div className="w-full">
-              <label className="block text-white/70 text-sm mb-1">Phone</label>
-              <input
-                type="tel"
-                name="phone"
-                value={form.phone}
-                onChange={handleChange}
-                onKeyDown={(e) => {
-                  const allowedKeys = [
-                    "Backspace",
-                    "ArrowLeft",
-                    "ArrowRight",
-                    "Tab",
-                    "Delete",
-                    "+",
-                  ];
-                  if (!/[0-9]/.test(e.key) && !allowedKeys.includes(e.key)) {
-                    e.preventDefault();
-                  }
-                }}
-                className="w-full px-4 py-2 rounded-xl border border-white/10 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all"
-              />
-              {errors.phone && (
-                <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
-              )}
-            </div>
+          <div className="flex flex-col md:flex-row md:gap-6">
+            {["company", "phone"].map((field, index) => (
+              <motion.div
+                key={field}
+                className="w-full"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <label className="text-sky-200 text-sm mb-1 block">
+                  {field.charAt(0).toUpperCase() + field.slice(1)}
+                </label>
+                <input
+                  type={field === "phone" ? "tel" : "text"}
+                  name={field}
+                  value={form[field]}
+                  onChange={handleChange}
+                  onKeyDown={field === "phone" ? (e) => {
+                    const allowedKeys = ["Backspace", "ArrowLeft", "ArrowRight", "Tab", "Delete", "+"];
+                    if (!/[0-9]/.test(e.key) && !allowedKeys.includes(e.key)) {
+                      e.preventDefault();
+                    }
+                  } : undefined}
+                  className="w-full px-4 py-3 rounded-xl border border-sky-800 bg-transparent text-white placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                />
+                {errors[field] && (
+                  <p className="text-red-500 text-xs mt-1">{errors[field]}</p>
+                )}
+              </motion.div>
+            ))}
           </div>
 
-          <div>
-            <label className="block text-white/70 text-sm mb-1">Message</label>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <label className="text-sky-200 text-sm mb-1 block">Message</label>
             <textarea
               name="message"
-              rows="4"
+              rows="5"
               value={form.message}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-xl border border-white/10 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"
+              className="w-full px-4 py-3 rounded-xl border border-sky-800 bg-transparent text-white placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none"
             ></textarea>
             {errors.message && (
               <p className="text-red-500 text-xs mt-1">{errors.message}</p>
             )}
-          </div>
+          </motion.div>
 
-          <button
+          <motion.button
             type="submit"
-            className="w-full py-3 bg-primary hover:bg-primary/80 cursor-pointer transition-all duration-300 rounded-xl text-white font-semibold tracking-wide flex items-center justify-center gap-2 disabled:opacity-50"
+            className="w-full py-3 bg-sky-600 hover:bg-sky-500 transition-all duration-300 rounded-xl text-white font-semibold tracking-wide flex items-center justify-center gap-2 disabled:opacity-50"
             disabled={loading}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
             {loading ? (
-              <span className="flex items-center gap-2 animate-pulse">
-                Sending...
-              </span>
+              <span className="flex items-center gap-2 animate-pulse">Sending...</span>
             ) : (
               <>
                 <span>Send Message</span>
                 <FiSend className="text-lg" />
               </>
             )}
-          </button>
+          </motion.button>
         </form>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

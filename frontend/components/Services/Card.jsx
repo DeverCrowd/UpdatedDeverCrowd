@@ -33,46 +33,20 @@ const Card = ({ icon, text, color, i, darkColor, progress }) => {
 
   let x = null;
   let y = null;
-  let opacity;
-  let scale;
+  let opacity = null;
+  let scale = null;
+  let rotateX = 0;
   const step = 0.25;
   const range = 0.1;
   if (isUnder24) {
-    // x = useTransform(
-    //   progress,
-    //   [i * step, i * step + range],
-    //   [0, innerWidth - cardWidth - 1]
-    // );
-    // opacity = useTransform(
-    //   x,
-    //   [0, (innerWidth - cardWidth - 1) / 2, innerWidth - cardWidth - 1],
-    //   [0, 1, 0]
-    // );
-    // scale = useTransform(
-    //   x,
-    //   [0, (innerWidth - cardWidth - 1) / 2, innerWidth - cardWidth - 1],
-    //   [0.5, 1, 0.5]
-    // );
-    y = useTransform(
-      progress,
-      [i * step, i * step + range],
-      [0, (innerWidth - cardWidth - 1)]
-    );
-    opacity = useTransform(
-      progress,
-      [i * step, i * step + range],
-      [1, 1]
-    );
-    scale = useTransform(
-      progress,
-      [i * step,1],
-      [1, 1 - (4 - i) * 0.1]
-    );
+    opacity = useTransform(progress, [i * step, i * step + range], [1, 1]);
+    scale = useTransform(progress, [i * step, 1], [1, 1 - (4 - i) * 0.1]);
+    rotateX = useTransform(progress, [i * step, 1], [0, 1 - (4 - i) * 15]);
   } else {
     x = useTransform(
       progress,
       [(i + 1) * 0.201, (i + 1) * 0.25],
-      [0, innerWidth / 2 + cardWidth / 2 - 50 - i * 20]
+      [0, (innerWidth - cardWidth - 100 )  - i * 20]
     );
     opacity = useTransform(
       x,
@@ -89,23 +63,28 @@ const Card = ({ icon, text, color, i, darkColor, progress }) => {
   return (
     <motion.div
       style={{
-        x: x ? x : 0,
+        x: x ?? 0,
         scale,
         opacity,
-        backgroundImage: `linear-gradient(0deg, ${color}, ${darkColor})`,
-        boxShadow: `0px 0px 15px 0px ${color}`,
+        rotateX,
+        backgroundImage: `linear-gradient(145deg, ${color}, ${darkColor})`,
+        boxShadow: `0px 20px 50px -10px ${color}, inset 0 0 20px -5px ${darkColor}`,
         position: "sticky",
-        top: isUnder24?200+i*50:250,
-        left: isUnder24?"0%":0,
+        top: isUnder24 ? 200 + i * 50 : 250,
+        left: isUnder24 ? "0%" : 0,
         zIndex: isUnder24 ? i + 50 : i,
         width: cardWidth,
         height: cardHeight,
       }}
-      className="rounded-4xl flex flex-col items-center justify-center shadow-xl m-50 lg:m-0"
+      className="rounded-[2rem] p-6 lg:p-8 flex flex-col items-center justify-center border border-white/10 backdrop-blur-md hover:scale-105 hover:shadow-[0_0_60px_0px_rgba(12,69,160,0.5)]"
     >
-      <div className=" h-[20%] text-7xl flex ">{icon()}</div>
+      <div className="h-[20%] text-[3rem] sm:text-[4rem] text-white/90 mb-2">
+        {icon()}
+      </div>
 
-      <p className="text-center p-4">{text}</p>
+      <p className="text-center text-white/80 text-sm sm:text-base px-2 leading-relaxed">
+        {text}
+      </p>
     </motion.div>
   );
 };

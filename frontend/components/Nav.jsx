@@ -21,31 +21,17 @@ const Nav = () => {
           <Logo width={96} height={32} />
         </Link>
 
-        <Link className="flex relative" href="/#about">
-          <div
-            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 border-l border-r px-3 border-primary hover:shadow-md shadow-primary`}
-          >
-            {/* <FaRegQuestionCircle className="text-xl" /> */}
-            About
-          </div>
-        </Link>
-        <Link className="flex relative" href="/#services">
-          <div
-            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 border-l border-r px-3 border-primary hover:shadow-md shadow-primary`}
-          >
-            {/* <FaRegQuestionCircle className="text-xl" /> */}
-            Services
-          </div>
-        </Link>
-
-        <Link className="flex relative" href="/works">
-          <div
-            className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 border-l border-r px-3 border-primary hover:shadow-md shadow-primary`}
-          >
-            {/* <FaFolderOpen className="text-xl" /> */}
-            Works
-          </div>
-        </Link>
+        {[
+          { href: "/#about", label: "About" },
+          { href: "/#services", label: "Services" },
+          { href: "/works", label: "Works" },
+        ].map(({ href, label }, i) => (
+          <Link key={i} className="flex relative" href={href}>
+            <div className="hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 border-l border-r px-3 border-primary hover:shadow-md shadow-primary">
+              {label}
+            </div>
+          </Link>
+        ))}
         <Link className="flex relative" href="/#contact">
           <div
             className={`hover:border-primary text-center rounded-full hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2`}
