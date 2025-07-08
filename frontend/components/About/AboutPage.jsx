@@ -133,7 +133,7 @@ const AboutPage = ({ progress }) => {
           </h1>
 
           <p
-            className="relative bg-white/5 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 py-6 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light"
+            className="relative bg-white/2 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 py-6 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light"
             style={{
               boxShadow: "9px 9px 10px 0px #1E3A8A",
               borderRadius: "0px 50px 0px 50px",
