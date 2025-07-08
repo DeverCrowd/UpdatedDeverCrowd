@@ -18,7 +18,7 @@ const AutoScroll = ({ tests }) => {
   const xTranslation = useMotionValue(0);
   useEffect(() => {
     let controls;
-    let finalPosition = -width / 2 - 40;
+    let finalPosition = -width / 2 - 20;
     controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
       ease: "linear",
       duration: 25,

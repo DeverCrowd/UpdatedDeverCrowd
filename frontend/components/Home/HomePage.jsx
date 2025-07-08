@@ -91,8 +91,8 @@ const HomePage = ({ progress }) => {
                   className="text-2xl sm:text-4xl font-bold text-[#0c9aff]"
                 />
                 {label == "Experience" && (
-                  <p className="absolute bottom-5 right-10 text-white/50">
-                    yrs
+                  <p className="absolute bottom-5 right-5 text-white/50">
+                    Yrs
                   </p>
                 )}
               </div>

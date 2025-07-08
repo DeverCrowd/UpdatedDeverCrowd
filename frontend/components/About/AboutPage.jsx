@@ -7,66 +7,59 @@ import { SlScreenDesktop } from "react-icons/sl";
 import { FaUsers } from "react-icons/fa6";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
 import AutoScroll from "../About/AutoScroll";
-
 import H1 from "../ui/H1";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import {
+  Autoplay,
+  EffectCoverflow,
+  EffectCube,
+  EffectFade,
+  EffectFlip,
+  Navigation,
+  Pagination,
+  FreeMode,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import "swiper/css/effect-cube";
+import "swiper/css/effect-coverflow";
+import "swiper/css/effect-flip";
+import TestCard from "./TestCard";
 
 const tests = [
   {
     name: "swilam",
     image: "/assets/user.png",
-    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
+    test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
     image: "/assets/user.png",
-    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
+    test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
     image: "/assets/user.png",
-    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
+    test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
     image: "/assets/user.png",
-    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
+    test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
     image: "/assets/user.png",
-    test: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita rem voluptatem unde iusto quos ut delectus blanditiis,",
+    test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
-];
-const containerVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-      when: "beforeChildren",
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const achievementsCards = [
-  { title: "Projects", icon: <SlScreenDesktop />, num: 10 },
-  { title: "Customers", icon: <FaUsers />, num: 25 },
-  { title: "Experience", icon: <HiOutlineBadgeCheck />, num: 5 },
 ];
 
 const AboutPage = ({ progress }) => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(progress, [0.55, 1], [1, 0.5]);
   const borderRadius = useTransform(progress, [0.55, 1], ["0px", "500px"]);
-
   return (
     <motion.section
       className="flex flex-col items-center justify-center w-full min-h-[100vh] backdrop-blur-3xl z-20 relative top-0 py-9"
@@ -96,7 +89,7 @@ const AboutPage = ({ progress }) => {
         <motion.div
           initial={{ opacity: 0.5, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{once:true}}
+          viewport={{ once: true }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -126,7 +119,7 @@ const AboutPage = ({ progress }) => {
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{once:true}}
+        viewport={{ once: true }}
         transition={{ duration: 1 }}
         className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-10 items-center z-1"
       >
@@ -166,12 +159,53 @@ const AboutPage = ({ progress }) => {
         </div>
       </motion.div>
 
-      {/* <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center">
-        <H1 title="what client said" />
+      {/* <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center mt-15">
         <div className="h-[30vh] w-full flex justify-center items-center mb-20 overflow-x-hidden">
-          <AutoScroll tests={tests} />
+        <AutoScroll tests={tests} />
         </div>
-      </div> */}
+        </div> */}
+      <div className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20">
+        <H1 title="what client said" />
+        <Swiper
+          modules={[
+            Navigation,
+            Pagination,
+            Autoplay,
+            EffectCube,
+            EffectCoverflow,
+            EffectFlip,
+            EffectFade,
+            FreeMode,
+          ]}
+          loop={true}
+          spaceBetween={0}
+          pagination={{ dynamicBullets: true, clickable: true }}
+          effect="coverflow"
+          autoplay={{ delay: 2000 }}
+          freeMode={true}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+          }}
+          breakpoints={{
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 25,
+            },
+          }}
+          slidesPerView={2}
+          className="h-[300px] rounded-3xl p-9"
+        >
+          {tests.map((test, i) => (
+            <SwiperSlide key={i} className="p-5">
+              <TestCard {...test} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </motion.section>
   );
 };

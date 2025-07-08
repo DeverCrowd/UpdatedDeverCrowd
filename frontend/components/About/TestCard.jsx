@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const TestCard = ({ name, image, test }) => {
   return (
-    <div className="shadow-lg transition-shadow duration-400 hover:shadow-xl shadow-primary flex flex-col items-center justify-center gap-4 border p-4 lg:w-100 w-50 h-50 rounded-3xl group">
+    <div className="shadow-lg transition-shadow duration-400 hover:shadow-xl shadow-primary flex flex-col items-center justify-center gap-4 border p-4 size-full rounded-3xl group ">
       <div className="flex items-center justify-center gap-4 ">
         <Image
           width={50}
