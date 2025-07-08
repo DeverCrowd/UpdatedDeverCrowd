@@ -167,9 +167,9 @@ const page = () => {
                   Live
                 </Link>
               )}
-              {project.live && (
+              {project.github && (
                 <Link
-                  href={project.live}
+                  href={project.github}
                   target="_blank"
                   className="flex gap-3 items-center px-6 py-3 bg-[#0c45a0] hover:bg-[#1860d0] text-white rounded-xl text-lg font-semibold shadow-lg transition-all w-fit"
                 >
