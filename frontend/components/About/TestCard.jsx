@@ -1,6 +1,4 @@
-import React from "react";
 import Image from "next/image";
-
 const TestCard = ({ name, image, test }) => {
   return (
     <div className="flex flex-col items-center justify-between text-center bg-[#0f172a]/60 border border-[#1e3a8a]/30 rounded-3xl p-6 shadow-lg max-w-md mx-auto ">

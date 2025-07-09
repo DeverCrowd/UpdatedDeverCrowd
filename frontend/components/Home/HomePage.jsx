@@ -1,63 +1,26 @@
-import React, { useEffect, useState } from "react";
-import Cube from "./Cube";
+import { useEffect } from "react";
 import Link from "next/link";
 import { FaEnvelope } from "react-icons/fa";
-import { motion, useScroll, useTransform } from "motion/react";
-import Particles from "../ui/Particles";
-import CountUp from "../ui/CountUp";
-import H1 from "../ui/H1";
-import Image from "next/image";
+import { motion } from "motion/react";
+import dynamic from "next/dynamic";
+import { ClipLoader } from "react-spinners";
+const CountUp = dynamic(() => import("../ui/CountUp"), {
+  loading: () => (
+    <div className="flex justify-center items-center h-40">
+      <ClipLoader color="#3B82F6" />
+    </div>
+  ),
+  ssr: false,
+});
 
-const HomePage = ({ progress }) => {
-  const { scrollYProgress } = useScroll();
-  const scale = useTransform(progress, [0, 0.5], [1, 0.5]);
-  const borderRadius = useTransform(progress, [0, 0.5], ["0px", "1000px"]);
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
-  const [isLaptop, setIsLaptop] = useState(false);
-  const [innerWidth, setInnerWidth] = useState(0);
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth;
-      setInnerWidth(window.innerWidth);
-      setIsMobile(width <= 480 && width >= 320);
-      setIsTablet(width >= 480 && width <= 768);
-      setIsLaptop(width >= 768 && width <= 1640);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+const HomePage = () => {
   return (
     <motion.section
       id="home"
       className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-10 "
     >
-      {/* <Image
-        src="/bgs/bg13.jpg"
-        fill
-        quality={100}
-        alt="bg"
-        className="object-cover  z-0"
-      /> */}
-      {/* Background Particles */}
-      <div className="absolute inset-0">
-        <Particles
-          particleColors={["#ffffff"]}
-          particleCount={200}
-          particleSpread={10}
-          speed={0.1}
-          particleBaseSize={100}
-          moveParticlesOnHover={false}
-          alphaParticles={true}
-          disableRotation={false}
-        />
-      </div>
-
       <div className="flex flex-col items-center justify-center w-full gap-9 sm:p-16 p-4 z-1">
-        <h1 className="text-white lg:text-6xl text-3xl font-extrabold text-center xl:w-[60%] w-[100%]">
+        <h1 className="text-white lg:text-6xl text-4xl font-extrabold text-center xl:w-[60%] w-[100%]">
           Grow <span className="text-primary">Faster</span> With Smarter Digital
           Products
         </h1>
@@ -90,9 +53,7 @@ const HomePage = ({ progress }) => {
                   className="text-2xl sm:text-4xl font-bold text-[#0c9aff]"
                 />
                 {label == "Experience" && (
-                  <p className="absolute bottom-5 right-5 text-white/50">
-                    Yrs
-                  </p>
+                  <p className="absolute bottom-5 right-5 text-white/50">Yrs</p>
                 )}
               </div>
             ))}
@@ -109,30 +70,6 @@ const HomePage = ({ progress }) => {
             Book A Call
           </div>
         </Link>
-
-        {/* Right Side: Cube */}
-        {/* <div
-          className="hidden absolute top-[60%] left-25 lg:top-0 lg:right-0 lg:relative z-0 lg:flex justify-center order-2 lg:w-1/4
-        "
-        >
-          <Cube
-            cubeSize={200}
-            initial={{ rotateX: -60 }}
-            whileTap={{ scale: 1.05 }}
-            whileInView={{
-              rotateX: -30,
-              transition: { duration: 3 },
-            }}
-            animate={{
-              rotateY: 360,
-              transition: {
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear",
-              },
-            }}
-          />
-        </div> */}
       </div>
     </motion.section>
   );

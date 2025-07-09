@@ -1,57 +1,44 @@
 "use client";
-import { motion, useScroll, useTransform } from "motion/react";
-import { LampContainer } from "../ui/lamp";
-import Particles from "../ui/Particles";
+import { motion } from "motion/react";
 import { Spotlight } from "../ui/spotlight-new";
-import { SlScreenDesktop } from "react-icons/sl";
-import { FaUsers } from "react-icons/fa6";
-import { HiOutlineBadgeCheck } from "react-icons/hi";
-import AutoScroll from "../About/AutoScroll";
+import { LampContainer } from "../ui/lamp";
 import H1 from "../ui/H1";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import TestCard from "./TestCard";
+import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Autoplay,
   EffectCoverflow,
-  EffectCube,
-  EffectFade,
-  EffectFlip,
   Navigation,
   Pagination,
-  FreeMode,
 } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-fade";
-import "swiper/css/effect-cube";
 import "swiper/css/effect-coverflow";
-import "swiper/css/effect-flip";
-import TestCard from "./TestCard";
 
 const tests = [
   {
     name: "swilam",
-    image: "/icons/user.png",
+    image: "/icons/user.webp",
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
-    image: "/icons/user.png",
+    image: "/icons/user.webp",
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
-    image: "/icons/user.png",
+    image: "/icons/user.webp",
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
-    image: "/icons/user.png",
+    image: "/icons/user.webp",
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
   {
     name: "swilam",
-    image: "/icons/user.png",
+    image: "/icons/user.webp",
     test: "انه حقا رائع لقد كنت اعاني من تساقط في شبكة الموقع ولكن بعد التجربه يستحق الشراء",
   },
 ];
@@ -91,7 +78,7 @@ const vmcs = [
 const AboutPage = ({ progress }) => {
   return (
     <motion.section
-      className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-20 backdrop-blur-2xl"
+      className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-20 backdrop-blur-3xl"
       id="about"
     >
       <Spotlight />
@@ -102,41 +89,28 @@ const AboutPage = ({ progress }) => {
           position: "absolute",
           zIndex: "50",
         }}
-      >
-        <Particles
-          particleColors={["#3B82F6"]}
-          particleCount={30}
-          particleSpread={10}
-          speed={0.1}
-          particleBaseSize={200}
-          moveParticlesOnHover={false}
-          alphaParticles={true}
-          disableRotation={false}
-        />
-      </div>
+      ></div>
       <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_100%,transparent)] min-h-screen flex flex-col items-center justify-center ">
-          <h1 className="text-center font-extrabold text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text tracking-tight leading-tight drop-shadow-[0_2px_20px_rgba(59,130,246,0.5)] ">
-            Who We Are?!
-          </h1>
+        <h1 className="text-center font-extrabold text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text tracking-tight leading-tight drop-shadow-[0_2px_20px_rgba(59,130,246,0.5)] ">
+          Who We Are?!
+        </h1>
 
-          <p
-            className="bg-white/2 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light mt-9"
-            style={{
-              boxShadow: "9px 9px 10px 0px #1E3A8A",
-              borderRadius: "0px 50px 0px 50px",
-            }}
-          >
-            At <span className="text-primary font-semibold">DeverCrowd</span>,
-            we're more than developers — we're partners in innovation. From
-            concept to code, we design and engineer seamless digital experiences
-            that grow with your business. Whether it's a product, platform, or
-            complete ecosystem — we make it real.
-          </p>
+        <p
+          className="bg-white/2 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light mt-9"
+          style={{
+            boxShadow: "9px 9px 10px 0px #1E3A8A",
+            borderRadius: "0px 50px 0px 50px",
+          }}
+        >
+          At <span className="text-primary font-semibold">DeverCrowd</span>,
+          we're more than developers — we're partners in innovation. From
+          concept to code, we design and engineer seamless digital experiences
+          that grow with your business. Whether it's a product, platform, or
+          complete ecosystem — we make it real.
+        </p>
       </LampContainer>
       {/* Vision / Mission / core value */}
-      <motion.div
-        className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
-      >
+      <motion.div className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
         {vmcs.map((item, i) => (
           <div
             key={i}
@@ -166,22 +140,18 @@ const AboutPage = ({ progress }) => {
         ))}
       </motion.div>
 
-      <div className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20 z-50">
+      <div className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20 z-50 border">
         <H1 title="what client said" />
         <Swiper
           modules={[
             Navigation,
             Pagination,
             Autoplay,
-            EffectCube,
             EffectCoverflow,
-            EffectFlip,
-            EffectFade,
-            FreeMode,
           ]}
           loop={true}
           spaceBetween={0}
-          pagination={{ dynamicBullets: true, clickable: true }}
+          pagination={{ dynamicBullets: true, }}
           effect="coverflow"
           autoplay={{ delay: 2000 }}
           freeMode={true}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiSend, FiCheckCircle } from "react-icons/fi";
 import H1 from "../ui/H1";
 import { motion } from "framer-motion";

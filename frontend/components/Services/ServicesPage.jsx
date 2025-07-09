@@ -1,19 +1,17 @@
 "use client";
 import {
   motion,
-  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import Card from "./Card";
 import { MdDesignServices } from "react-icons/md";
 import { IoTerminal } from "react-icons/io5";
 import { BsShieldLockFill } from "react-icons/bs";
 import { FaHandsHelping } from "react-icons/fa";
-import Cube from "../Home/Cube";
+import Card from "./Card";
+import Cube from "../ui/Cube";
 import H1 from "../ui/H1";
-import Image from "next/image";
 
 const cyberIcon = () => {
   return <BsShieldLockFill />;
@@ -27,28 +25,6 @@ const developmentIcon = () => {
 const supportIcon = () => {
   return <FaHandsHelping />;
 };
-const steaks = [
-  {
-    color: "#83181b",
-    darkColor: "#250505",
-    icon: cyberIcon,
-  },
-  {
-    color: "#3B0764",
-    darkColor: "#160222",
-    icon: designIcon,
-  },
-  {
-    color: "#0c552b",
-    darkColor: "#03160b",
-    icon: supportIcon,
-  },
-  {
-    color: "#1c388f",
-    darkColor: "#0a1026",
-    icon: developmentIcon,
-  },
-];
 
 const cards = [
   {
@@ -85,12 +61,10 @@ const cards = [
 ];
 const ServicesPage = ({ progress }) => {
   const section = useRef(null);
-  const { scrollYProgress, scrollY } = useScroll({
+  const { scrollYProgress } = useScroll({
     target: section,
-    // offset: ["start start", "start end"],
   });
-  // useMotionValueEvent(scrollYProgress,'change',(v)=>{console.log(v);
-  // })
+
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isLaptop, setIsLaptop] = useState(false);
@@ -121,13 +95,11 @@ const ServicesPage = ({ progress }) => {
   );
   const rotateYCube = useTransform(scrollYProgress, [0, 1], [0, 400]);
   const rotateXCube = useTransform(scrollYProgress, [0, 0.2], [-90, -25]);
-  const borderRadius = useTransform(progress, [0.85, 1], ["0px", "150px"]);
-  const scale = useTransform(progress, [0.85, 1.2], [1, 0.5]);
 
   return (
     <motion.section
       ref={section}
-      className="flex flex-col justify-start w-full h-[400vh] lg:h-[600vh] backdrop-blur-2xl z-30 border-t border-primary"
+      className="flex flex-col justify-start w-full h-[400vh] lg:h-[600vh] backdrop-blur-3xl z-30 "
       id="services"
     >
       <div className="flex flex-col items-center justify-start w-full h-full p-20">

@@ -1,7 +1,6 @@
-import React from "react";
-import Form from "./Form";
-import Info from "./Info";
 import Image from "next/image";
+import Form from "./Form"
+import Info from "./Info"
 
 const ContactPage = () => {
   return (
@@ -10,7 +9,7 @@ const ContactPage = () => {
       id="contact"
     >
       <Image
-        src="/bgs/bg4.png"
+        src="/bgs/bg4.webp"
         fill
         quality={100}
         alt="bg"

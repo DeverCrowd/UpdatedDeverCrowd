@@ -1,16 +1,11 @@
 "use client";
 import {
   motion,
-  useMotionValueEvent,
-  useScroll,
   useTransform,
 } from "motion/react";
 import { useEffect, useState } from "react";
 
 const Card = ({ icon, text, color, i, darkColor, progress,title }) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
-  const [isLaptop, setIsLaptop] = useState(false);
   const [isUnder24, setIsUnder24] = useState(false);
   const [innerWidth, setInnerWidth] = useState(0);
   const cardWidth = isUnder24 ? 300 : 350;
@@ -19,20 +14,14 @@ const Card = ({ icon, text, color, i, darkColor, progress,title }) => {
     const handleResize = () => {
       const width = window.innerWidth;
       setInnerWidth(window.innerWidth);
-      setIsMobile(width <= 480);
-      setIsTablet(width > 480 && width <= 768);
-      setIsLaptop(width > 768 && width <= 1640);
       setIsUnder24(width < 1024);
     };
-
     handleResize();
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   let x = null;
-  let y = null;
   let opacity = null;
   let scale = null;
   let rotateX = 0;
@@ -66,7 +55,6 @@ const Card = ({ icon, text, color, i, darkColor, progress,title }) => {
         x: x ?? 0,
         scale,
         opacity,
-        // backgroundImage: `linear-gradient(145deg, ${color}, ${darkColor})`,
         boxShadow: `8px 8px 8px 0px ${color},  -8px -8px 8px 0px ${color}`,
         position: "sticky",
         top: isUnder24 ? 200 + i * 50 : 250,

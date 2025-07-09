@@ -6,7 +6,7 @@ const Logo = ({ width, height,className }) => {
       alt="DeverCrowd logo"
       width={width}
       height={height}
-      src="/logo.png"
+      src="/logo.webp"
       className={`${className}`}
     />
   );

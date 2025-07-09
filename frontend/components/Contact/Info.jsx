@@ -1,10 +1,8 @@
-import React from "react";
 import H1 from "../ui/H1";
 import { motion } from "framer-motion";
 import { FaPhone } from "react-icons/fa6";
 import { MdMail } from "react-icons/md";
 import { FaMapLocationDot } from "react-icons/fa6";
-
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaFacebookF } from "react-icons/fa";
 import { AiFillTikTok } from "react-icons/ai";
@@ -17,7 +15,7 @@ const infos = [
   {
     icon: <FaPhone />,
     key: "Phone",
-    value: "0101010101",
+    value: "+20 100 253 2021",
   },
   {
     icon: <MdMail />,
@@ -75,7 +73,7 @@ const Info = () => {
               key={i}
               className="w-full flex items-center gap-4 p-4 m-3
                          rounded-2xl
-                         bg-gradient-to-br from-[#0a0f1c] to-[#0c1e3b]
+                         bg-gradient-to-br from-[#0a0f1c00] to-[#0c1e3b]
                          text-white
                          shadow-[0_4px_12px_rgba(0,0,0,0.25)]
                          border border-sky-900/40

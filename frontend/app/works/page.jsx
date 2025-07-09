@@ -1,27 +1,24 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useState } from "react";
 import {
   Navigation,
   Pagination,
   Autoplay,
-  EffectFade,
   EffectCube,
-  EffectCoverflow,
-  EffectFlip,
 } from "swiper/modules";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-fade";
 import "swiper/css/effect-cube";
-import "swiper/css/effect-coverflow";
-import "swiper/css/effect-flip";
-import H1 from "@/components/ui/H1";
+const H1 = dynamic(() => import("@/components/ui/H1"), {
+  loading: () => <p>Loding...</p>,
+  ssr: false,
+});
 import Image from "next/image";
 
 const projects = [
@@ -36,7 +33,7 @@ const projects = [
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
     industry: [{ name: "Markting" }],
     scope: [{ name: "Design" }, { name: "Development" }],
-    pic: "/projects/influcrowd.png",
+    pic: "/projects/influcrowd.webp",
     live: "https://mohamedhamad1.github.io/InfluCrowd/#hero",
     github: "",
   },
@@ -51,7 +48,7 @@ const projects = [
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
     industry: [{ name: "Portfolio" }],
     scope: [{ name: "Design" }, { name: "Development" }],
-    pic: "/projects/rawaby.png",
+    pic: "/projects/rawaby.webp",
     live: "https://devercrowd.github.io/Rawaby/",
     github: "",
   },
@@ -73,7 +70,7 @@ const projects = [
     ],
     industry: [{ name: "Programming" }],
     scope: [{ name: "Security" }],
-    pic: "/projects/codecrowd.png",
+    pic: "/projects/codecrowd.webp",
     live: "",
     github: "",
   },
@@ -92,7 +89,7 @@ const projects = [
     ],
     industry: [{ name: "Portfolio" }],
     scope: [{ name: "Design" }, { name: "Development" }],
-    pic: "/projects/swilam.png",
+    pic: "/projects/swilam.webp",
     live: "",
     github: "",
   },
@@ -106,7 +103,7 @@ const page = () => {
     setProject(projects[currentIndex]);
   };
   return (
-    <section className="min-h-screen px-4 xl:px-20 py-20 text-white bg-[url('/bgs/bg15.jpg')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-gradient-to-br from-[#0c45a0]/90 to-[#091d3a]/90">
+    <section className="min-h-screen px-4 xl:px-20 py-20 text-white bg-[url('/bgs/bg15.webp')] bg-cover bg-center bg-no-repeat bg-blend-overlay bg-gradient-to-br from-[#0c45a0]/90 to-[#091d3a]/90">
       <div className="max-w-[1440px] mx-auto flex flex-col xl:flex-row gap-12 items-start">
         {/* Slider Section */}
         <div className="w-full xl:w-[35%] relative">
@@ -116,9 +113,6 @@ const page = () => {
               Pagination,
               Autoplay,
               EffectCube,
-              EffectCoverflow,
-              EffectFlip,
-              EffectFade,
             ]}
             spaceBetween={30}
             slidesPerView={1}
@@ -132,12 +126,6 @@ const page = () => {
               depth: 200,
               modifier: 1,
               slideShadows: true,
-            }}
-            cubeEffect={{
-              shadow: true,
-              slideShadows: true,
-              shadowOffset: 50,
-              shadowScale: 0.94,
             }}
             onSlideChange={handleSlideChange}
             className="xl:h-[250px] rounded-3xl"
