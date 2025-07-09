@@ -127,7 +127,7 @@ const ServicesPage = ({ progress }) => {
   return (
     <motion.section
       ref={section}
-      className="flex flex-col justify-start w-full h-[400vh] lg:h-[600vh] backdrop-blur-2xl z-30"
+      className="flex flex-col justify-start w-full h-[400vh] lg:h-[600vh] backdrop-blur-2xl z-30 border-t border-primary"
       id="services"
     >
       <div className="flex flex-col items-center justify-start w-full h-full p-20">
