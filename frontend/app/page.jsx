@@ -40,14 +40,6 @@ export default function Main() {
           className="fixed"
         />
       </div>
-      <div className="fixed -z-10 inset-0">
-        <Image
-          className="bg-cover object-cover bg-center"
-          alt="bg"
-          src="/bgs/bg13.webp"
-          fill
-        />
-      </div>
       <HomePage progress={scrollYProgress} />
       <AboutPage progress={scrollYProgress} />
       <ServicesPage progress={scrollYProgress} />
