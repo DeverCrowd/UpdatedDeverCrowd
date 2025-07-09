@@ -33,27 +33,27 @@ const infos = [
 const socials = [
   {
     icon: <IoLogoWhatsapp />,
-    link: "0101010101",
+    link: "wa.me/+201002532021",
   },
   {
     icon: <FaFacebookF />,
-    link: "devercrowd@gmail.com",
+    link: "mailto:devercrowd@gmail.com",
   },
   {
     icon: <AiFillTikTok />,
-    link: "Egypt",
+    link: "https://www.tiktok.com/@devercrowd.com",
   },
   {
     icon: <AiFillInstagram />,
-    link: "Egypt",
+    link: "https://www.instagram.com/devercrowd/",
   },
   {
     icon: <FaLinkedinIn />,
-    link: "Egypt",
+    link: "https://www.linkedin.com/company/devercrowd/",
   },
   {
     icon: <FaSquareXTwitter />,
-    link: "Egypt",
+    link: "https://x.com/DeverC96471",
   },
 ];
 const Info = () => {

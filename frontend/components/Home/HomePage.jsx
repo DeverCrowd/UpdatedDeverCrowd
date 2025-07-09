@@ -32,9 +32,8 @@ const HomePage = ({ progress }) => {
   }, []);
   return (
     <motion.section
-      style={{ borderRadius, scale, boxShadow: `0px 0px 30px 0px #1E3A8A` }}
       id="home"
-      className="top-0 flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-10 sticky rounded-4xl"
+      className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-10 "
     >
       <Image
         src="/bgs/bg13.jpg"

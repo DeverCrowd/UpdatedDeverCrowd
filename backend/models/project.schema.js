@@ -29,16 +29,42 @@ const projectSchema = mongoose.Schema({
   cost: {
     type: Number,
     required: true,
-    default:0,
+    default: 0,
   },
   timeSpend: {
     type: String,
     required: true,
-    default:0,
+    default: 0,
   },
   category: {
     type: String,
     required: true,
+  },
+  scope: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+    },
+  ],
+  stack: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+    },
+  ],
+  industry: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+    },
+  ],
+  live: {
+    type: String,
+    required: false,
+  },
+  github: {
+    type: String,
+    required: false,
   },
 });
 module.exports = mongoose.model("Project", projectSchema, "projects");

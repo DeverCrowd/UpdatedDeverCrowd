@@ -2,7 +2,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import {
   Navigation,
@@ -26,7 +25,7 @@ import H1 from "@/components/ui/H1";
 
 const projects = [
   {
-    turnaround: "1 Week",
+    timeSpend: "1 Week",
     client: "InfluCrowd",
     name: "InfluCrowd",
     category: "Frontend",
@@ -36,12 +35,12 @@ const projects = [
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
     industry: [{ name: "Markting" }],
     scope: [{ name: "Design" }, { name: "Development" }],
-    image: "/projects/influcrowd.png",
+    pic: "/projects/influcrowd.png",
     live: "https://mohamedhamad1.github.io/InfluCrowd/#hero",
     github: "",
   },
   {
-    turnaround: "1 Week",
+    timeSpend: "1 Week",
     client: "Mohamed Rawaby",
     name: "Rawaby Portfolio",
     category: "Modern Portfolio",
@@ -51,12 +50,12 @@ const projects = [
     stack: [{ name: "HTML5" }, { name: "CSS3" }, { name: "JavaScript" }],
     industry: [{ name: "Portfolio" }],
     scope: [{ name: "Design" }, { name: "Development" }],
-    image: "/projects/rawaby.png",
+    pic: "/projects/rawaby.png",
     live: "https://devercrowd.github.io/Rawaby/",
     github: "",
   },
   {
-    turnaround: "UNDER DEVELOPMENT",
+    timeSpend: "UNDER DEVELOPMENT",
     client: "CodeCrowd",
     name: "CodeCrowd",
     category: "Full Web",
@@ -73,12 +72,12 @@ const projects = [
     ],
     industry: [{ name: "Programming" }],
     scope: [{ name: "Security" }],
-    image: "/projects/codecrowd.png",
+    pic: "/projects/codecrowd.png",
     live: "",
     github: "",
   },
   {
-    turnaround: "UNDER DEVELOPMENT",
+    timeSpend: "UNDER DEVELOPMENT",
     client: "Mohamed Hamad",
     name: "Swilam Portfolio",
     category: "Frontend",
@@ -92,7 +91,7 @@ const projects = [
     ],
     industry: [{ name: "Portfolio" }],
     scope: [{ name: "Design" }, { name: "Development" }],
-    image: "/projects/swilam.png",
+    pic: "/projects/swilam.png",
     live: "",
     github: "",
   },
@@ -125,7 +124,7 @@ const page = () => {
             navigation
             pagination={{ clickable: true }}
             effect="cube"
-            autoplay={{ delay: 20000 }}
+            autoplay={{ delay: 10000 }}
             coverflowEffect={{
               rotate: -50,
               stretch: 0,
@@ -145,8 +144,8 @@ const page = () => {
             {projects.map((project, index) => (
               <SwiperSlide key={index}>
                 <div className="relative group h-[300px] xl:h-full rounded-3xl overflow-hidden shadow-lg">
-                  <Image
-                    src={project.image}
+                  <pic
+                    src={project.pic}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform group-hover:scale-105 duration-500"
@@ -202,8 +201,8 @@ const page = () => {
                 <p className="text-white font-medium">{project.client}</p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow">
-                <p className="text-white/60 text-sm mb-1">Turnaround</p>
-                <p className="text-white font-medium">{project.turnaround}</p>
+                <p className="text-white/60 text-sm mb-1">timeSpend</p>
+                <p className="text-white font-medium">{project.timeSpend}</p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow">
                 <p className="text-white/60 text-sm mb-1">Category</p>
