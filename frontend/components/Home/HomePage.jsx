@@ -35,13 +35,13 @@ const HomePage = ({ progress }) => {
       id="home"
       className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-10 "
     >
-      <Image
+      {/* <Image
         src="/bgs/bg13.jpg"
         fill
         quality={100}
         alt="bg"
         className="object-cover  z-0"
-      />
+      /> */}
       {/* Background Particles */}
       <div className="absolute inset-0">
         <Particles

@@ -166,7 +166,7 @@ const AboutPage = ({ progress }) => {
         ))}
       </motion.div>
 
-      <div className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20">
+      <div className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20 z-50">
         <H1 title="what client said" />
         <Swiper
           modules={[
