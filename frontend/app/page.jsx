@@ -31,9 +31,9 @@ export default function Main() {
   return (
     <main className="">
       <div
-        className="fixed inset-0 -z-10 bg-no-repeat bg-cover bg-center"
+        className="fixed inset-0 -z-10 bg-cover bg-center"
         style={{
-          backgroundImage: `url('/assets/bgs/bg13.jpg')`,
+          backgroundImage: `url('/bgs/bg13.jpg')`,
           backgroundAttachment: "fixed",
         }}
       />

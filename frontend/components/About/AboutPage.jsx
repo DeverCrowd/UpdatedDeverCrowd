@@ -91,7 +91,7 @@ const vmcs = [
 const AboutPage = ({ progress }) => {
   return (
     <motion.section
-      className="flex flex-col items-center justify-center w-full min-h-[100vh] z-20 py-20"
+      className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-20"
       id="about"
     >
       <Spotlight />
@@ -114,14 +114,13 @@ const AboutPage = ({ progress }) => {
           disableRotation={false}
         />
       </div>
-      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] relative sm:top-0 bottom-20 z-0 mt-20 sm:mt-0">
-        <div className="flex flex-col items-center justify-center gap-5 ">
-          <h1 className="text-center font-extrabold text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text tracking-tight leading-tight drop-shadow-[0_2px_20px_rgba(59,130,246,0.5)]">
+      <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_100%,transparent)] min-h-screen flex flex-col items-center justify-center ">
+          <h1 className="text-center font-extrabold text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text tracking-tight leading-tight drop-shadow-[0_2px_20px_rgba(59,130,246,0.5)] ">
             Who We Are?!
           </h1>
 
           <p
-            className="relative bg-white/2 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light"
+            className="bg-white/2 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light mt-9"
             style={{
               boxShadow: "9px 9px 10px 0px #1E3A8A",
               borderRadius: "0px 50px 0px 50px",
@@ -133,11 +132,10 @@ const AboutPage = ({ progress }) => {
             that grow with your business. Whether it's a product, platform, or
             complete ecosystem — we make it real.
           </p>
-        </div>
       </LampContainer>
       {/* Vision / Mission / core value */}
       <motion.div
-        className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch z-10"
+        className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch "
       >
         {vmcs.map((item, i) => (
           <div
@@ -168,11 +166,6 @@ const AboutPage = ({ progress }) => {
         ))}
       </motion.div>
 
-      {/* <div className="w-full px-4 sm:px-6 flex flex-col items-center justify-center mt-15">
-        <div className="h-[30vh] w-full flex justify-center items-center mb-20 overflow-x-hidden">
-        <AutoScroll tests={tests} />
-        </div>
-        </div> */}
       <div className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20">
         <H1 title="what client said" />
         <Swiper

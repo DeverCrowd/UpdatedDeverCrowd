@@ -40,7 +40,7 @@ const HomePage = ({ progress }) => {
         fill
         quality={100}
         alt="bg"
-        className="object-cover sticky top-0 z-0"
+        className="object-cover  z-0"
       />
       {/* Background Particles */}
       <div className="absolute inset-0">

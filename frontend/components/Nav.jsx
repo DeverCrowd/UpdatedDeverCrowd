@@ -14,7 +14,7 @@ const Nav = () => {
   return (
     <nav
       style={{ borderRadius: "100px 100px 100px 100px" }}
-      className="flex items-center justify-between h-[47px] backdrop-blur-3xl border border-primary hover:shadow-lg shadow-md shadow-primary w-full transition-all duration-300"
+      className="flex items-center justify-between h-[47px] backdrop-blur-3xl border border-primary hover:shadow-lg shadow-md shadow-primary w-full transition-all duration-300 z-50"
     >
       <div className="flex items-center justify-around w-[100%] h-full ">
         <Link href="/">

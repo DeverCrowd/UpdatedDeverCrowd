@@ -53,7 +53,7 @@ export const LampContainer = ({ children, className }) => {
         <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
         <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-[#1E3A8A] opacity-50 blur-3xl"></div>
         <div className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-[#1E3A8A] blur-2xl"></div>
-        <div className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-[#1E3A8A] "></div>
+        <div className="absolute inset-auto z-50 h-0.5 w-[20rem] -translate-y-[7rem] bg-[#1E3A8A] "></div>
 
         <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-gray-950 "></div>
       </div>
