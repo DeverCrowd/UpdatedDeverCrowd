@@ -115,16 +115,7 @@ const AboutPage = ({ progress }) => {
         />
       </div>
       <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_80%,transparent)] relative sm:top-0 bottom-20 z-0 mt-20 sm:mt-0">
-        <motion.div
-          initial={{ opacity: 0.5, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="flex flex-col items-center justify-center gap-5 "
-        >
+        <div className="flex flex-col items-center justify-center gap-5 ">
           <h1 className="text-center font-extrabold text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text tracking-tight leading-tight drop-shadow-[0_2px_20px_rgba(59,130,246,0.5)]">
             Who We Are?!
           </h1>
@@ -142,14 +133,10 @@ const AboutPage = ({ progress }) => {
             that grow with your business. Whether it's a product, platform, or
             complete ecosystem — we make it real.
           </p>
-        </motion.div>
+        </div>
       </LampContainer>
       {/* Vision / Mission / core value */}
       <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
         className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch z-10"
       >
         {vmcs.map((item, i) => (
