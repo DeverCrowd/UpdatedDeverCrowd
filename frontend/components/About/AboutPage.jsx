@@ -91,7 +91,7 @@ const vmcs = [
 const AboutPage = ({ progress }) => {
   return (
     <motion.section
-      className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-20"
+      className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-20 backdrop-blur-2xl"
       id="about"
     >
       <Spotlight />
@@ -135,7 +135,7 @@ const AboutPage = ({ progress }) => {
       </LampContainer>
       {/* Vision / Mission / core value */}
       <motion.div
-        className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch "
+        className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
       >
         {vmcs.map((item, i) => (
           <div

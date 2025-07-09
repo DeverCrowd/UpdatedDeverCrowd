@@ -126,7 +126,6 @@ const ServicesPage = ({ progress }) => {
 
   return (
     <motion.section
-      style={{ borderRadius, scale, boxShadow: `0px 15px 30px 0px #3B82F6` }}
       ref={section}
       className="flex flex-col justify-start w-full h-[400vh] lg:h-[600vh] backdrop-blur-2xl z-30 relative top-0 "
       id="services"
