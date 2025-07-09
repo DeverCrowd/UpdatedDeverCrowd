@@ -22,6 +22,7 @@ import "swiper/css/effect-cube";
 import "swiper/css/effect-coverflow";
 import "swiper/css/effect-flip";
 import H1 from "@/components/ui/H1";
+import Image from "next/image";
 
 const projects = [
   {
