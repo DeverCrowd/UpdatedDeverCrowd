@@ -144,7 +144,7 @@ const page = () => {
             {projects.map((project, index) => (
               <SwiperSlide key={index}>
                 <div className="relative group h-[300px] xl:h-full rounded-3xl overflow-hidden shadow-lg">
-                  <pic
+                  <Image
                     src={project.pic}
                     alt={project.title}
                     fill
