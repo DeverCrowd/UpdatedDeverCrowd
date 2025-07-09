@@ -26,7 +26,7 @@ const Nav = () => {
           { href: "/works", label: "Our Works" },
         ].map(({ href, label }, i) => (
           <Link key={i} className="flex relative" href={href}>
-            <div className="hover:border-primary text-center rounded-sm hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 border-l border-r px-3 border-primary shadow-sm hover:shadow-md shadow-primary">
+            <div className="hover:border-primary text-center rounded-sm hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 ">
               {label}
             </div>
           </Link>
