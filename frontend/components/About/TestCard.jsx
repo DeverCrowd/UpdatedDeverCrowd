@@ -17,7 +17,7 @@ const TestCard = ({ name, image, test }) => {
         </h3>
       </div>
 
-      <div className="relative text-white/80 text-sm md:text-base font-light leading-relaxed bg-white/5 border border-white/10 p-4 rounded-xl shadow-inner backdrop-blur-2xl">
+      <div className="relative text-white/80 text-sm md:text-base font-light leading-relaxed bg-white/5 border border-white/10 p-4 rounded-2xl shadow-inner backdrop-blur-2xl">
         <span className="absolute top-[-10px] left-[-10px] text-blue-500 text-4xl font-bold opacity-20">
           “
         </span>

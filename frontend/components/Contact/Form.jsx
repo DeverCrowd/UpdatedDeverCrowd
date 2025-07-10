@@ -104,7 +104,7 @@ const ContactForm = () => {
 
         {success && (
           <motion.div
-            className="mt-6 bg-[#0c1e3b]/80 border border-sky-500 text-sky-400 py-3 px-5 rounded-xl text-sm flex items-center gap-3 shadow-md"
+            className="mt-6 bg-[#0c1e3b]/80 border border-sky-500 text-sky-400 py-3 px-5 rounded-2xl text-sm flex items-center gap-3 shadow-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}

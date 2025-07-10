@@ -149,7 +149,7 @@ const page = () => {
                 <Link
                   href={project.live}
                   target="_blank"
-                  className="flex gap-3 items-center  px-6 py-3 bg-[#0c45a0] hover:bg-[#1860d0] text-white rounded-xl text-lg font-semibold shadow-lg transition-all w-fit"
+                  className="flex gap-3 items-center  px-6 py-3 bg-[#0c45a0] hover:bg-[#1860d0] text-white rounded-2xl text-lg font-semibold shadow-lg transition-all w-fit"
                 >
                   <BsArrowUpRight className="text-2xl" />
                   Live
@@ -159,7 +159,7 @@ const page = () => {
                 <Link
                   href={project.github}
                   target="_blank"
-                  className="flex gap-3 items-center px-6 py-3 bg-[#0c45a0] hover:bg-[#1860d0] text-white rounded-xl text-lg font-semibold shadow-lg transition-all w-fit"
+                  className="flex gap-3 items-center px-6 py-3 bg-[#0c45a0] hover:bg-[#1860d0] text-white rounded-2xl text-lg font-semibold shadow-lg transition-all w-fit"
                 >
                   <BsGithub className="text-2xl" />
                   GitHub
@@ -185,20 +185,20 @@ const page = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 shadow">
                 <p className="text-white/60 text-sm mb-1">Client</p>
                 <p className="text-white font-medium">{project.client}</p>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 shadow">
                 <p className="text-white/60 text-sm mb-1">timeSpend</p>
                 <p className="text-white font-medium">{project.timeSpend}</p>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 shadow">
                 <p className="text-white/60 text-sm mb-1">Category</p>
                 <p className="text-white font-medium">{project.category}</p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow col-span-1 md:col-span-3">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 shadow col-span-1 md:col-span-3">
                 <p className="text-white/60 text-sm mb-2">Stack</p>
                 <div className="flex flex-wrap gap-2">
                   {project.stack.map((item, index) => (
@@ -212,7 +212,7 @@ const page = () => {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow col-span-1 md:col-span-3">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 shadow col-span-1 md:col-span-3">
                 <p className="text-white/60 text-sm mb-2">Industry</p>
                 <div className="flex flex-wrap gap-2">
                   {project.industry.map((item, index) => (
@@ -226,7 +226,7 @@ const page = () => {
                 </div>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 shadow col-span-1 md:col-span-3">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 shadow col-span-1 md:col-span-3">
                 <p className="text-white/60 text-sm mb-2">Scope of Work</p>
                 <div className="flex flex-wrap gap-2">
                   {project.scope.map((item, index) => (
