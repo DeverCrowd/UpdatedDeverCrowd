@@ -15,7 +15,7 @@ const infos = [
   {
     icon: <FaPhone />,
     key: "Phone",
-    value: "+20 100 253 2021",
+    value: "+201002532021",
   },
   {
     icon: <MdMail />,
@@ -31,11 +31,11 @@ const infos = [
 const socials = [
   {
     icon: <IoLogoWhatsapp />,
-    link: "wa.me/+201002532021",
+    link: "https://wa.me/+201002532021",
   },
   {
     icon: <FaFacebookF />,
-    link: "mailto:devercrowd@gmail.com",
+    link: "",
   },
   {
     icon: <AiFillTikTok />,

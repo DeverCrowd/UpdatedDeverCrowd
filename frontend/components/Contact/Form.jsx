@@ -90,7 +90,7 @@ const ContactForm = () => {
     >
 
       <motion.div
-        className="card w-full backdrop-blur-3xl bg-gradient-to-br from-[#0a0f1ca1] to-[#0c1e3b] py-8 px-6 sm:px-10 md:px-12 rounded-4xl shadow-[0_8px_24px_rgba(0,0,0,0.6)] borde border-sky-900/40"
+        className="card w-full bg-gradient-to-br from-[#0a0f1c] to-[#0c1e3b] py-8 px-6 sm:px-10 md:px-12 rounded-4xl shadow-[0_8px_24px_rgba(0,0,0,0.6)]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
@@ -135,7 +135,7 @@ const ContactForm = () => {
                   name={field}
                   value={form[field]}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-sky-800 bg-transparent text-white placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                  className="w-full px-4 py-3 border border-sky-800 bg-transparent text-white placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all rounded-2xl"
                 />
                 {errors[field] && (
                   <p className="text-red-500 text-xs mt-1">{errors[field]}</p>
@@ -168,7 +168,7 @@ const ContactForm = () => {
                       e.preventDefault();
                     }
                   } : undefined}
-                  className="w-full px-4 py-3 rounded-xl border border-sky-800 bg-transparent text-white placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
+                  className="w-full px-4 py-3 rounded-2xl border border-sky-800 bg-transparent text-white placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all"
                 />
                 {errors[field] && (
                   <p className="text-red-500 text-xs mt-1">{errors[field]}</p>
@@ -189,7 +189,7 @@ const ContactForm = () => {
               rows="5"
               value={form.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-sky-800 bg-transparent text-white placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none"
+              className="w-full px-4 py-3 rounded-2xl border border-sky-800 bg-transparent text-white placeholder-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500 transition-all resize-none"
             ></textarea>
             {errors.message && (
               <p className="text-red-500 text-xs mt-1">{errors.message}</p>
@@ -198,7 +198,7 @@ const ContactForm = () => {
 
           <motion.button
             type="submit"
-            className="w-full py-3 bg-sky-600 hover:bg-sky-500 transition-all duration-300 rounded-xl text-white font-semibold tracking-wide flex items-center justify-center gap-2 disabled:opacity-50"
+            className="w-full py-3 bg-sky-600 hover:bg-sky-500 transition-all duration-300 rounded-2xl text-white font-semibold tracking-wide flex items-center justify-center gap-2 disabled:opacity-50"
             disabled={loading}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
