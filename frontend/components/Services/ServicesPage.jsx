@@ -99,12 +99,12 @@ const ServicesPage = ({ progress }) => {
   return (
     <motion.section
       ref={section}
-      className="flex flex-col justify-start w-full h-[400vh] lg:h-[600vh] backdrop-blur-sm z-30 "
+      className="flex flex-col justify-start w-full h-[400vh] lg:h-[600vh] z-30 backdrop-brightness-100"
       id="services"
     >
       <div className="flex flex-col items-center justify-start w-full h-full p-20">
         <H1 title="Your Growth Toolkit" />
-        <div className="hidden lg:flex flex-col absolute items-center justify-start mt-50 h-[95%] w-[100%] pb-50 z-50">
+        <div className="hidden lg:flex flex-col absolute items-center justify-start mt-50 h-[95%] w-[100%] pb-50 z-50 ">
           <Cube
             cubeSize={cubeSize}
             style={{
