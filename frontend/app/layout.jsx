@@ -19,16 +19,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className="font-code">
-        <div className="fixed -z-10 inset-0">
-        <Image
-          className="bg-cover object-cover bg-center"
-          alt="bg"
-          src="/bgs/bg13.webp"
-          fill
-        />
-      </div>
         <Header />
         {children}
         <Footer />

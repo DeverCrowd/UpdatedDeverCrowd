@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Link from "next/link";
 import { FaEnvelope } from "react-icons/fa";
 import { motion } from "motion/react";

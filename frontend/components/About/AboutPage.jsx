@@ -45,7 +45,8 @@ const tests = [
 const vmcs = [
   {
     title: "Vision",
-    icon: "🌐",
+    icon: <span role="img" aria-label="globe">🌐</span>
+,
     desc: (
       <>
         At <span className="text-blue-500 font-semibold">DeverCrowd</span>, our
@@ -56,7 +57,7 @@ const vmcs = [
   },
   {
     title: "Core Values",
-    icon: "💎",
+    icon: <span role="img" aria-label="globe">💎</span>,
     desc: (
       <>
         Integrity, innovation, and teamwork fuel everything we do — guiding how
@@ -66,7 +67,7 @@ const vmcs = [
   },
   {
     title: "Mission",
-    icon: "🚀",
+    icon: <span role="img" aria-label="globe">🚀</span>,
     desc: (
       <>
         We empower startups and businesses by building scalable, user-centric
@@ -81,7 +82,7 @@ const AboutPage = ({ progress }) => {
       className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-20 backdrop-blur-3xl"
       id="about"
     >
-      <Spotlight />
+      {/* <Spotlight /> */}
       <div
         style={{
           width: "100%",
@@ -96,7 +97,7 @@ const AboutPage = ({ progress }) => {
         </h1>
 
         <p
-          className="bg-white/2 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/80 text-lg sm:text-xl md:text-2xl leading-relaxed font-light mt-9"
+          className="bg-white/5 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/90 text-lg sm:text-xl md:text-2xl leading-relaxed font-light mt-9"
           style={{
             boxShadow: "9px 9px 10px 0px #1E3A8A",
             borderRadius: "0px 50px 0px 50px",
@@ -130,7 +131,7 @@ const AboutPage = ({ progress }) => {
             </h3>
 
             {/* Description */}
-            <p className="relative z-10 text-sm md:text-base text-white/70 leading-relaxed font-light tracking-wide">
+            <p className="relative z-10 text-sm md:text-base text-white/90 leading-relaxed font-light tracking-wide">
               {item.desc}
             </p>
 
@@ -140,7 +141,7 @@ const AboutPage = ({ progress }) => {
         ))}
       </motion.div>
 
-      <div className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20 z-50 border">
+      <div id="swiper" className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20 z-50 border">
         <H1 title="what client said" />
         <Swiper
           modules={[

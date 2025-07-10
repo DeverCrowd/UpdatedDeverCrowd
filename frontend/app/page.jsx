@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
-import {
-  useScroll,
-} from "motion/react";
+import { useScroll } from "motion/react";
 import Lenis from "lenis";
 import { useEffect } from "react";
 import "lenis/dist/lenis.css";
@@ -10,9 +8,7 @@ import AboutPage from "@/components/About/AboutPage";
 import ServicesPage from "@/components/Services/ServicesPage";
 import HomePage from "@/components/Home/HomePage";
 import ContactPage from "@/components/Contact/ContactPage";
-import Particles from "@/components/ui/Particles";
-
-
+import FlyingDots from "@/components/ui/FlyingDots";
 
 export default function Main() {
   useEffect(() => {
@@ -24,22 +20,19 @@ export default function Main() {
     requestAnimationFrame(raf);
   });
   const { scrollYProgress } = useScroll();
-  // useMotionValueEvent(scrollYProgress,'change',(v)=>{console.log(v);})
   return (
     <main className="">
-      <div className="inset-0 fixed">
-        <Particles
-          particleColors={["#ffffff"]}
-          particleCount={200}
-          particleSpread={10}
-          speed={0.1}
-          particleBaseSize={100}
-          moveParticlesOnHover={false}
-          alphaParticles={true}
-          disableRotation={false}
-          className="fixed"
+      <div className="fixed -z-10 inset-0 h-screen w-full overflow-hidden">
+        <Image
+          alt="Background"
+          src="/bgs/bg13.webp"
+          fill
+          priority // ✅ لأنها أهم صورة
+          quality={100}
+          className="object-cover"
         />
       </div>
+      <FlyingDots />
       <HomePage progress={scrollYProgress} />
       <AboutPage progress={scrollYProgress} />
       <ServicesPage progress={scrollYProgress} />

@@ -12,9 +12,9 @@ const TestCard = ({ name, image, test }) => {
             className="object-cover w-full h-full"
           />
         </div>
-        <h1 className="text-white text-lg font-medium tracking-wide capitalize group-hover:text-blue-400 transition-colors duration-300">
+        <h3 className="text-white text-lg font-medium tracking-wide capitalize group-hover:text-blue-400 transition-colors duration-300">
           {name}
-        </h1>
+        </h3>
       </div>
 
       <div className="relative text-white/80 text-sm md:text-base font-light leading-relaxed bg-white/5 border border-white/10 p-4 rounded-xl shadow-inner backdrop-blur-2xl">
