@@ -14,6 +14,7 @@ import {
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import { useRef } from "react";
 
 const tests = [
   {
@@ -26,14 +27,25 @@ const tests = [
     image: "/icons/user.webp",
     test: "الخدمه ممتازه و فريق العمل غاية في الاحتراف و تم تسليم البورتفوليو في وقت اسرع من المتوقع و الموقع احترافي جدا",
   },
-
-  
+  {
+    name: "Mohamed Hamad",
+    image: "/icons/user.webp",
+    test: "الخدمه ممتازه و فريق العمل غاية في الاحتراف و تم تسليم البورتفوليو في وقت اسرع من المتوقع و الموقع احترافي جدا",
+  },
+  {
+    name: "Mohamed Hamad",
+    image: "/icons/user.webp",
+    test: "الخدمه ممتازه و فريق العمل غاية في الاحتراف و تم تسليم البورتفوليو في وقت اسرع من المتوقع و الموقع احترافي جدا",
+  },
 ];
 const vmcs = [
   {
     title: "Vision",
-    icon: <span role="img" aria-label="globe">🌐</span>
-,
+    icon: (
+      <span role="img" aria-label="globe">
+        🌐
+      </span>
+    ),
     desc: (
       <>
         At <span className="text-blue-500 font-semibold">DeverCrowd</span>, our
@@ -44,7 +56,11 @@ const vmcs = [
   },
   {
     title: "Core Values",
-    icon: <span role="img" aria-label="globe">💎</span>,
+    icon: (
+      <span role="img" aria-label="globe">
+        💎
+      </span>
+    ),
     desc: (
       <>
         Integrity, innovation, and teamwork fuel everything we do — guiding how
@@ -54,7 +70,11 @@ const vmcs = [
   },
   {
     title: "Mission",
-    icon: <span role="img" aria-label="globe">🚀</span>,
+    icon: (
+      <span role="img" aria-label="globe">
+        🚀
+      </span>
+    ),
     desc: (
       <>
         We empower startups and businesses by building scalable, user-centric
@@ -63,28 +83,23 @@ const vmcs = [
     ),
   },
 ];
-const AboutPage = ({ progress }) => {
+const AboutPage = () => {
+  const swiperRef = useRef(null);
+
   return (
     <motion.section
       className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-20 "
       id="about"
     >
       {/* <Spotlight /> */}
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "absolute",
-          zIndex: "50",
-        }}
-      ></div>
+
       <LampContainer className="[mask-image:linear-gradient(to_top,transparent,white_20%,white_100%,transparent)] min-h-screen flex flex-col items-center justify-center ">
         <h1 className="text-center font-extrabold text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text tracking-tight leading-tight drop-shadow-[0_2px_20px_rgba(59,130,246,0.5)] ">
           Who We Are?!
         </h1>
 
         <p
-          className="bg-white/5 border border-blue-500/10 rounded-3xl backdrop-blur-xl px-8 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/90 text-lg sm:text-xl md:text-2xl leading-relaxed font-light mt-9"
+          className=" bg-white/2 border border-blue-500/10 rounded-3xl px-8 max-w-3xl text-center shadow-[0_0_40px_rgba(59,130,246,0.1)] transition hover:shadow-blue-500/20 text-white/90 text-lg sm:text-xl md:text-2xl leading-relaxed font-light mt-9"
           style={{
             boxShadow: "9px 9px 10px 0px #1E3A8A",
             borderRadius: "0px 50px 0px 50px",
@@ -98,7 +113,7 @@ const AboutPage = ({ progress }) => {
         </p>
       </LampContainer>
       {/* Vision / Mission / core value */}
-      <motion.div className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+      <motion.div className="w-full max-w-7xl px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch border ">
         {vmcs.map((item, i) => (
           <div
             key={i}
@@ -128,20 +143,21 @@ const AboutPage = ({ progress }) => {
         ))}
       </motion.div>
 
-      <div id="swiper" className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20 z-50 ">
+      <div
+        id="swiper"
+        className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20 "
+      >
         <H1 title="what client said" />
         <Swiper
-          modules={[
-            Navigation,
-            Pagination,
-            Autoplay,
-            EffectCoverflow,
-          ]}
+          modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
           loop={true}
           spaceBetween={0}
-          pagination={{ dynamicBullets: true, }}
+          pagination={{ dynamicBullets: true }}
           effect="coverflow"
-          autoplay={{ delay: 2000 }}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
           freeMode={true}
           coverflowEffect={{
             rotate: 50,
@@ -160,6 +176,8 @@ const AboutPage = ({ progress }) => {
           }}
           slidesPerView={1}
           className="h-[300px] rounded-3xl p-9"
+          onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+          onMouseLeave={() => swiperRef.current?.autoplay?.start()}
         >
           {tests.map((test, i) => (
             <SwiperSlide key={i} className="p-5">
