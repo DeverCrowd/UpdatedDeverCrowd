@@ -9,6 +9,8 @@ import { AiFillTikTok } from "react-icons/ai";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+
 import Link from "next/link";
 
 const infos = [
@@ -35,7 +37,7 @@ const socials = [
   },
   {
     icon: <FaFacebookF />,
-    link: "",
+    link: "https://www.facebook.com/profile.php?id=61577937253222",
   },
   {
     icon: <AiFillTikTok />,
@@ -52,6 +54,10 @@ const socials = [
   {
     icon: <FaSquareXTwitter />,
     link: "https://x.com/DeverC96471",
+  },
+  {
+    icon: <FaGithub />,
+    link: "https://github.com/DeverCrowd",
   },
 ];
 const Info = () => {

@@ -36,11 +36,11 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex flex-col items-center sm:items-start gap-2">
             <h3 className="pb-3 font-semibold text-white">SOCIAL</h3>
-            <Link href="#" className="text-white/50 hover:text-primary transition">GitHub</Link>
-            <Link href="#" className="text-white/50 hover:text-primary transition">Instagram</Link>
-            <Link href="#" className="text-white/50 hover:text-primary transition">TikTok</Link>
-            <Link href="#" className="text-white/50 hover:text-primary transition">Facebook</Link>
-            <Link href="#" className="text-white/50 hover:text-primary transition">LinkedIn</Link>
+            <Link href="https://github.com/DeverCrowd" className="text-white/50 hover:text-primary transition">GitHub</Link>
+            <Link href="https://www.instagram.com/devercrowd/" className="text-white/50 hover:text-primary transition">Instagram</Link>
+            <Link href="https://www.tiktok.com/@devercrowd.com" className="text-white/50 hover:text-primary transition">TikTok</Link>
+            <Link href="https://www.facebook.com/profile.php?id=61577937253222" className="text-white/50 hover:text-primary transition">Facebook</Link>
+            <Link href="https://www.linkedin.com/company/devercrowd/" className="text-white/50 hover:text-primary transition">LinkedIn</Link>
           </div>
         </div>
       </div>

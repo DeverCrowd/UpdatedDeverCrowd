@@ -10,7 +10,6 @@ import {
 
 
 const Nav = () => {
-  const { scrollYProgress } = useScroll();
   return (
     <nav
       style={{ borderRadius: "100px 100px 100px 100px" }}
@@ -22,8 +21,8 @@ const Nav = () => {
         </Link>
 
         {[
-          { href: "/#about", label: "About Us" },
-          { href: "/works", label: "Our Works" },
+          { href: "/#about", label: "About" },
+          { href: "/works", label: "Works" },
         ].map(({ href, label }, i) => (
           <Link key={i} className="flex relative" href={href}>
             <div className="hover:border-primary text-center rounded-sm hover:text-primary transition-all duration-300 hover:scale-105 flex gap-2 ">
