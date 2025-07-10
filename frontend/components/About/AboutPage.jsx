@@ -79,7 +79,7 @@ const vmcs = [
 const AboutPage = ({ progress }) => {
   return (
     <motion.section
-      className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-20 backdrop-blur-3xl"
+      className="flex flex-col justify-center items-center w-full overflow-hidden min-h-screen select-none z-20 "
       id="about"
     >
       {/* <Spotlight /> */}
@@ -141,7 +141,7 @@ const AboutPage = ({ progress }) => {
         ))}
       </motion.div>
 
-      <div id="swiper" className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20 z-50 border">
+      <div id="swiper" className="w-full relative border-primary [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] mt-20 z-50 ">
         <H1 title="what client said" />
         <Swiper
           modules={[

@@ -22,16 +22,14 @@ export default function Main() {
   const { scrollYProgress } = useScroll();
   return (
     <main className="">
-      <div className="fixed -z-10 inset-0 h-screen w-full overflow-hidden">
         <Image
           alt="Background"
           src="/bgs/bg13.webp"
           fill
           priority // ✅ لأنها أهم صورة
           quality={100}
-          className="object-cover"
+          className="object-cover -z-10"
         />
-      </div>
       <FlyingDots />
       <HomePage progress={scrollYProgress} />
       <AboutPage progress={scrollYProgress} />
